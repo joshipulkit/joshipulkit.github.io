@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python on PJ&#39;s Personal Website</title>
+    <link>https://joshipulkit.github.io/tags/python/</link>
+    <description>Recent content in Python on PJ&#39;s Personal Website</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 26 Jun 2020 09:54:14 +0530</lastBuildDate>
+    
+	<atom:link href="https://joshipulkit.github.io/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>DIIS: Python code for H2O using minimal STO-3G basis set</title>
+      <link>https://joshipulkit.github.io/codes/diis-python-code/</link>
+      <pubDate>Fri, 26 Jun 2020 09:54:14 +0530</pubDate>
+      
+      <guid>https://joshipulkit.github.io/codes/diis-python-code/</guid>
+      <description>The theory for the DIIS method can be found in the Notes section, or directly click here. As a reference, a normal SCF procedure (without DIIS implementation) took around 38 iterations as compared to just 11 iterations with DIIS implementation (we will see in this example). The energy and density convergence criteria were same in both cases.
+Some one-electron, and two-electron integrals are required for the code to work and those files are made available here.</description>
+    </item>
+    
+  </channel>
+</rss>

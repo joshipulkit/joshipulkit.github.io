@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Language" content="en">
+
+    <meta name="author" content="Pulkit Joshi">
+    <meta name="description" content="The theory for the DIIS method can be found in the Notes section, or directly click here. As a reference, a normal SCF procedure (without DIIS implementation) took around 38 iterations as compared to just 11 iterations with DIIS implementation (we will see in this example). The energy and density convergence criteria were same in both cases.
+Some one-electron, and two-electron integrals are required for the code to work and those files are made available here.">
+    <meta name="keywords" content="blog, personal, research, codes, quantum chemistry">
+
+    
+      <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
+    
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="DIIS: Python code for H2O using minimal STO-3G basis set"/>
+<meta name="twitter:description" content="The theory for the DIIS method can be found in the Notes section, or directly click here. As a reference, a normal SCF procedure (without DIIS implementation) took around 38 iterations as compared to just 11 iterations with DIIS implementation (we will see in this example). The energy and density convergence criteria were same in both cases.
+Some one-electron, and two-electron integrals are required for the code to work and those files are made available here."/>
+
+    <meta property="og:title" content="DIIS: Python code for H2O using minimal STO-3G basis set" />
+<meta property="og:description" content="The theory for the DIIS method can be found in the Notes section, or directly click here. As a reference, a normal SCF procedure (without DIIS implementation) took around 38 iterations as compared to just 11 iterations with DIIS implementation (we will see in this example). The energy and density convergence criteria were same in both cases.
+Some one-electron, and two-electron integrals are required for the code to work and those files are made available here." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://joshipulkit.github.io/codes/diis-python-code/" />
+<meta property="article:published_time" content="2020-06-26T09:54:14+05:30" />
+<meta property="article:modified_time" content="2020-06-26T09:54:14+05:30" />
+
+
+    
+      <base href="https://joshipulkit.github.io/codes/diis-python-code/">
+    
+    <title>
+  DIIS: Python code for H2O using minimal STO-3G basis set · PJ&#39;s Personal Website
+</title>
+
+    
+      <link rel="canonical" href="https://joshipulkit.github.io/codes/diis-python-code/">
+    
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+
+    
+      
+      
+      <link rel="stylesheet" href="https://joshipulkit.github.io/css/coder.min.a8d6992447433031e9dd2630d263e3f14da699a7e7d02f93f6a8a06113ea7edc.css" integrity="sha256-qNaZJEdDMDHp3SYw0mPj8U2mmafn0C&#43;T9qigYRPqftw=" crossorigin="anonymous" media="screen" />
+    
+
+    
+
+    
+      
+        
+        
+        <link rel="stylesheet" href="https://joshipulkit.github.io/css/coder-dark.min.e78e80fc3a585a4d1c8fc7f58623b6ff852411e38431a9cd1792877ecaa160f6.css" integrity="sha256-546A/DpYWk0cj8f1hiO2/4UkEeOEManNF5KHfsqhYPY=" crossorigin="anonymous" media="screen" />
+      
+    
+
+    
+
+    
+
+    <link rel="icon" type="image/png" href="https://joshipulkit.github.io/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://joshipulkit.github.io/images/favicon-16x16.png" sizes="16x16">
+
+    <meta name="generator" content="Hugo 0.72.0" />
+  </head>
+
+  <body class=""
+        onload=" twemoji.parse(document.body); "
+  >
+    <main class="wrapper">
+      <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://joshipulkit.github.io/">
+      PJ&#39;s Personal Website
+    </a>
+    
+    <span id="dark-mode-toggle" class="menu-button float-right">
+      <svg width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+              3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+              13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"></path>
+      </svg>
+    </span>
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
+    <ul class="navigation-list">
+      
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://joshipulkit.github.io/about/">About</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://joshipulkit.github.io/notes/">Notes</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://joshipulkit.github.io/codes/">Codes</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://joshipulkit.github.io/blog/">Blog</a>
+          </li>
+        
+          <li class="navigation-item">
+            <a class="navigation-link" href="https://joshipulkit.github.io/contact/">Contact</a>
+          </li>
+        
+      
+      
+      <li class="navigation-item separator">
+        <span>|</span>
+      </li>
+    </ul>
+    
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">DIIS: Python code for H2O using minimal STO-3G basis set</h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fas fa-calendar"></i>
+              <time datetime='2020-06-26T09:54:14&#43;05:30'>
+                June 26, 2020
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fas fa-clock"></i>
+              8-minute read
+            </span>
+          </div>
+          
+          <div class="tags">
+  <i class="fas fa-tag"></i>
+    <a href="https://joshipulkit.github.io/tags/diis/">DIIS</a>
+      <span class="separator">•</span>
+    <a href="https://joshipulkit.github.io/tags/scf-convergence/">SCF Convergence</a>
+      <span class="separator">•</span>
+    <a href="https://joshipulkit.github.io/tags/python/">Python</a></div>
+
+        </div>
+      </header>
+
+      <div>
+        
+        <p>The theory for the DIIS method can be found in the Notes section, or directly click <a href="../../notes/diis">here</a>. As a reference, a normal SCF procedure (without DIIS implementation) took around 38 iterations as compared to just 11 iterations with DIIS implementation (we will see in this example). The energy and density convergence criteria were same in both cases.</p>
+<p>Some one-electron, and two-electron integrals are required for the code to work and those files are made available <a href="https://github.com/CrawfordGroup/ProgrammingProjects/tree/master/Project%2303/input/h2o/STO-3G" target="_blank">here</a>. Make sure to have those files in the same directory in which you have the DIIS code or else, mention their exact path in the code.</p>
+<p>The following code for calculating Hartree-Fock Self-Consistent Field energy (with DIIS implmentation) using a minimal STO-3G basis set. The output is given below the code.</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#007f7f">#!/usr/bin/env python3</span>
+<span style="color:#fff;font-weight:bold">import</span> numpy <span style="color:#fff;font-weight:bold">as</span> np
+<span style="color:#fff;font-weight:bold">import</span> scipy
+<span style="color:#fff;font-weight:bold">import</span> scipy.integrate <span style="color:#fff;font-weight:bold">as</span> integrate
+<span style="color:#fff;font-weight:bold">import</span> scipy.special <span style="color:#fff;font-weight:bold">as</span> special
+<span style="color:#fff;font-weight:bold">import</span> pandas <span style="color:#fff;font-weight:bold">as</span> pd
+
+<span style="color:#fff;font-weight:bold">from</span> math <span style="color:#fff;font-weight:bold">import</span> sqrt,pi
+<span style="color:#fff;font-weight:bold">from</span> timeit <span style="color:#fff;font-weight:bold">import</span> default_timer <span style="color:#fff;font-weight:bold">as</span> timer
+
+start_time=timer()
+
+
+<span style="color:#007f7f">#### functions to read one/two electron intergrals</span>
+<span style="color:#fff;font-weight:bold">def</span> readint(naos,t,s,v,eri,enuc):
+    readoneint(<span style="color:#0ff;font-weight:bold">&#34;t.dat&#34;</span>,naos,t)
+    readoneint(<span style="color:#0ff;font-weight:bold">&#34;s.dat&#34;</span>,naos,s)
+    readoneint(<span style="color:#0ff;font-weight:bold">&#34;v.dat&#34;</span>,naos,v)
+    readtwoint(<span style="color:#0ff;font-weight:bold">&#34;eri.dat&#34;</span>,naos,eri)
+    <span style="color:#007f7f">#print(t)</span>
+    <span style="color:#fff;font-weight:bold">return</span>
+
+
+<span style="color:#fff;font-weight:bold">def</span> readoneint(filename,naos,t):
+    text=<span style="color:#fff;font-weight:bold">open</span>(filename, <span style="color:#0ff;font-weight:bold">&#34;r&#34;</span>).read()
+    splitfile = text.strip().split(<span style="color:#0ff;font-weight:bold">&#39;</span><span style="color:#0ff;font-weight:bold">\n</span><span style="color:#0ff;font-weight:bold">&#39;</span>)
+    <span style="color:#007f7f"># print splitfile</span>
+    k =<span style="color:#ff0;font-weight:bold">0</span> 
+    <span style="color:#fff;font-weight:bold">for</span> i in <span style="color:#fff;font-weight:bold">range</span>(naos):
+        <span style="color:#fff;font-weight:bold">for</span> j in <span style="color:#fff;font-weight:bold">range</span>(i+<span style="color:#ff0;font-weight:bold">1</span>):
+            <span style="color:#007f7f"># print i, j </span>
+            line = splitfile[k]
+            t[i,j] = line.split()[<span style="color:#ff0;font-weight:bold">2</span>] 
+            t[j,i] = t[i,j]  
+            k = k +<span style="color:#ff0;font-weight:bold">1</span>
+    <span style="color:#fff;font-weight:bold">return</span>
+
+
+<span style="color:#fff;font-weight:bold">def</span> readtwoint(filename,naos,eri):
+    text=<span style="color:#fff;font-weight:bold">open</span>(filename, <span style="color:#0ff;font-weight:bold">&#34;r&#34;</span>).read()
+    splitfile = text.strip().split(<span style="color:#0ff;font-weight:bold">&#39;</span><span style="color:#0ff;font-weight:bold">\n</span><span style="color:#0ff;font-weight:bold">&#39;</span>)
+    ntwoints= <span style="color:#fff;font-weight:bold">len</span>(splitfile)
+    <span style="color:#fff;font-weight:bold">for</span> k in <span style="color:#fff;font-weight:bold">range</span>(ntwoints):
+        line = splitfile[k]
+        m = <span style="color:#fff;font-weight:bold">int</span>(line.split()[<span style="color:#ff0;font-weight:bold">0</span>]) -<span style="color:#ff0;font-weight:bold">1</span>
+        n = <span style="color:#fff;font-weight:bold">int</span>(line.split()[<span style="color:#ff0;font-weight:bold">1</span>]) -<span style="color:#ff0;font-weight:bold">1</span>
+        k = <span style="color:#fff;font-weight:bold">int</span>(line.split()[<span style="color:#ff0;font-weight:bold">2</span>]) -<span style="color:#ff0;font-weight:bold">1</span>
+        l = <span style="color:#fff;font-weight:bold">int</span>(line.split()[<span style="color:#ff0;font-weight:bold">3</span>]) -<span style="color:#ff0;font-weight:bold">1</span> 
+        eri[m,n,k,l] = line.split()[<span style="color:#ff0;font-weight:bold">4</span>]
+        eri[n,m,k,l] = eri[m,n,k,l]
+        eri[m,n,l,k] = eri[m,n,k,l]
+        eri[n,m,l,k] = eri[m,n,k,l]
+        eri[k,l,m,n] = eri[m,n,k,l]
+        eri[k,l,n,m] = eri[m,n,k,l]
+        eri[l,k,m,n] = eri[m,n,k,l]
+        eri[l,k,n,m] = eri[m,n,k,l]
+    <span style="color:#fff;font-weight:bold">return</span>
+
+
+<span style="color:#007f7f">#### builds new (i)th fock matrix from the (i-1)th density matrix</span>
+<span style="color:#fff;font-weight:bold">def</span> build_new_fock(denmat,naos,hcore):
+	fmat=np.zeros((naos,naos))
+	<span style="color:#fff;font-weight:bold">for</span> m in <span style="color:#fff;font-weight:bold">range</span>(naos):
+		<span style="color:#fff;font-weight:bold">for</span> n in <span style="color:#fff;font-weight:bold">range</span>(naos):
+			fmat[m,n] = hcore[m,n]
+			<span style="color:#fff;font-weight:bold">for</span> k in <span style="color:#fff;font-weight:bold">range</span>(naos):
+				<span style="color:#fff;font-weight:bold">for</span> l in <span style="color:#fff;font-weight:bold">range</span>(naos):
+					fmat[m,n] += denmat[k,l] * (<span style="color:#ff0;font-weight:bold">2</span>*erimat[m,n,k,l] - erimat[m,k,n,l])
+	<span style="color:#fff;font-weight:bold">return</span> fmat
+
+
+<span style="color:#007f7f">#### diagonalises (i)th fock matrix and obtain (i)th density matrix, electronic energy, etc (check line 92)</span>
+<span style="color:#fff;font-weight:bold">def</span> diagonalize_fock(fmat,smat_half,hcore):
+	fmatp = np.dot(smat_half,np.dot(fmat,smat_half)) <span style="color:#007f7f">#### transforming to canonical AO basis</span>
+
+	epsilon, cmatp = np.linalg.eig(fmatp) <span style="color:#007f7f">#### diagonalising fmatp</span>
+	idx = epsilon.argsort()[::<span style="color:#ff0;font-weight:bold">1</span>] <span style="color:#007f7f">#### sorting the eigenvalues</span>
+	epsilon = epsilon[idx]
+	cmatp = cmatp[:,idx]
+	cmat = np.dot(smat_half,cmatp)
+	cmat_occ = cmat[:,<span style="color:#ff0;font-weight:bold">0</span>:<span style="color:#ff0;font-weight:bold">5</span>] <span style="color:#007f7f">#### only first 5 MOs are occupied in case of water</span>
+
+	denmat = np.dot(cmat_occ,cmat_occ.transpose()) <span style="color:#007f7f">#### building density matrix and calculating electronic energy</span>
+	var1 = hcore + fmat
+	eelec = np.trace(np.dot(denmat,var1))
+
+	<span style="color:#fff;font-weight:bold">return</span> denmat,eelec,fmatp,cmat,epsilon
+
+
+<span style="color:#007f7f">#### builds a new error matrix based on (e = FDS-SDF)</span>
+<span style="color:#fff;font-weight:bold">def</span> build_error_vector(fmat,denmat,smat):
+    errvec = (np.dot(fmat,np.dot(denmat,smat))-np.dot(smat,np.dot(denmat,fmat))).reshape(naos*naos,<span style="color:#ff0;font-weight:bold">1</span>)
+    norm_errvec = sqrt(np.dot(errvec.transpose(), errvec)[<span style="color:#ff0;font-weight:bold">0</span>,<span style="color:#ff0;font-weight:bold">0</span>])
+    <span style="color:#fff;font-weight:bold">return</span> errvec, norm_errvec
+
+    
+<span style="color:#007f7f">#### builds the B-matrix and solve for DIIS coefficient</span>
+<span style="color:#fff;font-weight:bold">def</span> get_diis_coeff(errvec_subspace):
+    b_mat = np.zeros((<span style="color:#fff;font-weight:bold">len</span>(errvec_subspace)+<span style="color:#ff0;font-weight:bold">1</span>,<span style="color:#fff;font-weight:bold">len</span>(errvec_subspace)+<span style="color:#ff0;font-weight:bold">1</span>))
+    b_mat[-<span style="color:#ff0;font-weight:bold">1</span>,:] = -<span style="color:#ff0;font-weight:bold">1</span>; b_mat[:,-<span style="color:#ff0;font-weight:bold">1</span>] = -<span style="color:#ff0;font-weight:bold">1</span>; b_mat[-<span style="color:#ff0;font-weight:bold">1</span>,-<span style="color:#ff0;font-weight:bold">1</span>] = <span style="color:#ff0;font-weight:bold">0</span>
+
+    rhs = np.zeros((<span style="color:#fff;font-weight:bold">len</span>(errvec_subspace)+<span style="color:#ff0;font-weight:bold">1</span>,<span style="color:#ff0;font-weight:bold">1</span>))
+    rhs[-<span style="color:#ff0;font-weight:bold">1</span>,-<span style="color:#ff0;font-weight:bold">1</span>] = -<span style="color:#ff0;font-weight:bold">1</span>
+
+    <span style="color:#fff;font-weight:bold">for</span> i in <span style="color:#fff;font-weight:bold">range</span>(<span style="color:#fff;font-weight:bold">len</span>(errvec_subspace)):
+        <span style="color:#fff;font-weight:bold">for</span> j in <span style="color:#fff;font-weight:bold">range</span>(i+<span style="color:#ff0;font-weight:bold">1</span>):
+            b_mat[i,j] = np.dot(errvec_subspace[i].transpose(), errvec_subspace[j])
+            b_mat[j,i] = b_mat[i,j]
+
+    *diis_coeff, _ = np.linalg.solve(b_mat,rhs)
+
+    <span style="color:#fff;font-weight:bold">return</span> diis_coeff
+
+
+<span style="color:#007f7f">#### builds an extrapolated fock matrix by a linear combination (These won&#39;t be a part of fmat_subspace)</span>
+<span style="color:#fff;font-weight:bold">def</span> extrapolated_fock(fmat_subspace, diis_coeff):
+    extrapolated_fmat = np.zeros((naos,naos))
+
+    <span style="color:#fff;font-weight:bold">for</span> i in <span style="color:#fff;font-weight:bold">range</span>(<span style="color:#fff;font-weight:bold">len</span>(fmat_subspace)):
+        extrapolated_fmat += fmat_subspace[i]*diis_coeff[i]
+
+    <span style="color:#fff;font-weight:bold">return</span> extrapolated_fmat
+
+
+<span style="color:#007f7f">#### defining a class=Subspace for storing error vectors, fock, and density matrices</span>
+<span style="color:#fff;font-weight:bold">class</span> Subspace(<span style="color:#fff;font-weight:bold">list</span>):
+    <span style="color:#fff;font-weight:bold">def</span> append(self, item):
+        <span style="color:#fff;font-weight:bold">list</span>.append(self, item)
+        <span style="color:#fff;font-weight:bold">if</span> <span style="color:#fff;font-weight:bold">len</span>(self) &gt; dimSubspace : <span style="color:#fff;font-weight:bold">del</span> self[<span style="color:#ff0;font-weight:bold">0</span>]
+
+<span style="color:#fff;font-weight:bold">print</span>(<span style="color:#0ff;font-weight:bold">&#34;=&#34;</span>*<span style="color:#ff0;font-weight:bold">58</span>)
+<span style="color:#fff;font-weight:bold">print</span>(f<span style="color:#0ff;font-weight:bold">&#34;* Output for SCF energy calculation using DIIS algorithm *&#34;</span>)
+<span style="color:#fff;font-weight:bold">print</span>(<span style="color:#0ff;font-weight:bold">&#34;=&#34;</span>*<span style="color:#ff0;font-weight:bold">58</span>,<span style="color:#0ff;font-weight:bold">&#34;</span><span style="color:#0ff;font-weight:bold">\n\n</span><span style="color:#0ff;font-weight:bold">&#34;</span>)
+
+
+<span style="color:#007f7f">#### Bunch of global variables defined; initalizing some arrays</span>
+
+naos = <span style="color:#ff0;font-weight:bold">7</span> <span style="color:#007f7f">#### STO-3G has 7 AOs for H2O</span>
+
+tmat = np.zeros((naos,naos))
+smat = np.zeros((naos,naos))
+vmat = np.zeros((naos,naos))
+erimat = np.zeros((naos,naos,naos,naos))
+denmat = np.zeros((naos,naos))
+
+<span style="color:#fff;font-weight:bold">with</span> <span style="color:#fff;font-weight:bold">open</span>(<span style="color:#0ff;font-weight:bold">&#39;enuc.dat&#39;</span>, <span style="color:#0ff;font-weight:bold">&#39;r&#39;</span>) <span style="color:#fff;font-weight:bold">as</span> f:
+    enuc = <span style="color:#fff;font-weight:bold">float</span>(f.read())
+
+readint(naos,tmat,smat,vmat,erimat,enuc)
+
+hcore= tmat + vmat <span style="color:#007f7f">#### this will be initial guess for fock matrix</span>
+
+iterations = <span style="color:#ff0;font-weight:bold">12</span> <span style="color:#007f7f">#### maximum number of iterations</span>
+
+scftol = <span style="color:#ff0;font-weight:bold">1e-12</span> <span style="color:#007f7f">#### energy convergence criterion </span>
+dentol = <span style="color:#ff0;font-weight:bold">1e-12</span> <span style="color:#007f7f">#### density convergence criterion</span>
+errtol = <span style="color:#ff0;font-weight:bold">1e-15</span> <span style="color:#007f7f">#### error vector should be as close to 0</span>
+
+<span style="color:#fff;font-weight:bold">print</span>(f<span style="color:#0ff;font-weight:bold">&#34;Molecule = H2O&#34;</span>)
+<span style="color:#fff;font-weight:bold">print</span>(f<span style="color:#0ff;font-weight:bold">&#34;Basis Set = STO-3G&#34;</span>)
+<span style="color:#fff;font-weight:bold">print</span>(f<span style="color:#0ff;font-weight:bold">&#34;Total number of basis functions = {naos}</span><span style="color:#0ff;font-weight:bold">\n\n</span><span style="color:#0ff;font-weight:bold">&#34;</span>)
+
+<span style="color:#fff;font-weight:bold">print</span>(f<span style="color:#0ff;font-weight:bold">&#34;CONVERGENCE CRITERIA:</span><span style="color:#0ff;font-weight:bold">\n</span><span style="color:#0ff;font-weight:bold">~~~~~~~~~~~~~~~~~~~~~&#34;</span>)
+<span style="color:#fff;font-weight:bold">print</span>(f<span style="color:#0ff;font-weight:bold">&#34;Energy convergence criterion: {scftol}&#34;</span>)
+<span style="color:#fff;font-weight:bold">print</span>(f<span style="color:#0ff;font-weight:bold">&#34;Norm of density matrix convergence criterion: {dentol}&#34;</span>)
+<span style="color:#fff;font-weight:bold">print</span>(f<span style="color:#0ff;font-weight:bold">&#34;Norm of DIIS-error vector convergence criterion: {errtol}</span><span style="color:#0ff;font-weight:bold">\n\n</span><span style="color:#0ff;font-weight:bold">&#34;</span>)
+
+
+<span style="color:#007f7f">#### S^(-1/2) is used to diagonalise Fock matrix</span>
+s_eigval, s_eigvec = np.linalg.eig(smat)
+s_halfeig = np.zeros((naos,naos))
+
+<span style="color:#fff;font-weight:bold">for</span> i in <span style="color:#fff;font-weight:bold">range</span>(naos):
+    s_halfeig[i,i] = s_eigval[i]**(-<span style="color:#ff0;font-weight:bold">0.5</span>)
+
+a = np.dot(s_eigvec,s_halfeig)	<span style="color:#007f7f"># a = L*s^(-1/2)</span>
+b = s_eigvec.transpose()
+smat_half = np.dot(a,b)
+
+
+<span style="color:#007f7f">################################</span>
+<span style="color:#007f7f">####### DIIS Code begins #######</span>
+<span style="color:#007f7f">################################</span>
+
+dimSubspace = <span style="color:#ff0;font-weight:bold">6</span> <span style="color:#007f7f">#### usually around 6-8 to give a reasonable result</span>
+
+<span style="color:#007f7f">#### creating instances of the class=Subspace. The maximum dimension if defined above.</span>
+errvec_subspace = Subspace()
+fmat_subspace = Subspace()
+denmat_subspace = Subspace()
+
+<span style="color:#007f7f">#### initilizing these variables to check convergence</span>
+old_energy, old_denmat = <span style="color:#ff0;font-weight:bold">0</span>, np.zeros((naos,naos))
+
+<span style="color:#007f7f">#### providing the guess fock matrix to begin with (This will not be a part of fmat_subspace)</span>
+fmat = np.zeros((naos,naos))
+<span style="color:#fff;font-weight:bold">for</span> m in <span style="color:#fff;font-weight:bold">range</span>(naos):
+        <span style="color:#fff;font-weight:bold">for</span> n in <span style="color:#fff;font-weight:bold">range</span>(naos):
+            fmat[m,n] = hcore[m,n]
+
+<span style="color:#fff;font-weight:bold">print</span>(f<span style="color:#0ff;font-weight:bold">&#34;SCF ITERATIONS BEGIN:</span><span style="color:#0ff;font-weight:bold">\n</span><span style="color:#0ff;font-weight:bold">~~~~~~~~~~~~~~~~~~~~~&#34;</span>)
+
+<span style="color:#007f7f">#### begining the DIIS-SCF iterations</span>
+<span style="color:#fff;font-weight:bold">for</span> i in <span style="color:#fff;font-weight:bold">range</span>(iterations):
+    <span style="color:#fff;font-weight:bold">print</span>(f<span style="color:#0ff;font-weight:bold">&#34;Iteration {i+1}:&#34;</span>)
+    
+    <span style="color:#fff;font-weight:bold">if</span> i &lt;= <span style="color:#ff0;font-weight:bold">1</span>:
+        denmat = diagonalize_fock(fmat, smat_half, hcore)[<span style="color:#ff0;font-weight:bold">0</span>]
+        denmat_subspace.append(denmat)
+
+        energy = diagonalize_fock(fmat, smat_half, hcore)[<span style="color:#ff0;font-weight:bold">1</span>]
+        <span style="color:#fff;font-weight:bold">print</span>(f<span style="color:#0ff;font-weight:bold">&#34;    * Electronic energy = {energy} Eh&#34;</span>)
+                
+        fmat = build_new_fock(denmat, naos, hcore)
+        fmat_subspace.append(fmat)
+                
+        errvec, norm_errvec = build_error_vector(fmat, denmat, smat)
+        errvec_subspace.append(errvec)
+        <span style="color:#fff;font-weight:bold">print</span>(f<span style="color:#0ff;font-weight:bold">&#34;    * Norm of DIIS error vector = {norm_errvec}&#34;</span>)
+
+    <span style="color:#fff;font-weight:bold">else</span>:
+        <span style="color:#007f7f">#### start building and solving B-matrix to obatined DIIS coefficient after we have at least 2 error vectors</span>
+        diis_coeff = get_diis_coeff(errvec_subspace)
+
+        <span style="color:#007f7f">#### building extrapolated fock matrices</span>
+        extrapolated_fmat = extrapolated_fock(fmat_subspace, diis_coeff)
+
+        <span style="color:#007f7f">#### density matrix from extrapolated fock</span>
+        denmat = diagonalize_fock(extrapolated_fmat, smat_half, hcore)[<span style="color:#ff0;font-weight:bold">0</span>]
+        denmat_subspace.append(denmat)
+
+        <span style="color:#007f7f">#### next entry in the fock subspace obtained from the recent density matrix obtained</span>
+        fmat = build_new_fock(denmat, naos, hcore)
+        fmat_subspace.append(fmat)
+        
+        <span style="color:#007f7f">#### electronic energy</span>
+        energy = diagonalize_fock(fmat, smat_half, hcore)[<span style="color:#ff0;font-weight:bold">1</span>]
+        <span style="color:#fff;font-weight:bold">print</span>(f<span style="color:#0ff;font-weight:bold">&#34;    * Electronic energy = {energy} Eh&#34;</span>)
+
+        <span style="color:#007f7f">#### error vector calculation</span>
+        errvec, norm_errvec = build_error_vector(fmat, denmat, smat)
+        errvec_subspace.append(errvec)
+        <span style="color:#fff;font-weight:bold">print</span>(f<span style="color:#0ff;font-weight:bold">&#34;    * Norm of DIIS error vector = {norm_errvec}&#34;</span>)
+        <span style="color:#007f7f">#### DIIS algorithm ends here ####</span>
+
+    <span style="color:#007f7f">### checking for various convergence criteria</span>
+    deltaE = energy - old_energy
+    <span style="color:#fff;font-weight:bold">print</span>(f<span style="color:#0ff;font-weight:bold">&#34;    * Energy convergence = {deltaE} Eh&#34;</span>)
+    
+    denmat_vector, olddenmat_vector = np.reshape(denmat, (naos*naos,<span style="color:#ff0;font-weight:bold">1</span>)), np.reshape(old_denmat, (naos*naos,<span style="color:#ff0;font-weight:bold">1</span>))
+    norm_denmat = denmat_vector - olddenmat_vector
+    denconv = (np.dot(norm_denmat.transpose(),norm_denmat))**<span style="color:#ff0;font-weight:bold">0.5</span>
+    <span style="color:#fff;font-weight:bold">print</span>(f<span style="color:#0ff;font-weight:bold">&#34;    * Norm of density matrix convergence = {denconv[0,0]}</span><span style="color:#0ff;font-weight:bold">\n</span><span style="color:#0ff;font-weight:bold">&#34;</span>)
+
+    <span style="color:#007f7f">#### breaking the iterations when convergence is reached</span>
+    <span style="color:#fff;font-weight:bold">if</span> <span style="color:#fff;font-weight:bold">abs</span>(deltaE) &lt; scftol and <span style="color:#fff;font-weight:bold">abs</span>(denconv[<span style="color:#ff0;font-weight:bold">0</span>,<span style="color:#ff0;font-weight:bold">0</span>]) &lt; dentol:
+        <span style="color:#fff;font-weight:bold">print</span>(f<span style="color:#0ff;font-weight:bold">&#34;SCF ENERGY AND DENSITY CONVERGED WITHIN {i+1} ITERATIONS!</span><span style="color:#0ff;font-weight:bold">\n\n</span><span style="color:#0ff;font-weight:bold">&#34;</span>)
+        MOenergies = diagonalize_fock(fmat,smat_half,hcore)[<span style="color:#ff0;font-weight:bold">4</span>]
+        <span style="color:#fff;font-weight:bold">print</span>(f<span style="color:#0ff;font-weight:bold">&#34;ORBITAL ENERGIES:</span><span style="color:#0ff;font-weight:bold">\n</span><span style="color:#0ff;font-weight:bold">~~~~~~~~~~~~~~~~~</span><span style="color:#0ff;font-weight:bold">\n</span><span style="color:#0ff;font-weight:bold">{MOenergies}</span><span style="color:#0ff;font-weight:bold">\n\n</span><span style="color:#0ff;font-weight:bold">&#34;</span>)
+        <span style="color:#fff;font-weight:bold">print</span>(f<span style="color:#0ff;font-weight:bold">&#34;FINAL RESULT:</span><span style="color:#0ff;font-weight:bold">\n</span><span style="color:#0ff;font-weight:bold">~~~~~~~~~~~~~&#34;</span>)
+        <span style="color:#fff;font-weight:bold">print</span>(f<span style="color:#0ff;font-weight:bold">&#34;    * Electronic energy = {energy} Eh&#34;</span>)
+        <span style="color:#fff;font-weight:bold">print</span>(f<span style="color:#0ff;font-weight:bold">&#34;    * Total energy = {energy+enuc} Eh&#34;</span>)
+        <span style="color:#fff;font-weight:bold">print</span>(f<span style="color:#0ff;font-weight:bold">&#34;    * HOMO-LUMO gap = {MOenergies[5]-MOenergies[4]} Eh&#34;</span>)
+        <span style="color:#fff;font-weight:bold">break</span>
+    <span style="color:#fff;font-weight:bold">else</span>:
+        old_denmat = denmat
+        old_energy = energy
+
+<span style="color:#fff;font-weight:bold">print</span>(f<span style="color:#0ff;font-weight:bold">&#34;</span><span style="color:#0ff;font-weight:bold">\n</span><span style="color:#0ff;font-weight:bold">&#34;</span>)
+end_time = timer()
+<span style="color:#fff;font-weight:bold">print</span>(f<span style="color:#0ff;font-weight:bold">&#34;Wall time = {end_time-start_time} seconds&#34;</span>)
+<span style="color:#fff;font-weight:bold">print</span>(f<span style="color:#0ff;font-weight:bold">&#34;#EOF&#34;</span>)
+</code></pre></div><p>Output file:</p>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">==========================================================
+* Output for SCF energy calculation using DIIS algorithm *
+========================================================== 
+
+
+Molecule = H2O
+Basis Set = STO-3G
+Total number of basis functions = 7
+
+
+CONVERGENCE CRITERIA:
+~~~~~~~~~~~~~~~~~~~~~
+Energy convergence criterion: 1e-12
+Norm of density matrix convergence criterion: 1e-12
+Norm of DIIS-error vector convergence criterion: 1e-15
+
+
+SCF ITERATIONS BEGIN:
+~~~~~~~~~~~~~~~~~~~~~
+Iteration 1:
+    * Electronic energy = -125.84207743769872 Eh
+    * Norm of DIIS error vector = 0.7071326622354689
+    * Energy convergence = -125.84207743769872 Eh
+    * Norm of density matrix convergence = 2.5502610775639942
+
+Iteration 2:
+    * Electronic energy = -78.28658328473979 Eh
+    * Norm of DIIS error vector = 0.2916188629562465
+    * Energy convergence = 47.55549415295893 Eh
+    * Norm of density matrix convergence = 1.8266730844790497
+
+Iteration 3:
+    * Electronic energy = -82.96817430111264 Eh
+    * Norm of DIIS error vector = 0.03579239973876749
+    * Energy convergence = -4.681591016372849 Eh
+    * Norm of density matrix convergence = 0.40388981269621754
+
+Iteration 4:
+    * Electronic energy = -82.92990879461081 Eh
+    * Norm of DIIS error vector = 0.010388096600990935
+    * Energy convergence = 0.038265506501829805 Eh
+    * Norm of density matrix convergence = 0.08800371543016179
+
+Iteration 5:
+    * Electronic energy = -82.94386253386794 Eh
+    * Norm of DIIS error vector = 0.0037732560554277245
+    * Energy convergence = -0.013953739257132725 Eh
+    * Norm of density matrix convergence = 0.020519848927846068
+
+Iteration 6:
+    * Electronic energy = -82.94506703008572 Eh
+    * Norm of DIIS error vector = 0.0002413678868869734
+    * Energy convergence = -0.0012044962177810703 Eh
+    * Norm of density matrix convergence = 0.012108640030134078
+
+Iteration 7:
+    * Electronic energy = -82.94444341880964 Eh
+    * Norm of DIIS error vector = 1.0689089556398542e-06
+    * Energy convergence = 0.0006236112760831247 Eh
+    * Norm of density matrix convergence = 0.00046086217741523987
+
+Iteration 8:
+    * Electronic energy = -82.9444469361361 Eh
+    * Norm of DIIS error vector = 1.7121310576897823e-08
+    * Energy convergence = -3.517326462088022e-06 Eh
+    * Norm of density matrix convergence = 1.0810744482119196e-06
+
+Iteration 9:
+    * Electronic energy = -82.94444698921511 Eh
+    * Norm of DIIS error vector = 2.4119619376805485e-10
+    * Energy convergence = -5.307900607931515e-08 Eh
+    * Norm of density matrix convergence = 5.266833274903504e-08
+
+Iteration 10:
+    * Electronic energy = -82.94444699000225 Eh
+    * Norm of DIIS error vector = 7.811201338232912e-14
+    * Energy convergence = -7.87139242675039e-10 Eh
+    * Norm of density matrix convergence = 3.360853956205925e-10
+
+Iteration 11:
+    * Electronic energy = -82.94444699000206 Eh
+    * Norm of DIIS error vector = 3.77585115992646e-14
+    * Energy convergence = 1.8474111129762605e-13 Eh
+    * Norm of density matrix convergence = 6.63375456196504e-14
+
+SCF ENERGY AND DENSITY CONVERGED WITHIN 11 ITERATIONS!
+
+
+ORBITAL ENERGIES:
+~~~~~~~~~~~~~~~~~
+[-20.26289162  -1.20969737  -0.54796465  -0.4365272   -0.38758672
+   0.47761872   0.58813928]
+
+
+FINAL RESULT:
+~~~~~~~~~~~~~
+    * Electronic energy = -82.94444699000206 Eh
+    * Total energy = -74.94207992819162 Eh
+    * HOMO-LUMO gap = 0.8652054408643053 Eh
+
+
+Wall time = 0.06017093900300097 seconds
+#EOF
+</code></pre></div><p><em>If you have any suggestions about improving the code in any aspect, do <a href="../../contact">write to me</a>.</em></p>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+      </footer>
+    </article>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/startup.js" id="MathJax-script"></script>
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          ['$', '$'], ['\\(', '\\)']
+        ],
+        processEscapes: true,
+        processEnvironments: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  </section>
+
+      </div>
+
+      
+  <footer class="footer">
+    <section class="container">
+      
+      
+        ©
+        
+        2020
+         Pulkit Joshi 
+      
+      
+      
+    </section>
+  </footer>
+
+    </main>
+
+    
+      <script src="https://joshipulkit.github.io/js/custom.js"></script>
+    
+
+    
+
+    <script>
+(function(f, a, t, h, o, m){
+	a[h]=a[h]||function(){
+		(a[h].q=a[h].q||[]).push(arguments)
+	};
+	o=f.createElement('script'),
+	m=f.getElementsByTagName('script')[0];
+	o.async=1; o.src=t; o.id='fathom-script';
+	m.parentNode.insertBefore(o,m)
+})(document, window, '//analytics.example.com/tracker.js', 'fathom');
+fathom('set', 'siteId', 'ABCDE');
+fathom('trackPageview');
+</script>
+
+
+  </body>
+
+</html>

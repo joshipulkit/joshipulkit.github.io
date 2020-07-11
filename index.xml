@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PJ&#39;s Personal Website</title>
+    <link>https://joshipulkit.github.io/</link>
+    <description>Recent content on PJ&#39;s Personal Website</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 26 Jun 2020 09:54:14 +0530</lastBuildDate>
+    
+	<atom:link href="https://joshipulkit.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>DIIS: Python code for H2O using minimal STO-3G basis set</title>
+      <link>https://joshipulkit.github.io/codes/diis-python-code/</link>
+      <pubDate>Fri, 26 Jun 2020 09:54:14 +0530</pubDate>
+      
+      <guid>https://joshipulkit.github.io/codes/diis-python-code/</guid>
+      <description>The theory for the DIIS method can be found in the Notes section, or directly click here. As a reference, a normal SCF procedure (without DIIS implementation) took around 38 iterations as compared to just 11 iterations with DIIS implementation (we will see in this example). The energy and density convergence criteria were same in both cases.
+Some one-electron, and two-electron integrals are required for the code to work and those files are made available here.</description>
+    </item>
+    
+    <item>
+      <title>DIIS: A method to accelarate SCF convergence</title>
+      <link>https://joshipulkit.github.io/notes/diis/</link>
+      <pubDate>Tue, 23 Jun 2020 09:22:55 +0530</pubDate>
+      
+      <guid>https://joshipulkit.github.io/notes/diis/</guid>
+      <description>Introduction  Direct Inversion of the Iterative Subspace (DIIS) is a method first proposed by Pulay1 which accelarates the convergence of a normal SCF procedure.
+Method  Iterative procedures can give us a set of trial vectors {$\mathbf{p}^i$}. Thus we can form a residual (error) term between two sucessive iterations.
+$$\mathbf{e}^i = \mathbf{p}^{i+1} - \mathbf{p}^i$$
+The DIIS method assumes that the final solution can be extrapolated as the linear combination of the current subspace generated from previous iterations.</description>
+    </item>
+    
+    <item>
+      <title>Kalsubai Peak: First Monsoon Trek in the Sahyadris</title>
+      <link>https://joshipulkit.github.io/blog/first-monsoon-trek-to-sahyadris/</link>
+      <pubDate>Thu, 18 Jun 2020 11:49:21 +0530</pubDate>
+      
+      <guid>https://joshipulkit.github.io/blog/first-monsoon-trek-to-sahyadris/</guid>
+      <description>This is a brief account of my first trek in the Sahyadri range to the Kalsubai peak. Should you wish to skip reading the main content, please go to the end of the post where you will find key details about the trek.
+ What a day to cherish! If I could summarize it in one line, it would be:
+ When a 2815 feet plan fails, go for the 5400 feet one.</description>
+    </item>
+    
+    <item>
+      <title>Contact</title>
+      <link>https://joshipulkit.github.io/contact/</link>
+      <pubDate>Wed, 17 Jun 2020 16:59:37 +0530</pubDate>
+      
+      <guid>https://joshipulkit.github.io/contact/</guid>
+      <description>Address for correspondence D-225, Tata Institute of Fundamental Research,
+Dr. Homi Bhabha Road, Old Navy Nagar,
+Colaba, Mumbai - 400 005
+Electronic Mail pulkit.joshi@tifr.res.in
+pulkitjoshi896@gmail.com</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://joshipulkit.github.io/about/</link>
+      <pubDate>Wed, 17 Jun 2020 13:49:18 +0530</pubDate>
+      
+      <guid>https://joshipulkit.github.io/about/</guid>
+      <description>I am currently a PhD scholar in the Quantum Chemistry Group at Tata Institute of Fundamental Research. I have listed some of my research interests below. Apart from my work, I enjoy playing table tennis, go for hikes, and treks. You can read about some of the interesting ones in my blogs. I am also interested in learning programming languages like Python, C++, HTML5, CSS3, and Bash.
+Research Interests  Development of quantum chemical methods beyond the random phase approximation (RPA) within the density functional theory (DFT) framework Theory of metastable and driven systems Inter/intra-molecular interactions  Educational Background  August 2018 - present : Graduate student, TIFR, Mumbai.</description>
+    </item>
+    
+  </channel>
+</rss>
