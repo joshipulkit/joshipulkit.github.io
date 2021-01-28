@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Blogs on Pulkit Joshi</title>
-    <link>https://joshipulkit.github.io/blog/</link>
-    <description>Recent content in Blogs on Pulkit Joshi</description>
+    <title>Debian on Pulkit Joshi</title>
+    <link>https://joshipulkit.github.io/tags/debian/</link>
+    <description>Recent content in Debian on Pulkit Joshi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Thu, 28 Jan 2021 16:59:49 +0530</lastBuildDate>
     
-	<atom:link href="https://joshipulkit.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://joshipulkit.github.io/tags/debian/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>

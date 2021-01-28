@@ -6,9 +6,46 @@
     <description>Recent content in Categories on Pulkit Joshi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
+    <lastBuildDate>Thu, 28 Jan 2021 16:59:49 +0530</lastBuildDate>
     
 	<atom:link href="https://joshipulkit.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>FOSS</title>
+      <link>https://joshipulkit.github.io/categories/foss/</link>
+      <pubDate>Thu, 28 Jan 2021 16:59:49 +0530</pubDate>
+      
+      <guid>https://joshipulkit.github.io/categories/foss/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>https://joshipulkit.github.io/categories/linux/</link>
+      <pubDate>Thu, 28 Jan 2021 16:59:49 +0530</pubDate>
+      
+      <guid>https://joshipulkit.github.io/categories/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>System Maintenance</title>
+      <link>https://joshipulkit.github.io/categories/system-maintenance/</link>
+      <pubDate>Thu, 28 Jan 2021 16:59:49 +0530</pubDate>
+      
+      <guid>https://joshipulkit.github.io/categories/system-maintenance/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ubuntu 20.04 LTS</title>
+      <link>https://joshipulkit.github.io/categories/ubuntu-20.04-lts/</link>
+      <pubDate>Thu, 28 Jan 2021 16:59:49 +0530</pubDate>
+      
+      <guid>https://joshipulkit.github.io/categories/ubuntu-20.04-lts/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>
