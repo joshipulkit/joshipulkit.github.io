@@ -6,11 +6,7 @@
     <description>Recent content in SCF Convergence on Pulkit Joshi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 26 Jun 2020 09:54:14 +0530</lastBuildDate>
-    
-	<atom:link href="https://joshipulkit.github.io/tags/scf-convergence/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 26 Jun 2020 09:54:14 +0530</lastBuildDate><atom:link href="https://joshipulkit.github.io/tags/scf-convergence/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>DIIS: Python code for H2O using minimal STO-3G basis set</title>
       <link>https://joshipulkit.github.io/codes/diis-python-code/</link>

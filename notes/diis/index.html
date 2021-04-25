@@ -30,9 +30,10 @@ Method  Iterative procedures can give us a set of trial vectors {$\mathbf{p}^i$}
 $$\mathbf{e}^i = \mathbf{p}^{i&#43;1} - \mathbf{p}^i$$
 The DIIS method assumes that the final solution can be extrapolated as the linear combination of the current subspace generated from previous iterations." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://joshipulkit.github.io/notes/diis/" />
-<meta property="article:published_time" content="2020-06-23T09:22:55+05:30" />
-<meta property="article:modified_time" content="2020-06-23T09:22:55+05:30" />
+<meta property="og:url" content="https://joshipulkit.github.io/notes/diis/" /><meta property="article:section" content="notes" />
+<meta property="article:published_time" content="2020-06-23T09:22:55&#43;05:30" />
+<meta property="article:modified_time" content="2020-06-23T09:22:55&#43;05:30" />
+
 
 
     
@@ -73,7 +74,7 @@ The DIIS method assumes that the final solution can be extrapolated as the linea
     <link rel="icon" type="image/png" href="https://joshipulkit.github.io/images/favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="https://joshipulkit.github.io/images/favicon-16x16.png" sizes="16x16">
 
-    <meta name="generator" content="Hugo 0.68.3" />
+    <meta name="generator" content="Hugo 0.82.0" />
   </head>
 
   <body class=""
@@ -192,33 +193,33 @@ $$\sum_{i=1}^{m} c_i \mathbf{e}^i = 0$$</p>
 <h3 id="error-vector-in-c-diis-method">Error Vector in C-DIIS method</h3>
 <hr>
 <p>The C-DIIS (Commutator-DIIS) also known as Pulay&rsquo;s DIIS uses the following condition<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> to form the residual (error) vector. The Fock matrix and the density matrix should commute in the orthonormal MO basis.</p>
-<p><em>(<strong>Note:</strong> We will use notations like $\mathbf{F&rsquo;}, \mathbf{D&rsquo;}$ for matrices in MO basis and $\mathbf{F}, \mathbf{D}$ for matrices in AO basis.)</em></p>
-<p>$$[\mathbf{F&rsquo;},\mathbf{D&rsquo;}] = \mathbf{F&rsquo;}\mathbf{D&rsquo;} - \mathbf{D&rsquo;}\mathbf{F&rsquo;} = 0$$</p>
+<p><em>(<strong>Note:</strong> We will use notations like $\mathbf{F'}, \mathbf{D'}$ for matrices in MO basis and $\mathbf{F}, \mathbf{D}$ for matrices in AO basis.)</em></p>
+<p>$$[\mathbf{F'},\mathbf{D'}] = \mathbf{F'}\mathbf{D'} - \mathbf{D'}\mathbf{F'} = 0$$</p>
 <p>Thus, the error after each iteration is defined as,</p>
-<p>$$\mathbf{e}_i = \mathbf{F&rsquo;}_i \mathbf{D&rsquo;}_i - \mathbf{D&rsquo;}_i \mathbf{F&rsquo;}_i$$</p>
+<p>$$\mathbf{e}_i = \mathbf{F'}_i \mathbf{D'}_i - \mathbf{D'}_i \mathbf{F'}_i$$</p>
 <p>Let&rsquo;s look at the commutator in the AO basis:</p>
 <p>Roothan&rsquo;s equation, $\mathbf{F}\mathbf{C} = \mathbf{S}\mathbf{C}\varepsilon$ can be transformed into an eigenvalue problem in the MO basis using the orthonormality condition, $\mathbf{C^\dagger}\mathbf{S}\mathbf{C} = \mathbf{1}$ and, thus we obtain,</p>
-<p>$$\mathbf{F&rsquo;}\mathbf{C&rsquo;} = \mathbf{C&rsquo;}\varepsilon$$</p>
+<p>$$\mathbf{F'}\mathbf{C'} = \mathbf{C'}\varepsilon$$</p>
 <p>where,</p>
-<p>$$\mathbf{F&rsquo;} = \mathbf{S^{-\frac{1}{2}}}^\dagger \mathbf{F}\ \mathbf{S^{-\frac{1}{2}}}$$
+<p>$$\mathbf{F'} = \mathbf{S^{-\frac{1}{2}}}^\dagger \mathbf{F}\ \mathbf{S^{-\frac{1}{2}}}$$
 and,
-$$\mathbf{C} = \mathbf{S^{-\frac{1}{2}}} \mathbf{C&rsquo;}$$</p>
+$$\mathbf{C} = \mathbf{S^{-\frac{1}{2}}} \mathbf{C'}$$</p>
 <p>The density matrix in AO basis is,
 $$\mathbf{D} = \mathbf{C}\mathbf{C^\dagger}$$
 and in MO basis:
-$$\mathbf{D&rsquo;} = \mathbf{C&rsquo;}\mathbf{C'^\dagger}$$</p>
+$$\mathbf{D'} = \mathbf{C'}\mathbf{C'^\dagger}$$</p>
 <p>Thus, we can now have a tranformation of density matrix from MO to AO basis.</p>
-<p>$$\mathbf{D&rsquo;} = (\mathbf{S^{-\frac{1}{2}}})^{-1} \mathbf{D}\ (\mathbf{S^{-\frac{1}{2}}}^\dagger)^{-1}$$</p>
+<p>$$\mathbf{D'} = (\mathbf{S^{-\frac{1}{2}}})^{-1} \mathbf{D}\ (\mathbf{S^{-\frac{1}{2}}}^\dagger)^{-1}$$</p>
 <p>For simplicity sake, let $\mathbf{X} = \mathbf{S^{-\frac{1}{2}}}$, and we know that $\mathbf{X}$ is Hermitian.
 Thus we have,
-$$\mathbf{F&rsquo;} = \mathbf{X} \mathbf{F} \mathbf{X}$$
-$$\mathbf{D&rsquo;} = \mathbf{X}^{-1} \mathbf{D} \mathbf{X}^{-1}$$</p>
+$$\mathbf{F'} = \mathbf{X} \mathbf{F} \mathbf{X}$$
+$$\mathbf{D'} = \mathbf{X}^{-1} \mathbf{D} \mathbf{X}^{-1}$$</p>
 <p>Substituting these in the commutator in the MO basis, we get,</p>
 <p>$$\mathbf{X} \mathbf{F} \mathbf{D} \mathbf{X}^{-1} - \mathbf{X}^{-1} \mathbf{D} \mathbf{F} \mathbf{X} = 0$$</p>
 <p>Pre and post-multiplying with $\mathbf{X}^{-1}$:</p>
 <p>$$\mathbf{X}^{-1} \mathbf{X} \mathbf{F} \mathbf{D} \mathbf{X}^{-1} \mathbf{X}^{-1} - \mathbf{X}^{-1} \mathbf{X}^{-1} \mathbf{D} \mathbf{F} \mathbf{X} \mathbf{X}^{-1} = 0$$</p>
 <p>Thus, we obtain the commutator in the AO basis as:
-$$\mathbf{F&rsquo;}\mathbf{D&rsquo;} - \mathbf{D&rsquo;}\mathbf{F&rsquo;} = \mathbf{F} \mathbf{D} \mathbf{S} - \mathbf{S} \mathbf{D} \mathbf{F} = 0$$</p>
+$$\mathbf{F'}\mathbf{D'} - \mathbf{D'}\mathbf{F'} = \mathbf{F} \mathbf{D} \mathbf{S} - \mathbf{S} \mathbf{D} \mathbf{F} = 0$$</p>
 <p>Hence, we can define the error vector in AO basis as:
 $$\mathbf{e}_i = \mathbf{F}_i \mathbf{D}_i \mathbf{S} - \mathbf{S} \mathbf{D}_i \mathbf{F}_i$$</p>
 <h3 id="algorithm">Algorithm</h3>
