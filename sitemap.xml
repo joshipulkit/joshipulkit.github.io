@@ -2,12 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://joshipulkit.github.io/tags/avogadrov12/</loc>
-    <lastmod>2021-01-28T16:59:49+05:30</lastmod>
-  </url><url>
-    <loc>https://joshipulkit.github.io/categories/avogadrov12/</loc>
-    <lastmod>2021-01-28T16:59:49+05:30</lastmod>
-  </url><url>
     <loc>https://joshipulkit.github.io/blog/</loc>
     <lastmod>2021-01-28T16:59:49+05:30</lastmod>
   </url><url>
@@ -18,12 +12,6 @@
     <lastmod>2021-01-28T16:59:49+05:30</lastmod>
   </url><url>
     <loc>https://joshipulkit.github.io/categories/foss/</loc>
-    <lastmod>2021-01-28T16:59:49+05:30</lastmod>
-  </url><url>
-    <loc>https://joshipulkit.github.io/blog/install-avogardov12/</loc>
-    <lastmod>2021-01-28T16:59:49+05:30</lastmod>
-  </url><url>
-    <loc>https://joshipulkit.github.io/tags/jammy/</loc>
     <lastmod>2021-01-28T16:59:49+05:30</lastmod>
   </url><url>
     <loc>https://joshipulkit.github.io/blog/keep-ubuntu-clean/</loc>
@@ -45,9 +33,6 @@
     <lastmod>2021-01-28T16:59:49+05:30</lastmod>
   </url><url>
     <loc>https://joshipulkit.github.io/categories/ubuntu-20.04-lts/</loc>
-    <lastmod>2021-01-28T16:59:49+05:30</lastmod>
-  </url><url>
-    <loc>https://joshipulkit.github.io/categories/ubuntu-22.04-lts/</loc>
     <lastmod>2021-01-28T16:59:49+05:30</lastmod>
   </url><url>
     <loc>https://joshipulkit.github.io/codes/</loc>
