@@ -8,11 +8,11 @@
     <language>en</language>
     <lastBuildDate>Thu, 28 Jan 2021 16:59:49 +0530</lastBuildDate><atom:link href="https://joshipulkit.github.io/categories/foss/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Keep Ubuntu 20.04 (or it&#39;s derivatives) updated and clean</title>
-      <link>https://joshipulkit.github.io/blog/keep-ubuntu-clean/</link>
+      <title>Install Avogadro</title>
+      <link>https://joshipulkit.github.io/blog/install-avogardov12/</link>
       <pubDate>Thu, 28 Jan 2021 16:59:49 +0530</pubDate>
       
-      <guid>https://joshipulkit.github.io/blog/keep-ubuntu-clean/</guid>
+      <guid>https://joshipulkit.github.io/blog/install-avogardov12/</guid>
       <description>This also works for all debian based distributions.
  It is a good practice to keep our system updated and all the packages and libraries to their latest version. Specially in long-term support (LTS) versions such as Ubuntu 20.04 (Focal Fossa). This article provides a pretty straightforward way as to how to keep your system to its latest.
 Follow the link and copy the contents of this file. Open up your favourite text editor and paste the copied content.</description>
