@@ -6,11 +6,20 @@
     <description>Recent content in Categories on Pulkit Joshi</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 28 Jan 2021 16:59:49 +0530</lastBuildDate><atom:link href="https://joshipulkit.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 12 Oct 2023 01:21:11 +0530</lastBuildDate><atom:link href="https://joshipulkit.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Avogadrov12</title>
+      <link>https://joshipulkit.github.io/categories/avogadrov12/</link>
+      <pubDate>Thu, 12 Oct 2023 01:21:11 +0530</pubDate>
+      
+      <guid>https://joshipulkit.github.io/categories/avogadrov12/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>FOSS</title>
       <link>https://joshipulkit.github.io/categories/foss/</link>
-      <pubDate>Thu, 28 Jan 2021 16:59:49 +0530</pubDate>
+      <pubDate>Thu, 12 Oct 2023 01:21:11 +0530</pubDate>
       
       <guid>https://joshipulkit.github.io/categories/foss/</guid>
       <description></description>
@@ -19,9 +28,18 @@
     <item>
       <title>Linux</title>
       <link>https://joshipulkit.github.io/categories/linux/</link>
-      <pubDate>Thu, 28 Jan 2021 16:59:49 +0530</pubDate>
+      <pubDate>Thu, 12 Oct 2023 01:21:11 +0530</pubDate>
       
       <guid>https://joshipulkit.github.io/categories/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ubuntu 22.04 LTS</title>
+      <link>https://joshipulkit.github.io/categories/ubuntu-22.04-lts/</link>
+      <pubDate>Thu, 12 Oct 2023 01:21:11 +0530</pubDate>
+      
+      <guid>https://joshipulkit.github.io/categories/ubuntu-22.04-lts/</guid>
       <description></description>
     </item>
     
