@@ -25,8 +25,8 @@ Some one-electron, and two-electron integrals are required for the code to work 
 Some one-electron, and two-electron integrals are required for the code to work and those files are made available here." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://joshipulkit.github.io/codes/diis-python-code/" /><meta property="article:section" content="codes" />
-<meta property="article:published_time" content="2020-06-26T09:54:14+05:30" />
-<meta property="article:modified_time" content="2020-06-26T09:54:14+05:30" />
+<meta property="article:published_time" content="2020-06-26T09:54:14&#43;05:30" />
+<meta property="article:modified_time" content="2020-06-26T09:54:14&#43;05:30" />
 
 
 
@@ -68,7 +68,7 @@ Some one-electron, and two-electron integrals are required for the code to work 
     <link rel="icon" type="image/png" href="https://joshipulkit.github.io/images/favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="https://joshipulkit.github.io/images/favicon-16x16.png" sizes="16x16">
 
-    <meta name="generator" content="Hugo 0.88.1" />
+    <meta name="generator" content="Hugo 0.82.0" />
   </head>
 
   <body class=""
@@ -142,7 +142,7 @@ Some one-electron, and two-electron integrals are required for the code to work 
             </span>
             <span class="reading-time">
               <i class="fas fa-clock"></i>
-              7-minute read
+              8-minute read
             </span>
           </div>
           
@@ -162,7 +162,7 @@ Some one-electron, and two-electron integrals are required for the code to work 
         <p>The theory for the DIIS method can be found in the Notes section, or directly click <a href="../../notes/diis">here</a>. As a reference, a normal SCF procedure (without DIIS implementation) took around 38 iterations as compared to just 11 iterations with DIIS implementation (we will see in this example). The energy and density convergence criteria were same in both cases.</p>
 <p>Some one-electron, and two-electron integrals are required for the code to work and those files are made available <a href="https://github.com/CrawfordGroup/ProgrammingProjects/tree/master/Project%2303/input/h2o/STO-3G" target="_blank">here</a>. Make sure to have those files in the same directory in which you have the DIIS code or else, mention their exact path in the code.</p>
 <p>The following code for calculating Hartree-Fock Self-Consistent Field energy (with DIIS implmentation) using a minimal STO-3G basis set. The output is given below the code.</p>
-<div class="highlight"><pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#007f7f">#!/usr/bin/env python3</span>
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#007f7f">#!/usr/bin/env python3</span>
 <span style="color:#fff;font-weight:bold">import</span> numpy <span style="color:#fff;font-weight:bold">as</span> np
 <span style="color:#fff;font-weight:bold">import</span> scipy
 <span style="color:#fff;font-weight:bold">import</span> scipy.integrate <span style="color:#fff;font-weight:bold">as</span> integrate
@@ -293,7 +293,7 @@ start_time=timer()
         <span style="color:#fff;font-weight:bold">if</span> <span style="color:#fff;font-weight:bold">len</span>(self) &gt; dimSubspace : <span style="color:#fff;font-weight:bold">del</span> self[<span style="color:#ff0;font-weight:bold">0</span>]
 
 <span style="color:#fff;font-weight:bold">print</span>(<span style="color:#0ff;font-weight:bold">&#34;=&#34;</span>*<span style="color:#ff0;font-weight:bold">58</span>)
-<span style="color:#fff;font-weight:bold">print</span>(<span style="color:#0ff;font-weight:bold">f</span><span style="color:#0ff;font-weight:bold">&#34;* Output for SCF energy calculation using DIIS algorithm *&#34;</span>)
+<span style="color:#fff;font-weight:bold">print</span>(f<span style="color:#0ff;font-weight:bold">&#34;* Output for SCF energy calculation using DIIS algorithm *&#34;</span>)
 <span style="color:#fff;font-weight:bold">print</span>(<span style="color:#0ff;font-weight:bold">&#34;=&#34;</span>*<span style="color:#ff0;font-weight:bold">58</span>,<span style="color:#0ff;font-weight:bold">&#34;</span><span style="color:#0ff;font-weight:bold">\n\n</span><span style="color:#0ff;font-weight:bold">&#34;</span>)
 
 
@@ -320,14 +320,14 @@ scftol = <span style="color:#ff0;font-weight:bold">1e-12</span> <span style="col
 dentol = <span style="color:#ff0;font-weight:bold">1e-12</span> <span style="color:#007f7f">#### density convergence criterion</span>
 errtol = <span style="color:#ff0;font-weight:bold">1e-15</span> <span style="color:#007f7f">#### error vector should be as close to 0</span>
 
-<span style="color:#fff;font-weight:bold">print</span>(<span style="color:#0ff;font-weight:bold">f</span><span style="color:#0ff;font-weight:bold">&#34;Molecule = H2O&#34;</span>)
-<span style="color:#fff;font-weight:bold">print</span>(<span style="color:#0ff;font-weight:bold">f</span><span style="color:#0ff;font-weight:bold">&#34;Basis Set = STO-3G&#34;</span>)
-<span style="color:#fff;font-weight:bold">print</span>(<span style="color:#0ff;font-weight:bold">f</span><span style="color:#0ff;font-weight:bold">&#34;Total number of basis functions = </span><span style="color:#0ff;font-weight:bold">{</span>naos<span style="color:#0ff;font-weight:bold">}</span><span style="color:#0ff;font-weight:bold">\n\n</span><span style="color:#0ff;font-weight:bold">&#34;</span>)
+<span style="color:#fff;font-weight:bold">print</span>(f<span style="color:#0ff;font-weight:bold">&#34;Molecule = H2O&#34;</span>)
+<span style="color:#fff;font-weight:bold">print</span>(f<span style="color:#0ff;font-weight:bold">&#34;Basis Set = STO-3G&#34;</span>)
+<span style="color:#fff;font-weight:bold">print</span>(f<span style="color:#0ff;font-weight:bold">&#34;Total number of basis functions = {naos}</span><span style="color:#0ff;font-weight:bold">\n\n</span><span style="color:#0ff;font-weight:bold">&#34;</span>)
 
-<span style="color:#fff;font-weight:bold">print</span>(<span style="color:#0ff;font-weight:bold">f</span><span style="color:#0ff;font-weight:bold">&#34;CONVERGENCE CRITERIA:</span><span style="color:#0ff;font-weight:bold">\n</span><span style="color:#0ff;font-weight:bold">~~~~~~~~~~~~~~~~~~~~~&#34;</span>)
-<span style="color:#fff;font-weight:bold">print</span>(<span style="color:#0ff;font-weight:bold">f</span><span style="color:#0ff;font-weight:bold">&#34;Energy convergence criterion: </span><span style="color:#0ff;font-weight:bold">{</span>scftol<span style="color:#0ff;font-weight:bold">}</span><span style="color:#0ff;font-weight:bold">&#34;</span>)
-<span style="color:#fff;font-weight:bold">print</span>(<span style="color:#0ff;font-weight:bold">f</span><span style="color:#0ff;font-weight:bold">&#34;Norm of density matrix convergence criterion: </span><span style="color:#0ff;font-weight:bold">{</span>dentol<span style="color:#0ff;font-weight:bold">}</span><span style="color:#0ff;font-weight:bold">&#34;</span>)
-<span style="color:#fff;font-weight:bold">print</span>(<span style="color:#0ff;font-weight:bold">f</span><span style="color:#0ff;font-weight:bold">&#34;Norm of DIIS-error vector convergence criterion: </span><span style="color:#0ff;font-weight:bold">{</span>errtol<span style="color:#0ff;font-weight:bold">}</span><span style="color:#0ff;font-weight:bold">\n\n</span><span style="color:#0ff;font-weight:bold">&#34;</span>)
+<span style="color:#fff;font-weight:bold">print</span>(f<span style="color:#0ff;font-weight:bold">&#34;CONVERGENCE CRITERIA:</span><span style="color:#0ff;font-weight:bold">\n</span><span style="color:#0ff;font-weight:bold">~~~~~~~~~~~~~~~~~~~~~&#34;</span>)
+<span style="color:#fff;font-weight:bold">print</span>(f<span style="color:#0ff;font-weight:bold">&#34;Energy convergence criterion: {scftol}&#34;</span>)
+<span style="color:#fff;font-weight:bold">print</span>(f<span style="color:#0ff;font-weight:bold">&#34;Norm of density matrix convergence criterion: {dentol}&#34;</span>)
+<span style="color:#fff;font-weight:bold">print</span>(f<span style="color:#0ff;font-weight:bold">&#34;Norm of DIIS-error vector convergence criterion: {errtol}</span><span style="color:#0ff;font-weight:bold">\n\n</span><span style="color:#0ff;font-weight:bold">&#34;</span>)
 
 
 <span style="color:#007f7f">#### S^(-1/2) is used to diagonalise Fock matrix</span>
@@ -362,25 +362,25 @@ fmat = np.zeros((naos,naos))
         <span style="color:#fff;font-weight:bold">for</span> n in <span style="color:#fff;font-weight:bold">range</span>(naos):
             fmat[m,n] = hcore[m,n]
 
-<span style="color:#fff;font-weight:bold">print</span>(<span style="color:#0ff;font-weight:bold">f</span><span style="color:#0ff;font-weight:bold">&#34;SCF ITERATIONS BEGIN:</span><span style="color:#0ff;font-weight:bold">\n</span><span style="color:#0ff;font-weight:bold">~~~~~~~~~~~~~~~~~~~~~&#34;</span>)
+<span style="color:#fff;font-weight:bold">print</span>(f<span style="color:#0ff;font-weight:bold">&#34;SCF ITERATIONS BEGIN:</span><span style="color:#0ff;font-weight:bold">\n</span><span style="color:#0ff;font-weight:bold">~~~~~~~~~~~~~~~~~~~~~&#34;</span>)
 
 <span style="color:#007f7f">#### begining the DIIS-SCF iterations</span>
 <span style="color:#fff;font-weight:bold">for</span> i in <span style="color:#fff;font-weight:bold">range</span>(iterations):
-    <span style="color:#fff;font-weight:bold">print</span>(<span style="color:#0ff;font-weight:bold">f</span><span style="color:#0ff;font-weight:bold">&#34;Iteration </span><span style="color:#0ff;font-weight:bold">{</span>i+<span style="color:#ff0;font-weight:bold">1</span><span style="color:#0ff;font-weight:bold">}</span><span style="color:#0ff;font-weight:bold">:&#34;</span>)
+    <span style="color:#fff;font-weight:bold">print</span>(f<span style="color:#0ff;font-weight:bold">&#34;Iteration {i+1}:&#34;</span>)
     
     <span style="color:#fff;font-weight:bold">if</span> i &lt;= <span style="color:#ff0;font-weight:bold">1</span>:
         denmat = diagonalize_fock(fmat, smat_half, hcore)[<span style="color:#ff0;font-weight:bold">0</span>]
         denmat_subspace.append(denmat)
 
         energy = diagonalize_fock(fmat, smat_half, hcore)[<span style="color:#ff0;font-weight:bold">1</span>]
-        <span style="color:#fff;font-weight:bold">print</span>(<span style="color:#0ff;font-weight:bold">f</span><span style="color:#0ff;font-weight:bold">&#34;    * Electronic energy = </span><span style="color:#0ff;font-weight:bold">{</span>energy<span style="color:#0ff;font-weight:bold">}</span><span style="color:#0ff;font-weight:bold"> Eh&#34;</span>)
+        <span style="color:#fff;font-weight:bold">print</span>(f<span style="color:#0ff;font-weight:bold">&#34;    * Electronic energy = {energy} Eh&#34;</span>)
                 
         fmat = build_new_fock(denmat, naos, hcore)
         fmat_subspace.append(fmat)
                 
         errvec, norm_errvec = build_error_vector(fmat, denmat, smat)
         errvec_subspace.append(errvec)
-        <span style="color:#fff;font-weight:bold">print</span>(<span style="color:#0ff;font-weight:bold">f</span><span style="color:#0ff;font-weight:bold">&#34;    * Norm of DIIS error vector = </span><span style="color:#0ff;font-weight:bold">{</span>norm_errvec<span style="color:#0ff;font-weight:bold">}</span><span style="color:#0ff;font-weight:bold">&#34;</span>)
+        <span style="color:#fff;font-weight:bold">print</span>(f<span style="color:#0ff;font-weight:bold">&#34;    * Norm of DIIS error vector = {norm_errvec}&#34;</span>)
 
     <span style="color:#fff;font-weight:bold">else</span>:
         <span style="color:#007f7f">#### start building and solving B-matrix to obatined DIIS coefficient after we have at least 2 error vectors</span>
@@ -399,43 +399,43 @@ fmat = np.zeros((naos,naos))
         
         <span style="color:#007f7f">#### electronic energy</span>
         energy = diagonalize_fock(fmat, smat_half, hcore)[<span style="color:#ff0;font-weight:bold">1</span>]
-        <span style="color:#fff;font-weight:bold">print</span>(<span style="color:#0ff;font-weight:bold">f</span><span style="color:#0ff;font-weight:bold">&#34;    * Electronic energy = </span><span style="color:#0ff;font-weight:bold">{</span>energy<span style="color:#0ff;font-weight:bold">}</span><span style="color:#0ff;font-weight:bold"> Eh&#34;</span>)
+        <span style="color:#fff;font-weight:bold">print</span>(f<span style="color:#0ff;font-weight:bold">&#34;    * Electronic energy = {energy} Eh&#34;</span>)
 
         <span style="color:#007f7f">#### error vector calculation</span>
         errvec, norm_errvec = build_error_vector(fmat, denmat, smat)
         errvec_subspace.append(errvec)
-        <span style="color:#fff;font-weight:bold">print</span>(<span style="color:#0ff;font-weight:bold">f</span><span style="color:#0ff;font-weight:bold">&#34;    * Norm of DIIS error vector = </span><span style="color:#0ff;font-weight:bold">{</span>norm_errvec<span style="color:#0ff;font-weight:bold">}</span><span style="color:#0ff;font-weight:bold">&#34;</span>)
+        <span style="color:#fff;font-weight:bold">print</span>(f<span style="color:#0ff;font-weight:bold">&#34;    * Norm of DIIS error vector = {norm_errvec}&#34;</span>)
         <span style="color:#007f7f">#### DIIS algorithm ends here ####</span>
 
     <span style="color:#007f7f">### checking for various convergence criteria</span>
     deltaE = energy - old_energy
-    <span style="color:#fff;font-weight:bold">print</span>(<span style="color:#0ff;font-weight:bold">f</span><span style="color:#0ff;font-weight:bold">&#34;    * Energy convergence = </span><span style="color:#0ff;font-weight:bold">{</span>deltaE<span style="color:#0ff;font-weight:bold">}</span><span style="color:#0ff;font-weight:bold"> Eh&#34;</span>)
+    <span style="color:#fff;font-weight:bold">print</span>(f<span style="color:#0ff;font-weight:bold">&#34;    * Energy convergence = {deltaE} Eh&#34;</span>)
     
     denmat_vector, olddenmat_vector = np.reshape(denmat, (naos*naos,<span style="color:#ff0;font-weight:bold">1</span>)), np.reshape(old_denmat, (naos*naos,<span style="color:#ff0;font-weight:bold">1</span>))
     norm_denmat = denmat_vector - olddenmat_vector
     denconv = (np.dot(norm_denmat.transpose(),norm_denmat))**<span style="color:#ff0;font-weight:bold">0.5</span>
-    <span style="color:#fff;font-weight:bold">print</span>(<span style="color:#0ff;font-weight:bold">f</span><span style="color:#0ff;font-weight:bold">&#34;    * Norm of density matrix convergence = </span><span style="color:#0ff;font-weight:bold">{</span>denconv[<span style="color:#ff0;font-weight:bold">0</span>,<span style="color:#ff0;font-weight:bold">0</span>]<span style="color:#0ff;font-weight:bold">}</span><span style="color:#0ff;font-weight:bold">\n</span><span style="color:#0ff;font-weight:bold">&#34;</span>)
+    <span style="color:#fff;font-weight:bold">print</span>(f<span style="color:#0ff;font-weight:bold">&#34;    * Norm of density matrix convergence = {denconv[0,0]}</span><span style="color:#0ff;font-weight:bold">\n</span><span style="color:#0ff;font-weight:bold">&#34;</span>)
 
     <span style="color:#007f7f">#### breaking the iterations when convergence is reached</span>
     <span style="color:#fff;font-weight:bold">if</span> <span style="color:#fff;font-weight:bold">abs</span>(deltaE) &lt; scftol and <span style="color:#fff;font-weight:bold">abs</span>(denconv[<span style="color:#ff0;font-weight:bold">0</span>,<span style="color:#ff0;font-weight:bold">0</span>]) &lt; dentol:
-        <span style="color:#fff;font-weight:bold">print</span>(<span style="color:#0ff;font-weight:bold">f</span><span style="color:#0ff;font-weight:bold">&#34;SCF ENERGY AND DENSITY CONVERGED WITHIN </span><span style="color:#0ff;font-weight:bold">{</span>i+<span style="color:#ff0;font-weight:bold">1</span><span style="color:#0ff;font-weight:bold">}</span><span style="color:#0ff;font-weight:bold"> ITERATIONS!</span><span style="color:#0ff;font-weight:bold">\n\n</span><span style="color:#0ff;font-weight:bold">&#34;</span>)
+        <span style="color:#fff;font-weight:bold">print</span>(f<span style="color:#0ff;font-weight:bold">&#34;SCF ENERGY AND DENSITY CONVERGED WITHIN {i+1} ITERATIONS!</span><span style="color:#0ff;font-weight:bold">\n\n</span><span style="color:#0ff;font-weight:bold">&#34;</span>)
         MOenergies = diagonalize_fock(fmat,smat_half,hcore)[<span style="color:#ff0;font-weight:bold">4</span>]
-        <span style="color:#fff;font-weight:bold">print</span>(<span style="color:#0ff;font-weight:bold">f</span><span style="color:#0ff;font-weight:bold">&#34;ORBITAL ENERGIES:</span><span style="color:#0ff;font-weight:bold">\n</span><span style="color:#0ff;font-weight:bold">~~~~~~~~~~~~~~~~~</span><span style="color:#0ff;font-weight:bold">\n</span><span style="color:#0ff;font-weight:bold">{</span>MOenergies<span style="color:#0ff;font-weight:bold">}</span><span style="color:#0ff;font-weight:bold">\n\n</span><span style="color:#0ff;font-weight:bold">&#34;</span>)
-        <span style="color:#fff;font-weight:bold">print</span>(<span style="color:#0ff;font-weight:bold">f</span><span style="color:#0ff;font-weight:bold">&#34;FINAL RESULT:</span><span style="color:#0ff;font-weight:bold">\n</span><span style="color:#0ff;font-weight:bold">~~~~~~~~~~~~~&#34;</span>)
-        <span style="color:#fff;font-weight:bold">print</span>(<span style="color:#0ff;font-weight:bold">f</span><span style="color:#0ff;font-weight:bold">&#34;    * Electronic energy = </span><span style="color:#0ff;font-weight:bold">{</span>energy<span style="color:#0ff;font-weight:bold">}</span><span style="color:#0ff;font-weight:bold"> Eh&#34;</span>)
-        <span style="color:#fff;font-weight:bold">print</span>(<span style="color:#0ff;font-weight:bold">f</span><span style="color:#0ff;font-weight:bold">&#34;    * Total energy = </span><span style="color:#0ff;font-weight:bold">{</span>energy+enuc<span style="color:#0ff;font-weight:bold">}</span><span style="color:#0ff;font-weight:bold"> Eh&#34;</span>)
-        <span style="color:#fff;font-weight:bold">print</span>(<span style="color:#0ff;font-weight:bold">f</span><span style="color:#0ff;font-weight:bold">&#34;    * HOMO-LUMO gap = </span><span style="color:#0ff;font-weight:bold">{</span>MOenergies[<span style="color:#ff0;font-weight:bold">5</span>]-MOenergies[<span style="color:#ff0;font-weight:bold">4</span>]<span style="color:#0ff;font-weight:bold">}</span><span style="color:#0ff;font-weight:bold"> Eh&#34;</span>)
+        <span style="color:#fff;font-weight:bold">print</span>(f<span style="color:#0ff;font-weight:bold">&#34;ORBITAL ENERGIES:</span><span style="color:#0ff;font-weight:bold">\n</span><span style="color:#0ff;font-weight:bold">~~~~~~~~~~~~~~~~~</span><span style="color:#0ff;font-weight:bold">\n</span><span style="color:#0ff;font-weight:bold">{MOenergies}</span><span style="color:#0ff;font-weight:bold">\n\n</span><span style="color:#0ff;font-weight:bold">&#34;</span>)
+        <span style="color:#fff;font-weight:bold">print</span>(f<span style="color:#0ff;font-weight:bold">&#34;FINAL RESULT:</span><span style="color:#0ff;font-weight:bold">\n</span><span style="color:#0ff;font-weight:bold">~~~~~~~~~~~~~&#34;</span>)
+        <span style="color:#fff;font-weight:bold">print</span>(f<span style="color:#0ff;font-weight:bold">&#34;    * Electronic energy = {energy} Eh&#34;</span>)
+        <span style="color:#fff;font-weight:bold">print</span>(f<span style="color:#0ff;font-weight:bold">&#34;    * Total energy = {energy+enuc} Eh&#34;</span>)
+        <span style="color:#fff;font-weight:bold">print</span>(f<span style="color:#0ff;font-weight:bold">&#34;    * HOMO-LUMO gap = {MOenergies[5]-MOenergies[4]} Eh&#34;</span>)
         <span style="color:#fff;font-weight:bold">break</span>
     <span style="color:#fff;font-weight:bold">else</span>:
         old_denmat = denmat
         old_energy = energy
 
-<span style="color:#fff;font-weight:bold">print</span>(<span style="color:#0ff;font-weight:bold">f</span><span style="color:#0ff;font-weight:bold">&#34;</span><span style="color:#0ff;font-weight:bold">\n</span><span style="color:#0ff;font-weight:bold">&#34;</span>)
+<span style="color:#fff;font-weight:bold">print</span>(f<span style="color:#0ff;font-weight:bold">&#34;</span><span style="color:#0ff;font-weight:bold">\n</span><span style="color:#0ff;font-weight:bold">&#34;</span>)
 end_time = timer()
-<span style="color:#fff;font-weight:bold">print</span>(<span style="color:#0ff;font-weight:bold">f</span><span style="color:#0ff;font-weight:bold">&#34;Wall time = </span><span style="color:#0ff;font-weight:bold">{</span>end_time-start_time<span style="color:#0ff;font-weight:bold">}</span><span style="color:#0ff;font-weight:bold"> seconds&#34;</span>)
-<span style="color:#fff;font-weight:bold">print</span>(<span style="color:#0ff;font-weight:bold">f</span><span style="color:#0ff;font-weight:bold">&#34;#EOF&#34;</span>)
+<span style="color:#fff;font-weight:bold">print</span>(f<span style="color:#0ff;font-weight:bold">&#34;Wall time = {end_time-start_time} seconds&#34;</span>)
+<span style="color:#fff;font-weight:bold">print</span>(f<span style="color:#0ff;font-weight:bold">&#34;#EOF&#34;</span>)
 </code></pre></div><p>Output file:</p>
-<div class="highlight"><pre tabindex="0" style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">==========================================================
+<div class="highlight"><pre style="color:#e5e5e5;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">==========================================================
 * Output for SCF energy calculation using DIIS algorithm *
 ========================================================== 
 
