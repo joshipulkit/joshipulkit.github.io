@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Avogadrov12 on Pulkit Joshi</title>
+    <link>https://joshipulkit.github.io/tags/avogadrov12/</link>
+    <description>Recent content in Avogadrov12 on Pulkit Joshi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 28 Jan 2021 16:59:49 +0530</lastBuildDate><atom:link href="https://joshipulkit.github.io/tags/avogadrov12/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Install Avogadro v1.2</title>
+      <link>https://joshipulkit.github.io/blog/install-avogardov12/</link>
+      <pubDate>Thu, 28 Jan 2021 16:59:49 +0530</pubDate>
+      
+      <guid>https://joshipulkit.github.io/blog/install-avogardov12/</guid>
+      <description>Avogadro is an advanced molecule editor and visualizer designed for cross-platform use in computational chemistry, molecular modeling, bioinformatics, materials science, and related areas. It offers flexible high quality rendering and a powerful plugin architecture. More details about Avogadro can be found [here]{https://avogadro.cc/}.
+Since Ubuntu 20.04 LTS release, the version of Avogadro in its official repos (focal/jammy) has changed from v1.2 to v1.95. However, the seemingly newer version does not offer enough functionality in terms of tweaking bond parameters, UFF optimization, and general ease of use.</description>
+    </item>
+    
+  </channel>
+</rss>
