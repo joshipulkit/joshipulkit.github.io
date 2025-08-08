@@ -1,0 +1,113 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pulkit Joshi</title>
+  <meta name="description" content="Personal research website for quantum chemistry." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand">
+        <svg class="brand-icon" viewBox="0 0 64 64" aria-hidden="true">
+          <defs>
+            <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+              <stop offset="0%" />
+              <stop offset="100%" />
+            </linearGradient>
+          </defs>
+          <circle cx="32" cy="32" r="28" fill="url(#g)" />
+          <path d="M18 34c0-8 6-14 14-14s14 6 14 14-6 14-14 14" fill="none" stroke="currentColor" stroke-width="3" />
+          <path d="M18 30h12l4-8" fill="none" stroke="currentColor" stroke-width="3" />
+        </svg>
+        <span>Pulkit Joshi</span>
+      </a>
+      <nav class="nav">
+        <button id="nav-toggle" class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
+        <ul id="nav-menu" class="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="research.html">Research</a></li>
+          <li><a href="publications.html">Publications</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="about.html">About/CV</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+        <span class="sun" aria-hidden="true">☀</span>
+        <span class="moon" aria-hidden="true">🌙</span>
+      </button>
+    </div>
+  </header>
+  <main id="main">
+
+    <section class="page-hero container">
+      <h1>Publications</h1>
+      <p>Selected publications. Cover images supported. Add DOIs/links as needed.</p>
+    </section>
+
+    <section class="container pub-controls">
+      <label for="year-filter">Filter by year:</label>
+      <select id="year-filter">
+        <option value="all">All</option>
+        <option>2025</option>
+        <option>2024</option>
+        <option>2023</option>
+      </select>
+    </section>
+
+    <section class="container pubs">
+
+      <article class="pub" data-year="2024">
+        <img class="pub-cover" src="https://pubs.acs.org/cms/10.1021/jpclcd.2024.15.issue-22/asset/jpclcd.2024.15.issue-22.xlargecover.jpg" alt="Cover for CAP-RPA article" />
+        <div class="pub-info">
+          <h3>Taming Negative Ion Resonances Using Nonlocal Exchange-Correlation Functionals</h3>
+          <p><strong>Authors:</strong> Abhisek Ghosal, Pulkit Joshi, Vamsee K Voora</p>
+          <p><strong>Journal:</strong> J. Phys. Chem. Lett., 2024</p>
+          <div class="pub-links">
+            <a href="https://doi.org/10.1021/acs.jpclett.4c00717" class="btn-sm">DOI</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="pub" data-year="2024">
+        <img class="pub-cover" src="https://aipp.silverchair-cdn.com/aipp/content_public/journal/jcp/160/4/10.1063_5.0180526/1/m_044104_1_5.0180526.figures.online.f10.jpeg?Expires=1755786531&Signature=HeTNXgwljknfczUG0AZfiXmTx72TSHrEOfysnrjWgeYMnKfWLAfyAK7fwR1-OChTXxh0pEYB7Kq0uC3HlQi9vXPVFaUFJ~aeZhkxSDAlmrGgA~6DAExjaRhHhxTgK6N2pw6baknHSfXoL~Mtg~sByqk4QBfv9rbZj~Tqk71PytL6OcMzOGwhr5L3iD6rLHmrfUV6rhmaGkxDXzI7Meo-iOkGUtQfIhtdeg6ZyUkKHDMxJBJhQJL8hNACDFZstgvfSeW3DbiI6n058c-dFRjac-kAy9o4OzPRE3XKl6bnQD2M2pyUHe9cYBGTlM1zaVqoVmCTPndMKtSSbQiNmod2QQ__&Key-Pair-Id=APKAIE5G5CRDK6RD3PGA" alt="Cover for excited states article" />
+        <div class="pub-info">
+          <h3>Generalized perturbative singles corrections to the random phase approximation method: Impact on noncovalent interaction energies of closed- and open-shell dimers</h3>
+          <p><strong>Authors:</strong> Pulkit Joshi, Vamsee K Voora</p>
+          <p><strong>Journal:</strong> J. Chem. Phys., 2024</p>
+          <div class="pub-links">
+            <a href="https://doi.org/10.1063/5.0180526" class="btn-sm">DOI</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="pub" data-year="2023">
+        <img class="pub-cover" src="https://pubs.acs.org/cms/10.1021/acs.inorgchem.3c03110/asset/images/medium/ic3c03110_0011.gif" alt="Cover for Inorg. Chem. paper" />
+        <div class="pub-info">
+          <h3>Necrosis-Inducing High-Valent Oxo–Rhenium(V) Complexes with Potent Antitumor Activity: Synthesis, Aquation Chemistry, Cisplatin Cross-Resistance Profile, and Mechanism of Action</h3>
+          <p><strong>Authors:</strong> Shubhangi Das, Pulkit Joshi, Malay Patra</p>
+          <p><strong>Journal:</strong> Inorg. Chem., 2023</p>
+          <div class="pub-links">
+            <a href="https://doi.org/10.1021/acs.inorgchem.3c03110" class="btn-sm">DOI</a>
+          </div>
+        </div>
+      </article>
+    </section>
+
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="year"></span> Pulkit Joshi • All rights reserved</p>
+      <p class="small">Minimal, responsive static site with dark/light mode.</p>
+    </div>
+  </footer>
+</body>
+</html>

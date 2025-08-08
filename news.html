@@ -1,0 +1,84 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pulkit Joshi — Quantum Chemistry</title>
+  <meta name="description" content="Personal research website for quantum chemistry." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand">
+        <svg class="brand-icon" viewBox="0 0 64 64" aria-hidden="true">
+          <defs>
+            <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+              <stop offset="0%" />
+              <stop offset="100%" />
+            </linearGradient>
+          </defs>
+          <circle cx="32" cy="32" r="28" fill="url(#g)" />
+          <path d="M18 34c0-8 6-14 14-14s14 6 14 14-6 14-14 14" fill="none" stroke="currentColor" stroke-width="3" />
+          <path d="M18 30h12l4-8" fill="none" stroke="currentColor" stroke-width="3" />
+        </svg>
+        <span>Pulkit Joshi — Quantum Chemistry</span>
+      </a>
+      <nav class="nav">
+        <button id="nav-toggle" class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
+        <ul id="nav-menu" class="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="research.html">Research</a></li>
+          <li><a href="publications.html">Publications</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="about.html">About/CV</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+        <span class="sun" aria-hidden="true">☀</span>
+        <span class="moon" aria-hidden="true">🌙</span>
+      </button>
+    </div>
+  </header>
+  <main id="main">
+
+    <section class="page-hero container">
+      <h1>News</h1>
+      <p>Preprints, talks, awards, and updates.</p>
+    </section>
+
+    <section class="container news-list">
+      <article class="news-item">
+        <h3>New Preprint: Lattice-aware PEECM</h3>
+        <p class="meta">Aug 2025 • Preprint</p>
+        <p>Released a preprint detailing PEECM with lattice-aware integrals and consistent energy/Fock construction.</p>
+        <a href="#" class="read-more">Read the preprint →</a>
+      </article>
+      <article class="news-item">
+        <h3>Invited Talk</h3>
+        <p class="meta">Jul 2025 • Talk</p>
+        <p>Invited talk on excited-state dynamics in 2D materials at Q-Chem Summer School.</p>
+      </article>
+      <article class="news-item">
+        <h3>Open Positions</h3>
+        <p class="meta">Ongoing • Opportunities</p>
+        <p>Looking for motivated students and postdocs in method development and quantum chemistry.</p>
+        <a href="contact.html" class="read-more">How to apply →</a>
+      </article>
+    </section>
+
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="year"></span> Pulkit Joshi • All rights reserved</p>
+      <p class="small">Minimal, responsive static site with dark/light mode.</p>
+    </div>
+  </footer>
+</body>
+</html>

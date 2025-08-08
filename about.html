@@ -1,0 +1,116 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pulkit Joshi</title>
+  <meta name="description" content="Personal research website for quantum chemistry." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand">
+        <svg class="brand-icon" viewBox="0 0 64 64" aria-hidden="true">
+          <defs>
+            <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+              <stop offset="0%" />
+              <stop offset="100%" />
+            </linearGradient>
+          </defs>
+          <circle cx="32" cy="32" r="28" fill="url(#g)" />
+          <path d="M18 34c0-8 6-14 14-14s14 6 14 14-6 14-14 14" fill="none" stroke="currentColor" stroke-width="3" />
+          <path d="M18 30h12l4-8" fill="none" stroke="currentColor" stroke-width="3" />
+        </svg>
+        <span>Pulkit Joshi</span>
+      </a>
+      <nav class="nav">
+        <button id="nav-toggle" class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
+        <ul id="nav-menu" class="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="research.html">Research</a></li>
+          <li><a href="publications.html">Publications</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="about.html">About/CV</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+        <span class="sun" aria-hidden="true">☀</span>
+        <span class="moon" aria-hidden="true">🌙</span>
+      </button>
+    </div>
+  </header>
+  <main id="main">
+
+    <section class="page-hero container">
+      <h1>About / CV</h1>
+      <p>Dr. Pulkit Joshi — Quantum chemistry, embedding methods, excited states, and scientific software.</p>
+    </section>
+
+    <section class="container about-grid">
+      <div class="about-card">
+        <img class="avatar" src="assets/placeholder_avatar.svg" alt="Portrait placeholder" />
+        <div>
+          <h2>Bio</h2>
+          <p>I lead a quantum chemistry research program focusing on scalable embedding (PEECM), excited-state theory, and open-source tools for materials modeling.</p>
+          <p><strong>Research interests:</strong> electronic structure, multiscale embedding, excitonics, non-adiabatic dynamics, reproducible workflows.</p>
+        </div>
+      </div>
+
+      <div class="cv-grid">
+        <section class="cv-section">
+          <h3>Education</h3>
+          <ul>
+            <li>Ph.D., Theoretical/Computational Chemistry — University (Year)</li>
+            <li>M.Sc., Chemistry — University (Year)</li>
+          </ul>
+        </section>
+
+        <section class="cv-section">
+          <h3>Positions</h3>
+          <ul>
+            <li>Group Leader, Friedrich-Schiller-Universität Jena — 2025–present</li>
+            <li>Postdoctoral Researcher — Institute (Years)</li>
+          </ul>
+        </section>
+
+        <section class="cv-section">
+          <h3>Selected Awards</h3>
+          <ul>
+            <li>Best Poster — Q-Chem Summer School (2025)</li>
+          </ul>
+        </section>
+
+        <section class="cv-section">
+          <h3>Skills</h3>
+          <ul class="skills">
+            <li>Electronic Structure (DFT, post-HF)</li>
+            <li>Excited States (EOM, TDDFT)</li>
+            <li>Embedding (QM/MM, PEECM)</li>
+            <li>Software (C/C++, Fortran, Python)</li>
+            <li>HPC, GPU acceleration</li>
+          </ul>
+        </section>
+      </div>
+
+      <div class="cv-actions">
+        <a class="btn" href="#" aria-disabled="true">Download CV (PDF)</a>
+        <a class="btn-outline" href="contact.html">Contact</a>
+      </div>
+    </section>
+
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="year"></span> Pulkit Joshi • All rights reserved</p>
+      <p class="small">Minimal, responsive static site with dark/light mode.</p>
+    </div>
+  </footer>
+</body>
+</html>

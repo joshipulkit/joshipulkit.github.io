@@ -1,0 +1,80 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pulkit Joshi</title>
+  <meta name="description" content="Personal research website for quantum chemistry." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand">
+        <svg class="brand-icon" viewBox="0 0 64 64" aria-hidden="true">
+          <defs>
+            <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+              <stop offset="0%" />
+              <stop offset="100%" />
+            </linearGradient>
+          </defs>
+          <circle cx="32" cy="32" r="28" fill="url(#g)" />
+          <path d="M18 34c0-8 6-14 14-14s14 6 14 14-6 14-14 14" fill="none" stroke="currentColor" stroke-width="3" />
+          <path d="M18 30h12l4-8" fill="none" stroke="currentColor" stroke-width="3" />
+        </svg>
+        <span>Pulkit Joshi</span>
+      </a>
+      <nav class="nav">
+        <button id="nav-toggle" class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
+        <ul id="nav-menu" class="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="research.html">Research</a></li>
+          <li><a href="publications.html">Publications</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="about.html">About/CV</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+        <span class="sun" aria-hidden="true">☀</span>
+        <span class="moon" aria-hidden="true">🌙</span>
+      </button>
+    </div>
+  </header>
+  <main id="main">
+
+    <section class="page-hero container">
+      <h1>Contact</h1>
+      <p>Interested in collaborating? Reach out.</p>
+    </section>
+
+    <section class="container contact">
+      <div class="contact-card">
+        <h3>Email</h3>
+        <p><a href="mailto:pulkit.joshi@uni-jena.de">pulkit.joshi@uni-jena.de</a></p>
+        <p><a href="mailto:pulkitjoshi896@gmail.com">pulkitjoshi896@gmail.com</a></p>
+      </div>
+      <div class="contact-card">
+        <h3>Address</h3>
+        <p>Computational Materials Science<br/>Otto Schott Insitute for Materials Research<br/>Room 128, Löbdergraben 32<br/>07743 Jena, Germany</p>
+      </div>
+      <div class="contact-card">
+        <h3>Profiles</h3>
+        <p><a href="https://scholar.google.com/citations?user=rqIYelAAAAAJ&hl=en">Google Scholar</a> • <a href="https://github.com/joshipulkit">GitHub</a> • <a href="https://x.com/joshipulkit_">Twitter/X</a></p>
+      </div>
+    </section>
+
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="year"></span> Pulkit Joshi • All rights reserved</p>
+      <p class="small">Minimal, responsive static site with dark/light mode.</p>
+    </div>
+  </footer>
+</body>
+</html>
