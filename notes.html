@@ -1,11 +1,10 @@
-
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Pulkit Joshi | Research</title>
-  <meta name="description" content="Personal research website for quantum chemistry." />
+  <title>Pulkit Joshi | Notes</title>
+  <meta name="description" content="Working notes, ideas, and references." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -50,55 +49,39 @@
   <main id="main">
 
     <section class="page-hero container">
-      <h1>Research</h1>
-      <p>Electronic structure methods for open-shell systems, negative ion resonances, and scalable embedding tailored to realistic materials.</p>
+      <h1>Notes</h1>
+      <p>Working ideas, seminar highlights, quick references, and reading lists. Informal but curated.</p>
     </section>
 
-    <section class="container research-grid">
-      <article class="research-card">
-        <img src="assets/research/density_functional_embedding.png" alt="Project visualization 1" />
-        <div class="research-body">
-          <h3>Density Functional Embedding</h3>
-          <p>Embedding theory coupled with periodic charge–dipole electrostatics for realistic materials and condensed-phase chemistry.</p>
-          <ul class="bullets">
-            <li>Material science applications with periodic electrostatics</li>
-            <li>Charge-dipole coupling and multiscale workflows</li>
-            <li>Integrates with HPC environments</li>
-          </ul>
-        </div>
-      </article>
-      <article class="research-card">
-        <img src="assets/research/open_shell_anionic_states.png" alt="Project visualization 2" />
-        <div class="research-body">
-          <h3>Open-shell &amp; Anionic States</h3>
-          <p>Beyond-RPA corrections and complex nonlocal functionals for metastable and negative ion resonance states.</p>
-          <ul class="bullets">
-            <li>Accuracy gains for noncovalent interactions &amp; open-shell dimers</li>
-            <li>Resonance treatment using analytic continuation</li>
-            <li>Applications to spectroscopy and charge-transfer states</li>
-          </ul>
-        </div>
-      </article>
-      <article class="research-card">
-        <img src="assets/research/methods_software_hpc.png" alt="Project visualization 3" />
-        <div class="research-body">
-          <h3>Methods, Software &amp; HPC</h3>
-          <p>Algorithm development and reproducible workflows across Turbomole, ORCA, CP2K, Psi4, and CFOUR.</p>
-          <ul class="bullets">
-            <li>FORTRAN/Python implementations and benchmarking</li>
-            <li>Workflow validation for experimental spectra</li>
-            <li>Training and documentation for HPC teams</li>
-          </ul>
-        </div>
-      </article>
+    <section class="container note-search">
+      <input id="note-search" type="search" placeholder="Search notes by title, tags, or content…" aria-label="Search notes" />
     </section>
+
+    <section id="notes-list" class="container notes-grid" aria-live="polite"></section>
 
   </main>
   <footer class="site-footer">
     <div class="container footer-inner">
       <p>&copy; <span id="year"></span> Pulkit Joshi • All rights reserved</p>
-      <!-- <p class="small">Minimal, responsive static site with dark/light mode.</p> -->
     </div>
   </footer>
+  <script>
+    window.notesIndex = [
+      {
+        title: "PEECM lattice summations",
+        date: "Feb 2026",
+        href: "assets/notes/sample-note-1.md",
+        tags: ["Embedding", "PEECM"],
+        summary: "Practical defaults for lattice cutoffs, damping factors, and boundary treatments."
+      },
+      {
+        title: "Spin–orbit coupling: fast diagnostics",
+        date: "Jan 2026",
+        href: "assets/notes/sample-note-2.md",
+        tags: ["Excited States", "SOC"],
+        summary: "Rules of thumb to spot SOC-sensitive manifolds before heavy calculations."
+      }
+    ];
+  </script>
 </body>
 </html>

@@ -4,10 +4,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Pulkit Joshi</title>
+  <title>Pulkit Joshi | Home</title>
   <meta name="description" content="Personal research website for quantum chemistry." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
   <script defer src="script.js"></script>
 </head>
@@ -16,33 +17,33 @@
   <header class="site-header">
     <div class="container header-inner">
       <a href="index.html" class="brand">
-        <svg class="brand-icon" viewBox="0 0 64 64" aria-hidden="true">
-          <defs>
-            <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
-              <stop offset="0%" />
-              <stop offset="100%" />
-            </linearGradient>
-          </defs>
-          <circle cx="32" cy="32" r="28" fill="url(#g)" />
-          <path d="M18 34c0-8 6-14 14-14s14 6 14 14-6 14-14 14" fill="none" stroke="currentColor" stroke-width="3" />
-          <path d="M18 30h12l4-8" fill="none" stroke="currentColor" stroke-width="3" />
-        </svg>
         <span>Pulkit Joshi</span>
       </a>
       <nav class="nav">
-        <button id="nav-toggle" class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
+        <button id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+          </svg>
+        </button>
         <ul id="nav-menu" class="nav-menu">
           <li><a href="index.html">Home</a></li>
           <li><a href="research.html">Research</a></li>
           <li><a href="publications.html">Publications</a></li>
           <li><a href="news.html">News</a></li>
+          <li><a href="notes.html">Notes</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
           <li><a href="about.html">About/CV</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
       <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
-        <span class="sun" aria-hidden="true">☀</span>
-        <span class="moon" aria-hidden="true">🌙</span>
+        <svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 4V2m0 20v-2m8-8h2M2 12h2m12.95-5.66 1.41-1.41M5.64 18.36l1.41-1.41m0-8.49L5.64 5.64m12.72 12.72-1.41-1.41" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+          <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8" />
+        </svg>
+        <svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M21 14.5a8.5 8.5 0 1 1-9.5-9.5 7 7 0 0 0 9.5 9.5Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
       </button>
     </div>
   </header>
@@ -52,8 +53,9 @@
       <div class="container">
         <div class="hero-grid">
           <div class="hero-text">
-            <h1>Welcome!</h1>
-            <p>I develop theory and software for embedding methods (PEECM), excited states, and large-scale simulations of materials and molecules.</p>
+            <span class="eyebrow">Electronic structure • Embedding • Negative ion resonances</span>
+            <h1>Modelling molecules & materials</h1>
+            <p>Theoretical and computational chemist working on density functional embedding, beyond-RPA corrections, and open-shell/anion states with applications from condensed-phase chemistry to spectroscopy.</p>
             <div class="cta-row">
               <a class="btn" href="research.html">Explore Research</a>
               <a class="btn-outline" href="publications.html">View Publications</a>
@@ -68,32 +70,54 @@
 
     <section class="cards container">
       <article class="card">
-        <div class="card-icon">🧪</div>
+        <div class="icon-badge" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 3h6" />
+            <path d="M10 3v6.2l-3.4 5.6a3 3 0 0 0 2.6 4.5h5.6a3 3 0 0 0 2.6-4.5L14 9.2V3" />
+            <path d="M9.5 14h5" />
+          </svg>
+        </div>
         <h3>Research Areas</h3>
-        <p>Embedding for periodic systems (PEECM), excited-state methods, and scalable QC software.</p>
-        <a class="read-more" href="research.html">Read more →</a>
+        <p>Density functional embedding, beyond-RPA corrections, and open-shell/anion-state methods for realistic materials.</p>
+        <a class="read-more" href="research.html">Read more</a>
       </article>
       <article class="card">
-        <div class="card-icon">📚</div>
+        <div class="icon-badge" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M7 6h7.5A2.5 2.5 0 0 1 17 8.5V19l-3.5-1.4L10 19 6.5 17.6 3 19V8.5A2.5 2.5 0 0 1 5.5 6Z" />
+            <path d="M10 6v11.6" />
+          </svg>
+        </div>
         <h3>Publications</h3>
-        <p>Peer-reviewed work spanning ab initio methods to multiscale modeling.</p>
-        <a class="read-more" href="publications.html">Read more →</a>
+        <p>Peer-reviewed work on negative ion resonances, beyond-RPA methods, and noncovalent interactions.</p>
+        <a class="read-more" href="publications.html">Read more</a>
       </article>
       <article class="card">
-        <div class="card-icon">📰</div>
+        <div class="icon-badge" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 10v4" />
+            <path d="M4 12h3l6 3.5v-11L7 8H4" />
+            <path d="M11 12.2v3.4a2 2 0 0 1-2 2H8" />
+          </svg>
+        </div>
         <h3>News</h3>
-        <p>Updates on preprints, talks, awards, and positions.</p>
-        <a class="read-more" href="news.html">Read more →</a>
+        <p>Conference talks and posters ranging from MES to collaborative research center meetings.</p>
+        <a class="read-more" href="news.html">Read more</a>
       </article>
       <article class="card">
-        <div class="card-icon">👤</div>
+        <div class="icon-badge" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="8" r="3.2" />
+            <path d="M6.3 19a5.7 5.7 0 0 1 11.4 0" />
+          </svg>
+        </div>
         <h3>About/CV</h3>
-        <p>Bio, research interests, education, positions, awards, and skills.</p>
-        <a class="read-more" href="about.html">Read more →</a>
+        <p>Trained as a theoretical/computational chemist; postdoc at Friedrich-Schiller-University Jena.</p>
+        <a class="read-more" href="about.html">Read more</a>
       </article>
     </section>
 
-    <section class="container two-col">
+    <!-- <section class="container two-col">
       <div>
         <h2>Recent News</h2>
         <ul class="list">
@@ -108,7 +132,7 @@
           <li>Excited-state dynamics in 2D materials. <a href="publications.html">See paper</a></li>
         </ul>
       </div>
-    </section>
+    </section> -->
 
   </main>
   <footer class="site-footer">

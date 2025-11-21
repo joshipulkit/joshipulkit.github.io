@@ -4,10 +4,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Pulkit Joshi — Quantum Chemistry</title>
+  <title>Pulkit Joshi | News</title>
   <meta name="description" content="Personal research website for quantum chemistry." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
   <script defer src="script.js"></script>
 </head>
@@ -16,33 +17,33 @@
   <header class="site-header">
     <div class="container header-inner">
       <a href="index.html" class="brand">
-        <svg class="brand-icon" viewBox="0 0 64 64" aria-hidden="true">
-          <defs>
-            <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
-              <stop offset="0%" />
-              <stop offset="100%" />
-            </linearGradient>
-          </defs>
-          <circle cx="32" cy="32" r="28" fill="url(#g)" />
-          <path d="M18 34c0-8 6-14 14-14s14 6 14 14-6 14-14 14" fill="none" stroke="currentColor" stroke-width="3" />
-          <path d="M18 30h12l4-8" fill="none" stroke="currentColor" stroke-width="3" />
-        </svg>
-        <span>Pulkit Joshi — Quantum Chemistry</span>
+        <span>Pulkit Joshi</span>
       </a>
       <nav class="nav">
-        <button id="nav-toggle" class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
+        <button id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+          </svg>
+        </button>
         <ul id="nav-menu" class="nav-menu">
           <li><a href="index.html">Home</a></li>
           <li><a href="research.html">Research</a></li>
           <li><a href="publications.html">Publications</a></li>
           <li><a href="news.html">News</a></li>
+          <li><a href="notes.html">Notes</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
           <li><a href="about.html">About/CV</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
       <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
-        <span class="sun" aria-hidden="true">☀</span>
-        <span class="moon" aria-hidden="true">🌙</span>
+        <svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 4V2m0 20v-2m8-8h2M2 12h2m12.95-5.66 1.41-1.41M5.64 18.36l1.41-1.41m0-8.49L5.64 5.64m12.72 12.72-1.41-1.41" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+          <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8" />
+        </svg>
+        <svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M21 14.5a8.5 8.5 0 1 1-9.5-9.5 7 7 0 0 0 9.5 9.5Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
       </button>
     </div>
   </header>
@@ -50,27 +51,65 @@
 
     <section class="page-hero container">
       <h1>News</h1>
-      <p>Preprints, talks, awards, and updates.</p>
+      <p>Recent talks, conferences, and milestones.</p>
     </section>
 
-    <section class="container news-list">
-      <article class="news-item">
-        <h3>New Preprint: Lattice-aware PEECM</h3>
-        <p class="meta">Aug 2025 • Preprint</p>
-        <p>Released a preprint detailing PEECM with lattice-aware integrals and consistent energy/Fock construction.</p>
-        <a href="#" class="read-more">Read the preprint →</a>
-      </article>
-      <article class="news-item">
-        <h3>Invited Talk</h3>
-        <p class="meta">Jul 2025 • Talk</p>
-        <p>Invited talk on excited-state dynamics in 2D materials at Q-Chem Summer School.</p>
-      </article>
-      <article class="news-item">
-        <h3>Open Positions</h3>
-        <p class="meta">Ongoing • Opportunities</p>
-        <p>Looking for motivated students and postdocs in method development and quantum chemistry.</p>
-        <a href="contact.html" class="read-more">How to apply →</a>
-      </article>
+    <section class="container">
+      <ul id="news-list" class="news-list">
+        <li class="news-item" data-date="2025-02-01">
+          <h3>Joined as Postdoctoral Researcher</h3>
+          <p class="meta">01 Feb 2025 • Computational Materials Sciences Group, Otto-Schott-Institut, FS Uni Jena</p>
+          <p>Started postdoc position in Jena, Germany.</p>
+        </li>
+        <li class="news-item" data-date="2024-12-03">
+          <h3>PhD Defense</h3>
+          <p class="meta">03 Dec 2024 • TIFR, Mumbai</p>
+          <p>Successfully defended my thesis “Fifth-rung density functionals for open-shell intermolecular interactions and negative ion resonances.”</p>
+        </li>
+        <li class="news-item" data-date="2024-09-22">
+          <h3>MES, Pescara</h3>
+          <p class="meta">22 Sep 2024 • International Conference on Molecular Electronic Structure</p>
+          <p>Presented “Role of exact exchange and dynamical long-range polarization on negative ion resonances.”</p>
+        </li>
+        <li class="news-item" data-date="2024-09-18">
+          <h3>Research Associate, TIFR</h3>
+          <p class="meta">18 Sep 2024 • Department of Chemical Sciences, TIFR</p>
+          <p>Joined as a Research Associate in the Chemical Sciences department.</p>
+        </li>
+        <li class="news-item" data-date="2024-09-17">
+          <h3>Turbomole: Today and Tomorrow, Oxford</h3>
+          <p class="meta">17 Sep 2024 • Oxford, UK</p>
+          <p>Presented “Beyond-RPA corrections for open-shell intermolecular interactions.”</p>
+        </li>
+        <li class="news-item" data-date="2024-08-30">
+          <h3>CSIR Travel Grant</h3>
+          <p class="meta">30 Aug 2024</p>
+          <p>Awarded the CSIR Travel Grant.</p>
+        </li>
+        <li class="news-item" data-date="2024-08-14">
+          <h3>International Travel Support (ANRF/SERB)</h3>
+          <p class="meta">14 Aug 2024</p>
+          <p>Received International Travel Support from ANRF (formerly SERB).</p>
+        </li>
+        <li class="news-item" data-date="2024-05-14">
+          <h3>PhD Synopsis Seminar</h3>
+          <p class="meta">14 May 2024 • DCS, TIFR</p>
+          <p>Presented my Ph.D. synopsis seminar.</p>
+        </li>
+        <li class="news-item" data-date="2024-05-12">
+          <h3>JPCL Front Cover</h3>
+          <p class="meta">12 May 2024</p>
+          <p>JPCL paper on negative ion resonance states selected as the front cover.</p>
+          <a class="read-more" href="https://doi.org/10.1021/acs.jpclett.4c00717">Read paper</a>
+        </li>
+      
+        <li class="news-item" data-date="2023-12-29">
+          <h3>JCP Acceptance</h3>
+          <p class="meta">29 Dec 2023</p>
+          <p>Paper on generalized perturbative single-excitation corrections for open-shell noncovalent interactions accepted in JCP.</p>
+          <a class="read-more" href="https://doi.org/10.1063/5.0180526">Read paper</a>
+        </li>
+      </ul>
     </section>
 
   </main>
