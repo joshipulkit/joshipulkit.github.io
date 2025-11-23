@@ -68,24 +68,22 @@
     .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
     .replace(/\"/g,'&quot;').replace(/'/g,'&#39;');
 
+  const markdownParser = typeof window.markdownit === 'function'
+    ? window.markdownit({
+        html:false, linkify:true, typographer:true, breaks:true
+      }).disable('html_block').use(md => {
+        // Strip HTML comments
+        const original = md.renderer.render;
+        md.renderer.render = function(tokens, options, env){
+          const filtered = tokens.filter(t => !(t.type === 'html_block' && /^<!--/.test(t.content)));
+          return original.call(this, filtered, options, env);
+        };
+      })
+    : { render: escapeHtml };
+
   const markdownToHtml = md => {
     if(!md) return '';
-    let html = escapeHtml(md);
-    html = html.replace(/```([\s\S]*?)```/g, '<pre><code>$1</code></pre>');
-    html = html.replace(/`([^`]+)`/g, '<code>$1</code>');
-    html = html.replace(/^###### (.*)$/gm,'<h6>$1</h6>')
-      .replace(/^##### (.*)$/gm,'<h5>$1</h5>')
-      .replace(/^#### (.*)$/gm,'<h4>$1</h4>')
-      .replace(/^### (.*)$/gm,'<h3>$1</h3>')
-      .replace(/^## (.*)$/gm,'<h2>$1</h2>')
-      .replace(/^# (.*)$/gm,'<h1>$1</h1>');
-    html = html.replace(/\*\*(.*?)\*\*/g,'<strong>$1</strong>');
-    html = html.replace(/\*(.*?)\*/g,'<em>$1</em>');
-    html = html.replace(/\[(.*?)\]\((.*?)\)/g,'<a href="$2">$1</a>');
-    html = html.replace(/^\s*[-*] (.*)$/gm,'<li>$1</li>');
-    html = html.replace(/(<li>.*<\/li>)/gs, '<ul>$1</ul>');
-    html = html.replace(/^(?!<h\d|<ul|<pre|<li|<p|<blockquote)([^\n]+)$/gm,'<p>$1</p>');
-    return html;
+    return markdownParser.render(md);
   };
 
   const parseFrontMatter = raw => {
@@ -225,6 +223,9 @@
       <h2>${meta.title || ''}</h2>
       <div class="note-contents">${cache.html || ''}</div>
     `;
+    if(window.MathJax && window.MathJax.typesetPromise){
+      window.MathJax.typesetPromise([noteModalContent]).catch(() => {});
+    }
     noteModal.classList.add('show');
   };
 

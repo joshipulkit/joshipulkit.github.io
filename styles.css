@@ -276,6 +276,7 @@ select{
 .note-contents pre{background:var(--panel-alt);padding:.75rem;border-radius:12px;overflow:auto;border:1px solid var(--line)}
 .note-contents code{background:var(--panel-alt);padding:.1rem .25rem;border-radius:6px}
 .note-contents ul{padding-left:1.1rem}
+.katex-display{margin:0.75rem 0}
 
 .note-modal{
   position:fixed;inset:0;display:none;align-items:center;justify-content:center;

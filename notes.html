@@ -9,6 +9,17 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$','$'], ['\\\\(','\\\\)']],
+        displayMath: [['$$','$$'], ['\\\\[','\\\\]']]
+      },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script defer src="assets/vendor/markdown-it.min.js"></script>
+  <script defer src="assets/vendor/mathjax-tex-svg-full.js"></script>
   <script defer src="script.js"></script>
 </head>
 <body>
@@ -68,18 +79,10 @@
   <script>
     window.notesIndex = [
       {
-        title: "PEECM lattice summations",
-        date: "Feb 2026",
-        href: "assets/notes/sample-note-1.md",
-        tags: ["Embedding", "PEECM"],
-        summary: "Practical defaults for lattice cutoffs, damping factors, and boundary treatments."
-      },
-      {
-        title: "Spin–orbit coupling: fast diagnostics",
-        date: "Jan 2026",
-        href: "assets/notes/sample-note-2.md",
-        tags: ["Excited States", "SOC"],
-        summary: "Rules of thumb to spot SOC-sensitive manifolds before heavy calculations."
+        title: "DIIS: A method to accelerate SCF convergence",
+        date: "Jun 2020",
+        href: "assets/notes/diis.md",
+        tags: ["SCF", "DIIS", "Theory"],
       }
     ];
   </script>
