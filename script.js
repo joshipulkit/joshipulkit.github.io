@@ -160,7 +160,6 @@
           <h3>${meta.title || note.title}</h3>
           <div class="note-meta">
             ${(meta.tags || []).map(tag => `<button class="pill tag-pill" data-tag="${tag}" type="button">${tag}</button>`).join('')}
-            <a class="read-more" href="${note.href}" target="_blank" rel="noopener">Raw markdown</a>
           </div>
         </article>
       `;

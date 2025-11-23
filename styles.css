@@ -1,7 +1,8 @@
 /* Elegant, research-focused palette with paired light/dark modes */
 :root{
-  --font-sans: "Space Grotesk","Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
-  --bg: #f6f7fb;
+  --font-sans: "Manrope","Space Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --font-display: "Sora","Space Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --bg: #f6f8fd;
   --panel: #ffffff;
   --panel-alt: #eef2fb;
   --ink: #0f172a;
@@ -13,7 +14,7 @@
   --line: #e3e8f2;
   --shadow: 0 14px 50px rgba(15,23,42,0.08);
   --radius: 16px;
-  --gutter: clamp(2rem, 8vw, 3rem);
+  --gutter: clamp(2rem, 8vw, 3.2rem);
 }
 :root.dark{
   --bg: #0c111c;
@@ -27,14 +28,14 @@
   --accent-line: rgba(122,168,255,0.4);
   --line: #1f2a3c;
   --shadow: 0 16px 60px rgba(0,0,0,0.55);
-  --gutter: clamp(2rem, 8vw, 3rem);
+  --gutter: clamp(2rem, 8vw, 3.2rem);
 }
 
 *{box-sizing:border-box}
 html,body{margin:0;padding:0}
 body{
   font-family:var(--font-sans);
-  background:var(--bg);
+  background:radial-gradient(circle at 20% 20%, rgba(47,109,245,0.06), transparent 30%), radial-gradient(circle at 80% 0%, rgba(122,168,255,0.05), transparent 35%), var(--bg);
   color:var(--ink);
   line-height:1.7;
   letter-spacing:0.01em;
@@ -45,7 +46,7 @@ a{color:var(--accent);text-decoration:none;font-weight:600}
 a:hover{color:var(--accent-strong)}
 ::selection{background:var(--accent-soft)}
 
-h1,h2,h3,h4{color:var(--ink);margin:0 0 .35em;font-weight:700;letter-spacing:-0.01em}
+h1,h2,h3,h4{color:var(--ink);margin:0 0 .35em;font-weight:700;letter-spacing:-0.01em;font-family:var(--font-display)}
 p{margin:.3em 0 1em;color:var(--muted)}
 
 .container{
@@ -66,10 +67,6 @@ p{margin:.3em 0 1em;color:var(--muted)}
 :root.dark .site-header{background:rgba(12,17,28,0.92)}
 .header-inner{display:flex;align-items:center;gap:1rem;padding:1rem 0}
 .brand{display:flex;align-items:center;gap:.65rem;font-weight:700;color:var(--ink);font-size:1.1rem}
-.brand-icon{width:36px;height:36px;color:var(--accent)}
-.brand-icon stop:first-child{stop-color:var(--accent)}
-.brand-icon stop:last-child{stop-color:var(--accent-strong)}
-
 .nav{margin-left:auto}
 .nav-toggle{
   display:none;align-items:center;justify-content:center;
@@ -329,7 +326,6 @@ select{
 .lightbox-prev{left:-18px}
 .lightbox-next{right:-18px}
 .lightbox-nav svg,.lightbox-close svg{width:18px;height:18px}
-.lightbox-backdrop{position:absolute;inset:0}
 
 .about-grid{display:grid;grid-template-columns:1fr;gap:1.25rem;margin:clamp(1.4rem,4vw,1.8rem) auto clamp(2.4rem,5vw,3rem)}
 .about-card{

@@ -114,7 +114,7 @@ $$\mathbf{F} = \sum_{i=1}^{m} c_i \mathbf{F}_i$$
 
 
 *You can find a python code for DIIS method [here](../../codes/diis-python-code).\
-If you have have any queries regarding the article, feel free to [write to me](../../contact).*
+If you have have any queries regarding the article, feel free to [write to me](../../connect.html).*
 
 
 <!-- references begin -->
