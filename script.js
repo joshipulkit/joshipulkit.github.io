@@ -5,20 +5,29 @@
   const yearEl = document.getElementById('year');
   const navToggle = document.getElementById('nav-toggle');
   const navMenu = document.getElementById('nav-menu');
+  const isFileProtocol = window.location.protocol === 'file:';
+
   if(yearEl){ yearEl.textContent = new Date().getFullYear(); }
 
-  // Theme
+  // Theme - Using data-theme attribute
   const saved = localStorage.getItem('theme');
-  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  const startDark = saved === 'dark' || (!saved && prefersDark);
-  root.classList.toggle('dark', startDark);
-  toggle && toggle.setAttribute('aria-pressed', String(startDark));
-  toggle && toggle.addEventListener('click', () => {
-    root.classList.toggle('dark');
-    const isDark = root.classList.contains('dark');
+  const supportsMatchMedia = typeof window.matchMedia === 'function';
+  const prefersDark = supportsMatchMedia ? window.matchMedia('(prefers-color-scheme: dark)').matches : false;
+  const startTheme = saved || (prefersDark ? 'dark' : 'light');
+  root.setAttribute('data-theme', startTheme);
+  if(toggle){
+    const isDark = startTheme === 'dark';
     toggle.setAttribute('aria-pressed', String(isDark));
-    localStorage.setItem('theme', root.classList.contains('dark') ? 'dark' : 'light');
-  });
+    toggle.addEventListener('click', () => {
+      const currentTheme = root.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', newTheme);
+      const isDarkNow = newTheme === 'dark';
+      toggle.setAttribute('aria-pressed', String(isDarkNow));
+      localStorage.setItem('theme', newTheme);
+    });
+  }
+  const prefersReducedMotion = supportsMatchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)').matches : false;
 
   // Mobile nav
   navToggle && navToggle.addEventListener('click', () => {
@@ -38,6 +47,28 @@
         navToggle && navToggle.setAttribute('aria-expanded', 'false');
       });
     });
+  }
+
+
+  // Scroll-based reveal animations
+  const animatedSections = document.querySelectorAll('[data-animate]');
+  if(animatedSections.length){
+    if(!prefersReducedMotion && 'IntersectionObserver' in window){
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if(entry.isIntersecting){
+            entry.target.classList.add('is-visible');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { rootMargin: '0px 0px -10% 0px' });
+      animatedSections.forEach(el => {
+        el.classList.add('will-animate');
+        observer.observe(el);
+      });
+    } else {
+      animatedSections.forEach(el => el.classList.add('is-visible'));
+    }
   }
 
   // Publications filter
@@ -129,7 +160,8 @@
       noteCache.set(note.href, cached);
       return cached;
     }).catch(() => {
-      const cached = { text:'', html:'', excerpt:'', meta: note };
+      const fallbackHtml = '<p>Note content could not be loaded. If you are opening this site locally, please use a simple HTTP server or the GitHub Pages deployment.</p>';
+      const cached = { text:'', html:fallbackHtml, excerpt:'', meta: note };
       noteCache.set(note.href, cached);
       return cached;
     });
@@ -168,7 +200,7 @@
 
   const filterNotes = async () => {
     if(!notesList) return;
-    const q = (noteSearch?.value || '').trim().toLowerCase();
+    const q = ((noteSearch && noteSearch.value) || '').trim().toLowerCase();
     await Promise.all(sortedNotes.map(ensureContent));
     if(!q && !activeTag){
       renderNotes(sortedNotes);
@@ -176,14 +208,14 @@
     }
     const results = sortedNotes.filter(note => {
       const cache = noteCache.get(note.href);
-      const meta = cache?.meta || note;
+      const meta = (cache && cache.meta) ? cache.meta : note;
       const tagMatch = !activeTag || (meta.tags || []).map(t => t.toLowerCase()).includes(activeTag.toLowerCase());
       if(!tagMatch) return false;
       const haystack = [
         meta.title || '',
         meta.summary || '',
         (meta.tags || []).join(' '),
-        cache?.text || ''
+        (cache && cache.text) || ''
       ].join(' ').toLowerCase();
       return haystack.includes(q);
     });
@@ -210,7 +242,7 @@
       noteModalClose.addEventListener('click', () => noteModal.classList.remove('show'));
       noteModal.addEventListener('click', e => { if(e.target === noteModal) noteModal.classList.remove('show'); });
       document.addEventListener('keydown', e => {
-        if(e.key === 'Escape' && noteModal?.classList.contains('show')){
+        if(e.key === 'Escape' && noteModal && noteModal.classList.contains('show')){
           noteModal.classList.remove('show');
         }
       });
@@ -233,8 +265,8 @@
       sortedNotes.sort((a,b) => {
         const ca = noteCache.get(a.href);
         const cb = noteCache.get(b.href);
-        const da = Date.parse(ca?.meta?.date || a.date || '') || 0;
-        const db = Date.parse(cb?.meta?.date || b.date || '') || 0;
+        const da = Date.parse((ca && ca.meta && ca.meta.date) ? ca.meta.date : (a.date || '')) || 0;
+        const db = Date.parse((cb && cb.meta && cb.meta.date) ? cb.meta.date : (b.date || '')) || 0;
         return db - da;
       });
       renderNotes(sortedNotes);
@@ -304,9 +336,12 @@
     document.body.appendChild(lightbox);
     lightboxImg = lightbox.querySelector('img');
     lightboxCaption = lightbox.querySelector('.lightbox-caption');
-    lightbox.querySelector('.lightbox-close')?.addEventListener('click', () => toggleLightbox(false));
-    lightbox.querySelector('.lightbox-prev')?.addEventListener('click', () => stepLightbox(-1));
-    lightbox.querySelector('.lightbox-next')?.addEventListener('click', () => stepLightbox(1));
+    const closeBtn = lightbox.querySelector('.lightbox-close');
+    if(closeBtn){ closeBtn.addEventListener('click', () => toggleLightbox(false)); }
+    const prevBtn = lightbox.querySelector('.lightbox-prev');
+    if(prevBtn){ prevBtn.addEventListener('click', () => stepLightbox(-1)); }
+    const nextBtn = lightbox.querySelector('.lightbox-next');
+    if(nextBtn){ nextBtn.addEventListener('click', () => stepLightbox(1)); }
     lightbox.addEventListener('click', e => {
       if(e.target === lightbox){ toggleLightbox(false); }
     });
@@ -352,6 +387,58 @@
         const idx = Number(card.getAttribute('data-index'));
         openLightbox(idx);
       });
+    }
+  }
+
+
+  // Home page recent news preview
+  const homeNewsList = document.getElementById('home-news-list');
+  if(homeNewsList){
+    const renderHomeNewsFallback = () => {
+      homeNewsList.innerHTML = '<li class="news-item"><p>Recent updates are listed on the <a href="news.html">news page</a>.</p></li>';
+    };
+    if(isFileProtocol || typeof DOMParser === 'undefined'){
+      renderHomeNewsFallback();
+    } else {
+      fetch('news.html')
+        .then(res => res.ok ? res.text() : '')
+        .then(html => {
+          if(!html){
+            throw new Error('No news HTML');
+          }
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(html, 'text/html');
+          const sourceList = doc.getElementById('news-list');
+          if(!sourceList){
+            throw new Error('No news list');
+          }
+          const items = Array.from(sourceList.querySelectorAll('.news-item'));
+          if(!items.length){
+            throw new Error('No news items');
+          }
+          items.sort((a,b) => {
+            const da = Date.parse(a.getAttribute('data-date') || '') || 0;
+            const db = Date.parse(b.getAttribute('data-date') || '') || 0;
+            return db - da;
+          });
+          const recent = items.slice(0,4);
+          homeNewsList.innerHTML = recent.map(item => {
+            const titleEl = item.querySelector('h3');
+            const metaEl = item.querySelector('.meta');
+            const bodyEl = item.querySelector('p:not(.meta)');
+            const title = titleEl ? titleEl.textContent.trim() : '';
+            const meta = metaEl ? metaEl.textContent.trim() : '';
+            const body = bodyEl ? bodyEl.textContent.trim() : '';
+            return `<li class="news-item">
+              ${meta ? `<p class="meta">${meta}</p>` : ''}
+              ${title ? `<h3>${title}</h3>` : ''}
+              ${body ? `<p>${body}</p>` : ''}
+            </li>`;
+          }).join('');
+        })
+        .catch(() => {
+          renderHomeNewsFallback();
+        });
     }
   }
 
