@@ -421,7 +421,7 @@
             const db = Date.parse(b.getAttribute('data-date') || '') || 0;
             return db - da;
           });
-          const recent = items.slice(0,4);
+          const recent = items.slice(0,2);
           homeNewsList.innerHTML = recent.map(item => {
             const titleEl = item.querySelector('h3');
             const metaEl = item.querySelector('.meta');
