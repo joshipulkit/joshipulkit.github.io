@@ -1,0 +1,4 @@
+[
+  {"title":"DIIS: A method to accelerate SCF convergence","date":"Jun 2020","href":"assets/notes/diis.md","tags":["SCF","DIIS","Theory"]},
+  {"title":"Keep Ubuntu 20.04 (or its derivatives) updated and clean","date":"Jan 2021","href":"assets/notes/keep_ubuntu_updated.md","tags":["Linux","FOSS","Ubuntu","Debian","System Maintenance"]}
+]

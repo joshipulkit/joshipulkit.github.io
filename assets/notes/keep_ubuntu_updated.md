@@ -1,7 +1,7 @@
 ---
 date: 2021-01-28
-title: Keep Ubuntu 20.04 (or it's derivatives) updated and clean
-tags: [Linux, FOSS, Ubuntu, Debian, System Maintainance]
+title: Keep Ubuntu 20.04 (or its derivatives) updated and clean
+tags: [Linux, FOSS, Ubuntu, Debian, System Maintenance]
 ---
 *This also works for all debian based distributions.*
 

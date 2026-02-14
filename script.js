@@ -29,6 +29,40 @@
   }
   const prefersReducedMotion = supportsMatchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)').matches : false;
 
+  // Focus trap utility for modals
+  const mainEl = document.querySelector('main');
+  const FOCUSABLE_SELECTOR = 'a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])';
+  const createFocusTrap = container => {
+    let previouslyFocused = null;
+    const handler = e => {
+      if(e.key !== 'Tab') return;
+      const focusable = Array.from(container.querySelectorAll(FOCUSABLE_SELECTOR)).filter(el => el.offsetParent !== null);
+      if(!focusable.length) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if(e.shiftKey){
+        if(document.activeElement === first){ e.preventDefault(); last.focus(); }
+      } else {
+        if(document.activeElement === last){ e.preventDefault(); first.focus(); }
+      }
+    };
+    return {
+      activate(triggerEl){
+        previouslyFocused = triggerEl || document.activeElement;
+        document.addEventListener('keydown', handler);
+        if(mainEl) mainEl.setAttribute('aria-hidden', 'true');
+      },
+      deactivate(){
+        document.removeEventListener('keydown', handler);
+        if(mainEl) mainEl.removeAttribute('aria-hidden');
+        if(previouslyFocused && typeof previouslyFocused.focus === 'function'){
+          previouslyFocused.focus();
+        }
+        previouslyFocused = null;
+      }
+    };
+  };
+
   // Mobile nav
   navToggle && navToggle.addEventListener('click', () => {
     const expanded = navToggle.getAttribute('aria-expanded') === 'true';
@@ -87,12 +121,11 @@
   }
 
   // Notes search and rendering (markdown + metadata)
-  const notesIndex = window.notesIndex || [];
   const notesList = document.getElementById('notes-list');
   const noteSearch = document.getElementById('note-search');
   const noteCache = new Map();
-  let noteModal, noteModalContent, noteModalClose;
-  const sortedNotes = [...notesIndex];
+  let noteModal, noteModalContent, noteModalClose, noteModalTrap;
+  let sortedNotes = [];
   let activeTag = null;
 
   const escapeHtml = str => str
@@ -189,10 +222,11 @@
       return `
         <article class="note-card" data-note="${note.href}">
           <div class="note-meta-line">${metaLine}</div>
-          <h3>${meta.title || note.title}</h3>
+          <h2>${meta.title || note.title}</h2>
           <div class="note-meta">
             ${(meta.tags || []).map(tag => `<button class="pill tag-pill" data-tag="${tag}" type="button">${tag}</button>`).join('')}
           </div>
+          <span class="read-more">Read note</span>
         </article>
       `;
     }).join('');
@@ -222,12 +256,21 @@
     renderNotes(results);
   };
 
+  const closeNoteModal = () => {
+    if(!noteModal) return;
+    noteModal.classList.remove('show');
+    if(noteModalTrap) noteModalTrap.deactivate();
+  };
+
   const openNoteModal = href => {
     const cache = noteCache.get(href);
     if(!cache) return;
+    const triggerEl = document.activeElement;
     if(!noteModal){
       noteModal = document.createElement('div');
       noteModal.className = 'note-modal';
+      noteModal.setAttribute('role', 'dialog');
+      noteModal.setAttribute('aria-modal', 'true');
       noteModal.innerHTML = `
         <div class="note-modal-inner">
           <button class="note-modal-close" aria-label="Close note">
@@ -239,11 +282,12 @@
       document.body.appendChild(noteModal);
       noteModalContent = noteModal.querySelector('.note-modal-body');
       noteModalClose = noteModal.querySelector('.note-modal-close');
-      noteModalClose.addEventListener('click', () => noteModal.classList.remove('show'));
-      noteModal.addEventListener('click', e => { if(e.target === noteModal) noteModal.classList.remove('show'); });
+      noteModalTrap = createFocusTrap(noteModal.querySelector('.note-modal-inner'));
+      noteModalClose.addEventListener('click', closeNoteModal);
+      noteModal.addEventListener('click', e => { if(e.target === noteModal) closeNoteModal(); });
       document.addEventListener('keydown', e => {
         if(e.key === 'Escape' && noteModal && noteModal.classList.contains('show')){
-          noteModal.classList.remove('show');
+          closeNoteModal();
         }
       });
     }
@@ -254,13 +298,40 @@
       <h2>${meta.title || ''}</h2>
       <div class="note-contents">${cache.html || ''}</div>
     `;
+    const typesetMath = () => {
+      if(window.MathJax && window.MathJax.typesetPromise){
+        window.MathJax.typesetPromise([noteModalContent]).catch(() => {});
+      }
+    };
     if(window.MathJax && window.MathJax.typesetPromise){
-      window.MathJax.typesetPromise([noteModalContent]).catch(() => {});
+      typesetMath();
+    } else if(!window.MathJax){
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$','$'], ['\\(','\\)']],
+          displayMath: [['$$','$$'], ['\\[','\\]']]
+        },
+        svg: { fontCache: 'global' },
+        startup: { ready(){ MathJax.startup.defaultReady(); typesetMath(); } }
+      };
+      const mjScript = document.createElement('script');
+      mjScript.src = 'assets/vendor/mathjax-tex-svg-full.js';
+      mjScript.async = true;
+      document.head.appendChild(mjScript);
+    } else {
+      // MathJax config exists but not yet loaded; wait for ready
+      const origReady = (window.MathJax.startup && window.MathJax.startup.ready) || null;
+      window.MathJax.startup = window.MathJax.startup || {};
+      window.MathJax.startup.ready = function(){ if(origReady) origReady(); else MathJax.startup.defaultReady(); typesetMath(); };
     }
     noteModal.classList.add('show');
+    noteModalTrap.activate(triggerEl);
+    noteModalClose.focus();
   };
 
-  if(notesList && sortedNotes.length){
+  const initNotes = notesIndex => {
+    sortedNotes = [...notesIndex];
+    if(!notesList || !sortedNotes.length) return;
     Promise.all(sortedNotes.map(ensureContent)).then(() => {
       sortedNotes.sort((a,b) => {
         const ca = noteCache.get(a.href);
@@ -288,12 +359,21 @@
         }
       });
     });
+  };
+
+  if(notesList){
+    fetch('assets/notes/index.json')
+      .then(r => { if(!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+      .then(data => initNotes(data))
+      .catch(() => {
+        notesList.innerHTML = '<p>Could not load notes index. If you are viewing this page locally, please use an HTTP server (e.g. <code>python -m http.server</code>).</p>';
+      });
   }
 
   // Gallery grid + lightbox
   const galleryItems = window.galleryItems || [];
   const galleryGrid = document.getElementById('gallery-grid');
-  let lightbox, lightboxImg, lightboxCaption, currentIndex = 0;
+  let lightbox, lightboxImg, lightboxCaption, lightboxTrap, lightboxTrigger, currentIndex = 0;
 
   const renderGallery = () => {
     if(!galleryGrid) return;
@@ -333,9 +413,12 @@
         <div class="lightbox-caption"></div>
       </div>
     `;
+    lightbox.setAttribute('role', 'dialog');
+    lightbox.setAttribute('aria-modal', 'true');
     document.body.appendChild(lightbox);
     lightboxImg = lightbox.querySelector('img');
     lightboxCaption = lightbox.querySelector('.lightbox-caption');
+    lightboxTrap = createFocusTrap(lightbox.querySelector('.lightbox-inner'));
     const closeBtn = lightbox.querySelector('.lightbox-close');
     if(closeBtn){ closeBtn.addEventListener('click', () => toggleLightbox(false)); }
     const prevBtn = lightbox.querySelector('.lightbox-prev');
@@ -364,9 +447,18 @@
   const toggleLightbox = show => {
     if(!lightbox) return;
     lightbox.classList.toggle('show', show);
+    if(show){
+      if(lightboxTrap) lightboxTrap.activate(lightboxTrigger);
+      const closeBtn = lightbox.querySelector('.lightbox-close');
+      if(closeBtn) closeBtn.focus();
+    } else {
+      if(lightboxTrap) lightboxTrap.deactivate();
+      lightboxTrigger = null;
+    }
   };
 
   const openLightbox = idx => {
+    lightboxTrigger = document.activeElement;
     if(!lightbox) buildLightbox();
     currentIndex = idx;
     renderLightboxItem(currentIndex);
@@ -391,58 +483,30 @@
   }
 
 
-  // Home page recent news preview
-  const homeNewsList = document.getElementById('home-news-list');
-  if(homeNewsList){
-    const renderHomeNewsFallback = () => {
-      homeNewsList.innerHTML = '<li class="news-item"><p>Recent updates are listed on the <a href="news.html">news page</a>.</p></li>';
-    };
-    if(isFileProtocol || typeof DOMParser === 'undefined'){
-      renderHomeNewsFallback();
-    } else {
-      fetch('news.html')
-        .then(res => res.ok ? res.text() : '')
-        .then(html => {
-          if(!html){
-            throw new Error('No news HTML');
-          }
-          const parser = new DOMParser();
-          const doc = parser.parseFromString(html, 'text/html');
-          const sourceList = doc.getElementById('news-list');
-          if(!sourceList){
-            throw new Error('No news list');
-          }
-          const items = Array.from(sourceList.querySelectorAll('.news-item'));
-          if(!items.length){
-            throw new Error('No news items');
-          }
-          items.sort((a,b) => {
-            const da = Date.parse(a.getAttribute('data-date') || '') || 0;
-            const db = Date.parse(b.getAttribute('data-date') || '') || 0;
-            return db - da;
-          });
-          const recent = items.slice(0,2);
-          homeNewsList.innerHTML = recent.map(item => {
-            const titleEl = item.querySelector('h3');
-            const metaEl = item.querySelector('.meta');
-            const bodyEl = item.querySelector('p:not(.meta)');
-            const title = titleEl ? titleEl.textContent.trim() : '';
-            const meta = metaEl ? metaEl.textContent.trim() : '';
-            const body = bodyEl ? bodyEl.textContent.trim() : '';
-            return `<li class="news-item">
-              ${meta ? `<p class="meta">${meta}</p>` : ''}
-              ${title ? `<h3>${title}</h3>` : ''}
-              ${body ? `<p>${body}</p>` : ''}
-            </li>`;
-          }).join('');
-        })
-        .catch(() => {
-          renderHomeNewsFallback();
-        });
-    }
-  }
+  // Back to top button
+  (function(){
+    const btn = document.createElement('button');
+    btn.className = 'back-to-top';
+    btn.setAttribute('aria-label', 'Back to top');
+    btn.innerHTML = '<svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>';
+    document.body.appendChild(btn);
 
-  // News ordering (reverse by date)
+    const toggleVisibility = () => {
+      if(window.scrollY > 400){
+        btn.classList.add('visible');
+      } else {
+        btn.classList.remove('visible');
+      }
+    };
+    window.addEventListener('scroll', toggleVisibility, { passive: true });
+    toggleVisibility();
+
+    btn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: prefersReducedMotion ? 'instant' : 'smooth' });
+    });
+  })();
+
+  // News ordering (reverse by date) with year grouping
   const newsList = document.getElementById('news-list');
   if(newsList){
     const items = Array.from(newsList.querySelectorAll('.news-item'));
@@ -451,6 +515,21 @@
       const db = Date.parse(b.getAttribute('data-date') || '') || 0;
       return db - da;
     });
-    items.forEach(item => newsList.appendChild(item));
+    // Clear list and re-insert with year dividers
+    newsList.innerHTML = '';
+    let currentYear = null;
+    items.forEach(item => {
+      const date = item.getAttribute('data-date') || '';
+      const year = date.substring(0, 4);
+      if(year && year !== currentYear){
+        currentYear = year;
+        const divider = document.createElement('li');
+        divider.className = 'news-year-heading';
+        divider.id = 'year-' + year;
+        divider.innerHTML = '<h2>' + year + '</h2>';
+        newsList.appendChild(divider);
+      }
+      newsList.appendChild(item);
+    });
   }
 })();
