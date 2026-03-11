@@ -182,6 +182,11 @@
 
   const ensureContent = note => {
     if(noteCache.has(note.href)){ return Promise.resolve(noteCache.get(note.href)); }
+    if(note.href && note.href.toLowerCase().endsWith('.pdf')){
+      const cached = { text: (note.title || '').toLowerCase() + ' ' + (note.tags || []).join(' ').toLowerCase(), html:'', excerpt:'', meta: { ...note } };
+      noteCache.set(note.href, cached);
+      return Promise.resolve(cached);
+    }
     return fetch(note.href).then(r => r.ok ? r.text() : '').then(text => {
       const { meta, body } = parseFrontMatter(text);
       const combinedMeta = { ...note, ...meta };
@@ -219,14 +224,19 @@
       const cache = noteCache.get(note.href) || {};
       const meta = cache.meta || note;
       const metaLine = buildNoteMetaLine(meta);
+      const isPinned = note.pinned || (meta && meta.pinned);
+      const isPdf = note.href && note.href.toLowerCase().endsWith('.pdf');
+      const pinnedBadge = isPinned ? '<span class="pinned-badge" title="Pinned"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.09 6.26L21 9.27l-5 3.9L17.18 20 12 16.77 6.82 20 8 13.17l-5-3.9 6.91-1.01L12 2z"/></svg> Pinned</span>' : '';
+      const actionLabel = isPdf ? 'View PDF' : 'Read note';
       return `
-        <article class="note-card" data-note="${note.href}">
+        <article class="note-card${isPinned ? ' pinned' : ''}" data-note="${note.href}"${isPdf ? ' data-pdf="true"' : ''}>
+          ${pinnedBadge}
           <div class="note-meta-line">${metaLine}</div>
           <h2>${meta.title || note.title}</h2>
           <div class="note-meta">
             ${(meta.tags || []).map(tag => `<button class="pill tag-pill" data-tag="${tag}" type="button">${tag}</button>`).join('')}
           </div>
-          <span class="read-more">Read note</span>
+          <span class="read-more">${actionLabel}</span>
         </article>
       `;
     }).join('');
@@ -334,6 +344,9 @@
     if(!notesList || !sortedNotes.length) return;
     Promise.all(sortedNotes.map(ensureContent)).then(() => {
       sortedNotes.sort((a,b) => {
+        const pa = a.pinned ? 1 : 0;
+        const pb = b.pinned ? 1 : 0;
+        if(pa !== pb) return pb - pa;
         const ca = noteCache.get(a.href);
         const cb = noteCache.get(b.href);
         const da = Date.parse((ca && ca.meta && ca.meta.date) ? ca.meta.date : (a.date || '')) || 0;
@@ -355,6 +368,10 @@
             return;
           }
           const href = card.getAttribute('data-note');
+          if(card.getAttribute('data-pdf') === 'true'){
+            window.open(href, '_blank', 'noopener');
+            return;
+          }
           openNoteModal(href);
         }
       });
