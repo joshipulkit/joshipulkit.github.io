@@ -1,43 +1,45 @@
 /* Minimal Academic Design System */
 :root {
   /* Typography */
-  --font-sans: "Manrope", "Space Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
-  --font-display: "Sora", "Space Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-sans: "Source Sans 3", "Helvetica Neue", "Segoe UI", sans-serif;
+  --font-display: "Source Serif 4", Georgia, serif;
   
-  /* Base Colors - Light Theme */
-  --bg: #fafafa;
-  --bg-2: #f2f2f2;
-  --surface: #ffffff;
-  --surface-2: #f7f7f7;
-  --text: #1a1a1a;
-  --text-muted: #6b6b6b;
-  --border: rgba(26, 26, 26, 0.08);
+  /* Catppuccin Latte */
+  --bg: #eff1f5;
+  --bg-2: #e6e9ef;
+  --surface: #e6e9ef;
+  --surface-2: #dce0e8;
+  --text: #4c4f69;
+  --text-muted: #5c5f77;
+  --border: #ccd0da;
+  --border-strong: #bcc0cc;
   
-  /* Brand Accents - Warm Sage */
-  --accent: #527a67;
-  --accent-2: #628a77;
-  --accent-hover: #426a57;
-  --accent-soft: rgba(82, 122, 103, 0.10);
-  --accent-line: rgba(82, 122, 103, 0.18);
+  /* Brand Accents */
+  --accent: #1e66f5;
+  --accent-2: #7287fd;
+  --accent-hover: #7287fd;
+  --accent-soft: rgba(30, 102, 245, 0.1);
+  --accent-line: rgba(30, 102, 245, 0.22);
   
-  /* Glass Effects - Clean & Subtle */
-  --glass-bg: rgba(255, 255, 255, 0.7);
-  --glass-bg-strong: rgba(255, 255, 255, 0.85);
-  --glass-border: rgba(255, 255, 255, 0.4);
-  --glass-blur: 20px;
-  --glass-blur-strong: 40px;
+  /* Legacy surface aliases for existing components */
+  --glass-bg: var(--surface);
+  --glass-bg-strong: var(--surface-2);
+  --glass-border: var(--border);
+  --glass-blur: 0px;
+  --glass-blur-strong: 0px;
+  --overlay: rgba(17, 17, 27, 0.68);
   
-  /* Shadows - Subtle & Soft */
-  --shadow-sm: 0 1px 3px rgba(26, 26, 26, 0.04), 0 1px 2px rgba(26, 26, 26, 0.05);
-  --shadow-md: 0 4px 12px rgba(26, 26, 26, 0.06), 0 2px 4px rgba(26, 26, 26, 0.07);
-  --shadow-lg: 0 10px 30px rgba(26, 26, 26, 0.08), 0 4px 8px rgba(26, 26, 26, 0.09);
-  --shadow-xl: 0 16px 48px rgba(26, 26, 26, 0.1), 0 6px 16px rgba(26, 26, 26, 0.11);
+  /* Shadows - restrained for a flatter UI */
+  --shadow-sm: 0 1px 2px rgba(92, 95, 119, 0.08);
+  --shadow-md: 0 10px 24px rgba(92, 95, 119, 0.08);
+  --shadow-lg: 0 18px 40px rgba(92, 95, 119, 0.12);
+  --shadow-xl: 0 24px 56px rgba(92, 95, 119, 0.16);
   
   /* Border Radius */
-  --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 16px;
-  --radius-xl: 20px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
   --radius-full: 9999px;
   
   /* Spacing Scale */
@@ -55,38 +57,36 @@
   color-scheme: light;
 }
 
-/* Dark Theme - Charcoal/Gray */
+/* Catppuccin Mocha */
 [data-theme="dark"] {
   color-scheme: dark;
   
-  /* Base Colors - Charcoal/Gray Theme */
-  --bg: #1a1a1a;
-  --bg-2: #242424;
-  --surface: #262626;
-  --surface-2: #2a2a2a;
-  --text: #e8e8e8;
-  --text-muted: #b0b0b0;
-  --border: rgba(255, 255, 255, 0.1);
+  --bg: #1e1e2e;
+  --bg-2: #181825;
+  --surface: #313244;
+  --surface-2: #45475a;
+  --text: #cdd6f4;
+  --text-muted: #bac2de;
+  --border: #45475a;
+  --border-strong: #585b70;
   
-  /* Brand Accents - Warm Sage for Dark Theme */
-  --accent: #82b89c;
-  --accent-2: #92c8ac;
-  --accent-hover: #72a88c;
-  --accent-soft: rgba(130, 184, 156, 0.15);
-  --accent-line: rgba(130, 184, 156, 0.22);
+  --accent: #89b4fa;
+  --accent-2: #b4befe;
+  --accent-hover: #b4befe;
+  --accent-soft: rgba(137, 180, 250, 0.14);
+  --accent-line: rgba(137, 180, 250, 0.28);
   
-  /* Glass Effects - Clean & Subtle Dark */
-  --glass-bg: rgba(37, 37, 37, 0.65);
-  --glass-bg-strong: rgba(37, 37, 37, 0.8);
-  --glass-border: rgba(255, 255, 255, 0.12);
-  --glass-blur: 20px;
-  --glass-blur-strong: 40px;
+  --glass-bg: var(--surface);
+  --glass-bg-strong: var(--surface-2);
+  --glass-border: var(--border);
+  --glass-blur: 0px;
+  --glass-blur-strong: 0px;
+  --overlay: rgba(17, 17, 27, 0.78);
   
-  /* Shadows - Soft Dark Theme */
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.35);
-  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4), 0 2px 4px rgba(0, 0, 0, 0.45);
-  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.5), 0 4px 8px rgba(0, 0, 0, 0.55);
-  --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.6), 0 6px 16px rgba(0, 0, 0, 0.65);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 12px 28px rgba(0, 0, 0, 0.28);
+  --shadow-lg: 0 20px 48px rgba(0, 0, 0, 0.34);
+  --shadow-xl: 0 28px 72px rgba(0, 0, 0, 0.4);
 }
 
 
@@ -153,8 +153,9 @@ a:focus-visible {
 h1, h2, h3, h4 {
   color: var(--text);
   margin: 0 0 0.35em;
-  font-weight: 700;
-  letter-spacing: -0.02em;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.15;
   font-family: var(--font-display);
 }
 
@@ -1431,11 +1432,31 @@ select:hover {
   }
 }
 
-/* ──────────────────────────────────────────────
-   Solid surface overrides (de-glass cards)
-   Glass is kept ONLY on: header, mobile nav,
-   theme toggle, modals, and lightbox.
-   ────────────────────────────────────────────── */
+/* Minimal Catppuccin surface system */
+.hero::before,
+.hero::after {
+  display: none;
+}
+
+.site-header,
+.site-footer {
+  background: var(--bg);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.site-header {
+  border-bottom-color: var(--border);
+  box-shadow: none;
+}
+
+.site-footer {
+  background: var(--bg-2);
+}
+
+.nav-toggle,
+.theme-toggle,
+.hero-visual,
 .research-card,
 .pub,
 .news-item,
@@ -1444,65 +1465,122 @@ select:hover {
 .about-card,
 .cv-section,
 .contact-card,
-.card {
-  background: var(--surface);
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
-  border-color: var(--border);
-}
-
+.card,
 .pub-controls,
 .note-search input,
-select {
+select,
+.note-modal-inner,
+.note-modal-close,
+.lightbox-inner,
+.lightbox-close,
+.lightbox-nav,
+.back-to-top {
   background: var(--surface);
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
   border-color: var(--border);
+  box-shadow: none;
+}
+
+.hero-visual,
+.research-card,
+.pub,
+.news-item,
+.note-card,
+.gallery-card,
+.about-card,
+.cv-section,
+.contact-card,
+.card,
+.pub-controls {
+  box-shadow: none;
+}
+
+.nav-menu a:hover {
+  border-color: var(--border);
+  transform: none;
+}
+
+.nav-menu a[aria-current="page"] {
+  box-shadow: none;
+}
+
+.btn,
+.btn-sm {
+  background: var(--accent);
+  border-color: var(--accent);
+  box-shadow: none;
+}
+
+.btn:hover,
+.btn-sm:hover {
+  background: var(--accent-hover);
+  transform: none;
+  box-shadow: none;
+}
+
+.btn-outline {
+  background: var(--surface);
+  border-color: var(--border-strong);
+  box-shadow: none;
+}
+
+.btn-outline:hover {
+  background: var(--accent-soft);
+  border-color: var(--accent-line);
+  color: var(--accent);
+  transform: none;
+  box-shadow: none;
 }
 
 .tag,
-.pill {
-  background: var(--accent-soft);
+.pill,
+.tag-pill,
+.eyebrow,
+.icon-badge {
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
 }
 
+.tag,
+.pill,
 .tag-pill {
   background: var(--accent-soft);
 }
 
 .eyebrow {
-  background: var(--surface);
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
-  border-color: var(--border);
+  background: var(--accent-soft);
+  border-color: var(--accent-line);
+  box-shadow: none;
 }
 
-.btn-outline {
-  background: var(--surface);
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
+.icon-badge {
+  background: var(--accent-soft);
+  border-color: var(--accent-line);
+  box-shadow: none;
 }
 
-.note-contents pre {
-  background: var(--bg-2);
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
+.hero-visual:hover,
+.research-card:hover,
+.pub:hover,
+.news-item:hover,
+.note-card:hover,
+.gallery-card:hover,
+.about-card:hover,
+.cv-section:hover,
+.contact-card:hover,
+.card:hover,
+.nav-toggle:hover,
+.theme-toggle:hover,
+.icon-badge:hover,
+.note-modal-close:hover,
+.lightbox-close:hover,
+.lightbox-nav:hover,
+.back-to-top:hover {
+  transform: none;
+  box-shadow: none;
 }
 
-.note-contents code {
-  background: var(--bg-2);
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
-}
-
-.site-footer {
-  background: var(--bg-2);
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
-}
-
-/* ── Toned-down hover states ─────────────────── */
 .research-card:hover,
 .pub:hover,
 .news-item:hover,
@@ -1512,17 +1590,57 @@ select {
 .cv-section:hover,
 .contact-card:hover,
 .card:hover {
-  transform: none;
-  box-shadow: var(--shadow-md);
   border-color: var(--accent-line);
 }
 
-.hero-visual:hover {
-  transform: none;
+.nav-toggle:hover,
+.theme-toggle:hover,
+.note-modal-close:hover,
+.lightbox-close:hover,
+.lightbox-nav:hover,
+.back-to-top:hover {
+  background: var(--surface-2);
 }
 
-.icon-badge:hover {
-  transform: none;
+.note-search input,
+select,
+.note-contents pre,
+.note-contents code {
+  background: var(--bg-2);
+  border-color: var(--border);
+  box-shadow: none;
+}
+
+.page-hero,
+.section-title .rule,
+.avatar {
+  border-color: var(--border);
+}
+
+.note-card.pinned {
+  box-shadow: none;
+}
+
+.note-modal,
+.lightbox {
+  background: var(--overlay);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.note-modal-inner,
+.lightbox-inner {
+  box-shadow: var(--shadow-lg);
+}
+
+@media (max-width: 880px){
+  .nav-menu{
+    background: var(--surface);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border-color: var(--border);
+    box-shadow: var(--shadow-md);
+  }
 }
 
 /* ── Muted text elements (keep --text-muted) ── */
@@ -1614,20 +1732,19 @@ select {
   width: 2.75rem;
   height: 2.75rem;
   border-radius: var(--radius-full);
-  border: 1px solid var(--glass-border);
-  background: var(--glass-bg);
-  backdrop-filter: blur(var(--glass-blur));
-  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--border);
+  background: var(--surface);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
   color: var(--accent);
   cursor: pointer;
-  box-shadow: var(--shadow-md);
+  box-shadow: none;
   opacity: 0;
   visibility: hidden;
   transform: translateY(0.5rem);
   transition: opacity 0.25s ease,
               visibility 0.25s ease,
               transform 0.25s ease,
-              box-shadow 0.2s ease,
               background 0.2s ease;
 }
 
@@ -1638,9 +1755,8 @@ select {
 }
 
 .back-to-top:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-lg);
-  background: var(--glass-bg-strong);
+  transform: translateY(0);
+  background: var(--surface-2);
 }
 
 .back-to-top:focus-visible {
@@ -1656,6 +1772,219 @@ select {
 @media (prefers-reduced-motion: reduce) {
   .back-to-top {
     transition: none;
+  }
+}
+
+/* Editorial minimal refinement */
+.header-inner {
+  padding: 0.85rem 0;
+}
+
+.brand {
+  font-size: 1rem;
+  letter-spacing: -0.01em;
+}
+
+.nav-menu {
+  gap: 1.1rem;
+}
+
+.nav-menu a {
+  padding: 0.2rem 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.nav-menu a:hover,
+.nav-menu a[aria-current="page"] {
+  background: transparent;
+}
+
+.nav-menu a:hover {
+  color: var(--text);
+}
+
+.nav-menu a[aria-current="page"] {
+  color: var(--text);
+  border-bottom: 0;
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.3em;
+}
+
+.theme-toggle,
+.nav-toggle {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border-radius: var(--radius-sm);
+}
+
+.hero {
+  padding: clamp(2.5rem, 5vw, 3.5rem) 0 clamp(2rem, 4vw, 2.75rem);
+}
+
+.hero-grid,
+.two-col {
+  gap: 2.5rem;
+}
+
+.eyebrow {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.78rem;
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 5vw, 3.4rem);
+  margin-bottom: 0.3rem;
+}
+
+.hero p {
+  max-width: 58ch;
+}
+
+.hero-subtitle {
+  max-width: 28ch;
+  margin-bottom: 1rem;
+}
+
+.cta-row {
+  gap: 0.65rem;
+  margin-top: 1rem;
+}
+
+.btn,
+.btn-outline,
+.btn-sm {
+  border-radius: var(--radius-sm);
+  padding: 0.6rem 0.95rem;
+  font-weight: 600;
+}
+
+.btn-outline {
+  color: var(--text);
+}
+
+.hero-visual {
+  background: transparent;
+  border: 0;
+  display: block;
+  min-height: 0;
+  padding: 0;
+}
+
+.hero-visual img {
+  padding: 0;
+  border-radius: var(--radius-lg);
+}
+
+.cards,
+.research-grid,
+.pubs,
+.notes-grid,
+.gallery-grid,
+.about-grid,
+.contact,
+.cv-grid {
+  gap: 0.85rem;
+}
+
+.card,
+.research-card,
+.pub,
+.news-item,
+.note-card,
+.gallery-card,
+.about-card,
+.cv-section,
+.contact-card {
+  background: transparent;
+  border-radius: var(--radius-md);
+}
+
+.card,
+.news-item,
+.note-card,
+.cv-section,
+.contact-card {
+  padding: 1rem;
+}
+
+.research-card,
+.pub,
+.about-card {
+  gap: 1rem;
+}
+
+.research-body,
+.gallery-body {
+  padding: 0.95rem 1rem 1rem;
+}
+
+.pub-links,
+.note-meta,
+.footer-links {
+  gap: 0.4rem 0.8rem;
+}
+
+.tag,
+.pill,
+.tag-pill,
+.news-year-nav a {
+  background: transparent;
+  border-color: var(--border);
+  color: var(--text-muted);
+  box-shadow: none;
+  font-weight: 600;
+}
+
+.tag-pill:hover,
+.news-year-nav a:hover {
+  color: var(--text);
+  border-color: var(--accent-line);
+}
+
+.note-card.pinned {
+  border-color: var(--accent-line);
+}
+
+.pinned-badge {
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+}
+
+.read-more::after {
+  transform: none !important;
+}
+
+.site-footer {
+  background: transparent;
+  padding-top: 1.25rem;
+}
+
+.footer-inner {
+  padding-top: 0.25rem;
+}
+
+@media (max-width: 880px){
+  .nav-menu {
+    gap: 0;
+  }
+
+  .nav-menu a {
+    padding: 0.55rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-menu li:last-child a {
+    border-bottom: 0;
   }
 }
 

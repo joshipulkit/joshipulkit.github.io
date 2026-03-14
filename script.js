@@ -5,23 +5,34 @@
   const yearEl = document.getElementById('year');
   const navToggle = document.getElementById('nav-toggle');
   const navMenu = document.getElementById('nav-menu');
+  const themeColorMeta = document.querySelector('meta[name="theme-color"]');
   const isFileProtocol = window.location.protocol === 'file:';
+  const themeColorMap = {
+    light: '#eff1f5',
+    dark: '#1e1e2e'
+  };
 
   if(yearEl){ yearEl.textContent = new Date().getFullYear(); }
 
   // Theme - Using data-theme attribute
+  const applyTheme = theme => {
+    root.setAttribute('data-theme', theme);
+    if(themeColorMeta){
+      themeColorMeta.setAttribute('content', themeColorMap[theme] || themeColorMap.light);
+    }
+  };
   const saved = localStorage.getItem('theme');
   const supportsMatchMedia = typeof window.matchMedia === 'function';
   const prefersDark = supportsMatchMedia ? window.matchMedia('(prefers-color-scheme: dark)').matches : false;
   const startTheme = saved || (prefersDark ? 'dark' : 'light');
-  root.setAttribute('data-theme', startTheme);
+  applyTheme(startTheme);
   if(toggle){
     const isDark = startTheme === 'dark';
     toggle.setAttribute('aria-pressed', String(isDark));
     toggle.addEventListener('click', () => {
       const currentTheme = root.getAttribute('data-theme');
       const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-      root.setAttribute('data-theme', newTheme);
+      applyTheme(newTheme);
       const isDarkNow = newTheme === 'dark';
       toggle.setAttribute('aria-pressed', String(isDarkNow));
       localStorage.setItem('theme', newTheme);
