@@ -1,6 +1,6 @@
 ---
 date: 2020-06-23
-title: DIIS: A method to accelerate SCF convergence
+title: "DIIS: A method to accelerate SCF convergence"
 tags: [DIIS, SCF Convergence, Theory]
 ---
 

@@ -1,0 +1,110 @@
+cv:
+  name: Pulkit Joshi
+  label: Postdoctoral Researcher
+  email: pulkit.joshi@uni-jena.de
+  location: Jena, Germany
+  image: avatar_pulkit.png
+  summary: Theoretical and computational chemist working on electronic structure theory, density functional embedding, beyond-RPA corrections, and negative ion resonances.
+
+  social_networks:
+    - network: GitHub
+      username: joshipulkit
+    - network: LinkedIn
+      username: joshipulkit
+    - network: X
+      username: joshipulkit_
+
+  sections:
+    Education:
+      - institution: Tata Institute of Fundamental Research
+        location: Mumbai, India
+        area: Chemical Sciences (Theory and Computation)
+        studyType: PhD
+        start_date: 2019
+        end_date: 2024
+        highlights:
+          - Thesis on fifth-rung density functionals for open-shell intermolecular interactions and negative ion resonances.
+
+      - institution: St. Stephen's College, University of Delhi
+        location: Delhi, India
+        area: Chemistry
+        studyType: MSc
+        start_date: 2017
+        end_date: 2019
+
+      - institution: St. Stephen's College, University of Delhi
+        location: Delhi, India
+        area: Chemistry
+        studyType: BSc (Hons.)
+        start_date: 2014
+        end_date: 2017
+
+    Experience:
+      - company: Friedrich-Schiller-University Jena
+        position: Postdoctoral Researcher
+        location: Jena, Germany
+        start_date: 2025
+        summary: Research in computational materials science with a focus on electronic structure methods for realistic materials, embedding, and metastable states.
+        highlights:
+          - Density functional embedding for realistic environments and periodic electrostatics.
+          - Method development for negative ion resonances and open-shell interactions.
+
+      - company: Tata Institute of Fundamental Research
+        position: Research Associate
+        location: Mumbai, India
+        start_date: 2024
+        end_date: 2025
+        highlights:
+          - Continued work on beyond-RPA corrections and resonance theory after the PhD.
+
+    Awards:
+      - title: CSIR Travel Grant
+        date: 2024-08-30
+        awarder: Council of Scientific and Industrial Research
+        summary: Travel support for international scientific presentation.
+
+      - title: International Travel Support
+        date: 2024-08-14
+        awarder: ANRF / SERB
+        summary: International travel support for conference participation.
+
+    Publications:
+      - title: Taming Negative Ion Resonances Using Nonlocal Exchange-Correlation Functionals
+        authors:
+          - Abhisek Ghosal
+          - Pulkit Joshi
+          - Vamsee K. Voora
+        publisher: Journal of Physical Chemistry Letters
+        releaseDate: 2024-05-12
+        url: https://doi.org/10.1021/acs.jpclett.4c00717
+        summary: Nonlocal exchange-correlation functionals for temporary anion states and resonance stabilization.
+
+      - title: Generalized perturbative singles corrections to the random phase approximation method
+        authors:
+          - Pulkit Joshi
+          - Vamsee K. Voora
+        publisher: Journal of Chemical Physics
+        releaseDate: 2024-01-05
+        url: https://doi.org/10.1063/5.0180526
+        summary: Perturbative singles corrections for noncovalent interaction energies of closed- and open-shell dimers.
+
+      - title: Necrosis-Inducing High-Valent Oxo-Rhenium(V) Complexes with Potent Antitumor Activity
+        authors:
+          - Shubhangi Das
+          - Pulkit Joshi
+          - Malay Patra
+        publisher: Inorganic Chemistry
+        releaseDate: 2023-12-13
+        url: https://doi.org/10.1021/acs.inorgchem.3c03110
+        summary: Synthesis and mechanistic analysis of high-valent oxo-rhenium(V) complexes with antitumor activity.
+
+    Skills:
+      - name: Electronic Structure Theory
+        level: Advanced
+        icon: fa-solid fa-hashtag
+        keywords: Density Functional Theory, Density Functional Embedding, RPA, Open-Shell Systems, Negative Ion Resonances
+
+      - name: Software and HPC
+        level: Advanced
+        icon: fa-solid fa-laptop
+        keywords: ORCA, CP2K, TURBOMOLE, Psi4, CFOUR, Python, FORTRAN, Linux
