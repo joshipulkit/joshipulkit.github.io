@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://joshipulkit.github.io/sitemap.xml
