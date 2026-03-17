@@ -1,6 +1,12 @@
 **/*.map
 **/*.min.css
 **/*.min.js
+.bundle/**
+.jekyll-cache/**
+.venv-rendercv/**
+_site/**
+node_modules/**
+vendor/**
 assets/css/main.scss
 assets/js/distillpub/template.v2.js
 assets/js/search/*.js

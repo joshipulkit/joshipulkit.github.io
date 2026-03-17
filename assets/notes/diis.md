@@ -5,11 +5,13 @@ tags: [DIIS, SCF Convergence, Theory]
 ---
 
 ### Introduction
+
 ---
 
 Direct Inversion of the Iterative Subspace (DIIS) is a method first proposed by Pulay[^1] which accelerates the convergence of a normal SCF procedure.
 
 ### Method
+
 ---
 
 Iterative procedures can give us a set of trial vectors {$\mathbf{p}^i$}. Thus we can form a residual (error) term between two sucessive iterations.
@@ -32,7 +34,7 @@ $$\sum_{i=1}^{m} c_i = 1$$
 and,
 $$\sum_{i=1}^{m} c_i \mathbf{e}^i = 0$$
 
-Let's construct a Lagrangian to minimise the norm of error vector, $\langle \mathbf{e} | \mathbf{e} \rangle = \sum_{i,j = 1}^{m} c_i^* c_j \langle e_i | e_j \rangle $ under the constraint that coefficients should sum to 1,
+Let's construct a Lagrangian to minimise the norm of error vector, $\langle \mathbf{e} | \mathbf{e} \rangle = \sum\_{i,j = 1}^{m} c_i^\* c_j \langle e_i | e_j \rangle $ under the constraint that coefficients should sum to 1,
 
 $$\mathcal{L} = \mathbf{c}^\dagger \mathbf{B} \mathbf{c} - \lambda \left( 1-\sum_{i=1}^m c_i \right)$$
 
@@ -42,16 +44,19 @@ $$\frac{\partial\mathcal{L}}{\partial c_k} = 0 = 2 \sum_{i=1}^m c_i B_{ki} -\lam
 
 and we solve the following set of linear equations to obtain the coefficients for DIIS extrapolation:
 
-$$\begin{pmatrix} \mathbf{B}\_{11} & \mathbf{B}\_{12} & \dots & \mathbf{B}\_{1m} & -1 \\\ \mathbf{B}\_{21} & \mathbf{B}\_{22} & \dots & \mathbf{B}\_{2m} & -1 \\\ \dots & \dots & \dots & \dots & \dots \\\ \mathbf{B}\_{m1} & \mathbf{B}\_{m2} & \dots & \mathbf{B}\_{mm} & -1 \\\ -1 & -1 & \dots & -1 & 0 \end{pmatrix}
-\begin{pmatrix} c_1 \\\ c_2 \\\ \dots \\\ c_m \\\ \lambda \end{pmatrix} = 
-\begin{pmatrix} 0 \\\ 0 \\\ \dots \\\ 0 \\\ -1 \end{pmatrix}$$
+$$
+\begin{pmatrix} \mathbf{B}\_{11} & \mathbf{B}\_{12} & \dots & \mathbf{B}\_{1m} & -1 \\\ \mathbf{B}\_{21} & \mathbf{B}\_{22} & \dots & \mathbf{B}\_{2m} & -1 \\\ \dots & \dots & \dots & \dots & \dots \\\ \mathbf{B}\_{m1} & \mathbf{B}\_{m2} & \dots & \mathbf{B}\_{mm} & -1 \\\ -1 & -1 & \dots & -1 & 0 \end{pmatrix}
+\begin{pmatrix} c_1 \\\ c_2 \\\ \dots \\\ c_m \\\ \lambda \end{pmatrix} =
+\begin{pmatrix} 0 \\\ 0 \\\ \dots \\\ 0 \\\ -1 \end{pmatrix}
+$$
 
 ### Error Vector in C-DIIS method
+
 ---
 
 The C-DIIS (Commutator-DIIS) also known as Pulay's DIIS uses the following condition[^2] to form the residual (error) vector. The Fock matrix and the density matrix should commute in the orthonormal MO basis.
 
-*(**Note:** We will use notations like $\mathbf{F'}, \mathbf{D'}$ for matrices in MO basis and $\mathbf{F}, \mathbf{D}$ for matrices in AO basis.)*
+_(**Note:** We will use notations like $\mathbf{F'}, \mathbf{D'}$ for matrices in MO basis and $\mathbf{F}, \mathbf{D}$ for matrices in AO basis.)_
 
 $$[\mathbf{F'},\mathbf{D'}] = \mathbf{F'}\mathbf{D'} - \mathbf{D'}\mathbf{F'} = 0$$
 
@@ -100,29 +105,32 @@ Hence, we can define the error vector in AO basis as:
 $$\mathbf{e}_i = \mathbf{F}_i \mathbf{D}_i \mathbf{S} - \mathbf{S} \mathbf{D}_i \mathbf{F}_i$$
 
 ### Algorithm
+
 ---
 
-* Compute the error matrix using $\mathbf{e}_i = \mathbf{F}_i \mathbf{D}_i \mathbf{S} - \mathbf{S} \mathbf{D}_i \mathbf{F}_i$ in each iteration.
-* From the B matrix using error vectors such that, $\mathbf{B}\_{ij} = \mathbf{e}\_i \cdot \mathbf{e}\_j$ and solve for the following set of linear equations,
+- Compute the error matrix using $\mathbf{e}_i = \mathbf{F}_i \mathbf{D}_i \mathbf{S} - \mathbf{S} \mathbf{D}_i \mathbf{F}_i$ in each iteration.
+- From the B matrix using error vectors such that, $\mathbf{B}\_{ij} = \mathbf{e}\_i \cdot \mathbf{e}\_j$ and solve for the following set of linear equations,
 
-    $$\begin{pmatrix} \mathbf{B}\_{11} & \mathbf{B}\_{12} & \dots & \mathbf{B}\_{1m} & -1 \\\ \mathbf{B}\_{21} & \mathbf{B}\_{22} & \dots & \mathbf{B}\_{2m} & -1 \\\ \dots & \dots & \dots & \dots & \dots \\\ \mathbf{B}\_{m1} & \mathbf{B}\_{m2} & \dots & \mathbf{B}\_{mm} & -1 \\\ -1 & -1 & \dots & -1 & 0 \end{pmatrix}
-    \begin{pmatrix} c_1 \\\ c_2 \\\ \dots \\\ c_m \\\ \lambda \end{pmatrix} = 
-    \begin{pmatrix} 0 \\\ 0 \\\ \dots \\\ 0 \\\ -1 \end{pmatrix}$$
+  $$
+  \begin{pmatrix} \mathbf{B}\_{11} & \mathbf{B}\_{12} & \dots & \mathbf{B}\_{1m} & -1 \\\ \mathbf{B}\_{21} & \mathbf{B}\_{22} & \dots & \mathbf{B}\_{2m} & -1 \\\ \dots & \dots & \dots & \dots & \dots \\\ \mathbf{B}\_{m1} & \mathbf{B}\_{m2} & \dots & \mathbf{B}\_{mm} & -1 \\\ -1 & -1 & \dots & -1 & 0 \end{pmatrix}
+  \begin{pmatrix} c_1 \\\ c_2 \\\ \dots \\\ c_m \\\ \lambda \end{pmatrix} =
+  \begin{pmatrix} 0 \\\ 0 \\\ \dots \\\ 0 \\\ -1 \end{pmatrix}
+  $$
 
-* Compute the new extrapolated Fock matrix as the following and repeat the SCF procedure.
-$$\mathbf{F} = \sum_{i=1}^{m} c_i \mathbf{F}_i$$
+- Compute the new extrapolated Fock matrix as the following and repeat the SCF procedure.
+  $$\mathbf{F} = \sum_{i=1}^{m} c_i \mathbf{F}_i$$
 
-
-*You can find a python code for DIIS method [here](../../codes/diis-python-code).\
-If you have have any queries regarding the article, feel free to [write to me](../../connect.html).*
-
+_You can find a python code for DIIS method [here](../../codes/diis-python-code).\
+If you have have any queries regarding the article, feel free to [write to me](../../connect.html)._
 
 <!-- references begin -->
 
 ### References
 
-[^1]: P. Pulay (1980) "Convergence accelaration of iterative sequences: The case of SCF iteration"\
-Ref: [https://doi.org/10.1016/0009-2614(80)80396-4](https://doi.org/10.1016/0009-2614(80)80396-4)
+[^1]:
+    P. Pulay (1980) "Convergence accelaration of iterative sequences: The case of SCF iteration"\
+    Ref: [https://doi.org/10.1016/0009-2614(80)80396-4](<https://doi.org/10.1016/0009-2614(80)80396-4>)
 
-[^2]: P. Pulay (1982) "Improved SCF convergence accelaration"\
-Ref: [https://doi.org/10.1002/jcc.540030413](https://doi.org/10.1002/jcc.540030413)
+[^2]:
+    P. Pulay (1982) "Improved SCF convergence accelaration"\
+    Ref: [https://doi.org/10.1002/jcc.540030413](https://doi.org/10.1002/jcc.540030413)

@@ -64,4 +64,4 @@ $$
 - Solve the Pulay linear system for the DIIS coefficients.
 - Form the extrapolated Fock matrix and continue the SCF iterations.
 
-[^1]: P. Pulay (1980), "Convergence acceleration of iterative sequences: The case of SCF iteration", [10.1016/0009-2614(80)80396-4](https://doi.org/10.1016/0009-2614(80)80396-4)
+[^1]: P. Pulay (1980), "Convergence acceleration of iterative sequences: The case of SCF iteration", [10.1016/0009-2614(80)80396-4](<https://doi.org/10.1016/0009-2614(80)80396-4>)

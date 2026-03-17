@@ -7,7 +7,7 @@ tags: Linux Ubuntu Debian FOSS
 categories: notes
 ---
 
-*This also works for all Debian-based distributions.*
+_This also works for all Debian-based distributions._
 
 It is good practice to keep a system updated and all packages at their latest stable version. This short note outlines a simple workflow for Ubuntu 20.04 and similar Debian-based systems.
 

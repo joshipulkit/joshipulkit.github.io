@@ -1,10 +1,10 @@
 cv:
   name: Pulkit Joshi
-  label: Postdoctoral Researcher
+  headline: Postdoctoral Researcher
   email: pulkit.joshi@uni-jena.de
   location: Jena, Germany
-  image: avatar_pulkit.png
-  summary: Theoretical and computational chemist working on electronic structure theory, density functional embedding, beyond-RPA corrections, and negative ion resonances.
+  website: https://joshipulkit.github.io/
+  photo: ../assets/img/avatar_pulkit.png
 
   social_networks:
     - network: GitHub
@@ -13,13 +13,22 @@ cv:
       username: joshipulkit
     - network: X
       username: joshipulkit_
+    - network: ORCID
+      username: 0000-0003-2138-6662
+    - network: ResearchGate
+      username: Pulkit-Joshi
+    - network: Google Scholar
+      username: rqIYelAAAAAJ
 
   sections:
-    Education:
+    summary:
+      - Theoretical and computational chemist working on electronic structure theory, density functional embedding, beyond-RPA corrections, and negative ion resonances.
+
+    education:
       - institution: Tata Institute of Fundamental Research
         location: Mumbai, India
         area: Chemical Sciences (Theory and Computation)
-        studyType: PhD
+        degree: PhD
         start_date: 2019
         end_date: 2024
         highlights:
@@ -28,18 +37,18 @@ cv:
       - institution: St. Stephen's College, University of Delhi
         location: Delhi, India
         area: Chemistry
-        studyType: MSc
+        degree: MSc
         start_date: 2017
         end_date: 2019
 
       - institution: St. Stephen's College, University of Delhi
         location: Delhi, India
         area: Chemistry
-        studyType: BSc (Hons.)
+        degree: BSc (Hons.)
         start_date: 2014
         end_date: 2017
 
-    Experience:
+    experience:
       - company: Friedrich-Schiller-University Jena
         position: Postdoctoral Researcher
         location: Jena, Germany
@@ -57,54 +66,42 @@ cv:
         highlights:
           - Continued work on beyond-RPA corrections and resonance theory after the PhD.
 
-    Awards:
-      - title: CSIR Travel Grant
-        date: 2024-08-30
-        awarder: Council of Scientific and Industrial Research
-        summary: Travel support for international scientific presentation.
+    selected_honors:
+      - bullet: CSIR Travel Grant, Council of Scientific and Industrial Research (2024)
+      - bullet: International Travel Support, ANRF / SERB (2024)
 
-      - title: International Travel Support
-        date: 2024-08-14
-        awarder: ANRF / SERB
-        summary: International travel support for conference participation.
-
-    Publications:
+    publications:
       - title: Taming Negative Ion Resonances Using Nonlocal Exchange-Correlation Functionals
+        date: 2024-05-12
         authors:
           - Abhisek Ghosal
-          - Pulkit Joshi
+          - "**Pulkit Joshi**"
           - Vamsee K. Voora
-        publisher: Journal of Physical Chemistry Letters
-        releaseDate: 2024-05-12
-        url: https://doi.org/10.1021/acs.jpclett.4c00717
+        doi: 10.1021/acs.jpclett.4c00717
+        journal: Journal of Physical Chemistry Letters
         summary: Nonlocal exchange-correlation functionals for temporary anion states and resonance stabilization.
 
       - title: Generalized perturbative singles corrections to the random phase approximation method
+        date: 2024-01-05
         authors:
-          - Pulkit Joshi
+          - "**Pulkit Joshi**"
           - Vamsee K. Voora
-        publisher: Journal of Chemical Physics
-        releaseDate: 2024-01-05
-        url: https://doi.org/10.1063/5.0180526
+        doi: 10.1063/5.0180526
+        journal: Journal of Chemical Physics
         summary: Perturbative singles corrections for noncovalent interaction energies of closed- and open-shell dimers.
 
       - title: Necrosis-Inducing High-Valent Oxo-Rhenium(V) Complexes with Potent Antitumor Activity
+        date: 2023-12-13
         authors:
           - Shubhangi Das
-          - Pulkit Joshi
+          - "**Pulkit Joshi**"
           - Malay Patra
-        publisher: Inorganic Chemistry
-        releaseDate: 2023-12-13
-        url: https://doi.org/10.1021/acs.inorgchem.3c03110
+        doi: 10.1021/acs.inorgchem.3c03110
+        journal: Inorganic Chemistry
         summary: Synthesis and mechanistic analysis of high-valent oxo-rhenium(V) complexes with antitumor activity.
 
-    Skills:
-      - name: Electronic Structure Theory
-        level: Advanced
-        icon: fa-solid fa-hashtag
-        keywords: Density Functional Theory, Density Functional Embedding, RPA, Open-Shell Systems, Negative Ion Resonances
-
-      - name: Software and HPC
-        level: Advanced
-        icon: fa-solid fa-laptop
-        keywords: ORCA, CP2K, TURBOMOLE, Psi4, CFOUR, Python, FORTRAN, Linux
+    skills:
+      - label: Research Areas
+        details: Density Functional Theory, Density Functional Embedding, RPA, Open-Shell Systems, Negative Ion Resonances
+      - label: Software and HPC
+        details: ORCA, CP2K, TURBOMOLE, Psi4, CFOUR, Python, FORTRAN, Linux
