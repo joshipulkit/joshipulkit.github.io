@@ -22,6 +22,10 @@ jobs:
         with:
           fetch-depth: 0 # OR "2" -> To retrieve the preceding commit.
 
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
       - name: Get changed files
         id: changed-files
         uses: tj-actions/changed-files@ed68ef82c095e0d48ec87eccea555d944a631a4c # v46
@@ -42,6 +46,14 @@ jobs:
             ./gh-md-toc --indent 2 --insert --no-backup --hide-footer $file
           done
           rm gh-md-toc
+
+      - name: Format updated markdown files
+        if: steps.changed-files.outputs.any_changed == 'true'
+        env:
+          ALL_CHANGED_FILES: ${{ steps.changed-files.outputs.all_changed_files }}
+        run: |
+          npm ci
+          npx prettier ${ALL_CHANGED_FILES} --write
 
       - name: Commit changes
         if: steps.changed-files.outputs.any_changed == 'true'
