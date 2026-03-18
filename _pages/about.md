@@ -31,4 +31,4 @@ I am a theoretical and computational chemist working on electronic structure met
 
 I am currently a postdoctoral researcher in the Computational Materials Science group at Friedrich-Schiller-University Jena. I am particularly interested in methods that stay useful outside idealized benchmarks: periodic electrostatics, multiscale embedding, reproducible HPC workflows, and theory that maps cleanly onto spectroscopy and experiment-driven collaborations.
 
-This site collects selected publications, recent news, research directions, and a few working notes. A more structured summary of my background is available on the [CV page](/cv/).
+This site collects selected publications, recent news, research directions, and a few working notes. A more structured summary of my background is available in the [CV](/assets/pdf/cv_pulkitjoshi.pdf).

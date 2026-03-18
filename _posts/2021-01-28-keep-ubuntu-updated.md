@@ -4,7 +4,7 @@ title: Keep Ubuntu 20.04 (or its derivatives) updated and clean
 date: 2021-01-28 12:00:00+0530
 description: a short practical note for updating and cleaning Debian-based systems
 tags: Linux Ubuntu Debian FOSS
-categories: notes
+categories: posts
 ---
 
 _This also works for all Debian-based distributions._

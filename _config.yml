@@ -259,9 +259,12 @@ jekyll-archives:
       categories: "/blog/:type/:name/"
   books:
     enabled: [year, tags, categories] # enables year, tag and category archives (remove if you need to disable one of them).
+    permalinks:
+      year: "/books/:year/"
 
-display_tags: ["DFT", "Theory", "SCF", "Linux"] # these tags will be displayed on the front page of your blog
-display_categories: ["notes"] # these categories will be displayed on the front page of your blog
+#display_tags: ["DFT", "Theory", "SCF", "Linux"] # these tags will be displayed on the front page of your blog
+display_tags: [] # these tags will be displayed on the front page of your blog
+display_categories: ["notes", "posts"] # these categories will be displayed on the front page of your blog
 
 # -----------------------------------------------------------------------------
 # Jekyll Scholar
