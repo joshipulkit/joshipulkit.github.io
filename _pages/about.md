@@ -2,14 +2,15 @@
 layout: about
 title: about
 permalink: /
-subtitle: Postdoctoral Researcher, Friedrich-Schiller-University Jena. Electronic structure theory, density functional embedding, and negative ion resonances.
+subtitle: Developing scalable electronic structure methods for realistic materials and spectroscopy-driven applications.
 
 profile:
   align: right
   image: avatar_pulkit.png
   image_circular: false # crops the image to make it circular
   more_info: >
-    <p>Computational Materials Science</p>
+    <p>Postdoctoral Researcher</p>
+    <p>Computational Materials Science Group</p>
     <p>Otto Schott Institute for Materials Research</p>
     <p>Lobdergraben 32, 07743 Jena, Germany</p>
 
