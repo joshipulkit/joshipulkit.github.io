@@ -30,13 +30,6 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/projects/";
           },
-        },{id: "nav-repositories",
-          title: "repositories",
-          description: "GitHub profile cards and selected repositories.",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/repositories/";
-          },
         },{id: "nav-teaching",
           title: "teaching",
           description: "Teaching materials and course information.",
@@ -58,16 +51,9 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "/books/";
               },
-            },{id: "dropdown-blog",
-              title: "blog",
-              description: "",
-              section: "Dropdown",
-              handler: () => {
-                window.location.href = "/blog/";
-              },
             },{id: "post-a-comprehensive-overview-of-density-functional-theory",
         
-          title: "a comprehensive overview of density functional theory",
+          title: "A comprehensive overview of density functional theory",
         
         description: "a longer PDF note on density functional theory fundamentals and context",
         section: "Posts",
@@ -98,7 +84,42 @@ ninja.data = [{
             window.location.href = "/blog/2020/diis-scf-convergence/";
           
         },
-      },{id: "news-our-paper-on-generalized-perturbative-single-excitation-corrections-for-open-shell-noncovalent-interactions-was-accepted-in-j-chem-phys",
+      },{id: "books-density-functional-theory-of-atoms-and-molecules",
+          title: 'Density Functional Theory of Atoms and Molecules',
+          description: "",
+          section: "Books",handler: () => {
+              window.location.href = "/books/dft_atoms_mols/";
+            },},{id: "books-density-functional-theory-an-advanced-course",
+          title: 'Density Functional Theory - An Advanced Course',
+          description: "",
+          section: "Books",handler: () => {
+              window.location.href = "/books/dft_engel_dreizler/";
+            },},{id: "books-interacting-electrons-theory-and-computational-approaches",
+          title: 'Interacting Electrons, Theory and Computational Approaches',
+          description: "",
+          section: "Books",handler: () => {
+              window.location.href = "/books/interacting_electrons/";
+            },},{id: "books-the-theory-of-intermolecular-forces",
+          title: 'The Theory of Intermolecular Forces',
+          description: "",
+          section: "Books",handler: () => {
+              window.location.href = "/books/intermolecular_stone/";
+            },},{id: "books-modern-quantum-chemistry-introduction-to-advanced-electronic-structure-theory",
+          title: 'Modern Quantum Chemistry, Introduction to Advanced Electronic Structure Theory',
+          description: "",
+          section: "Books",handler: () => {
+              window.location.href = "/books/modern_quantum_chemistry/";
+            },},{id: "books-non-hermitian-quantum-mechanics",
+          title: 'Non-Hermitian Quantum Mechanics',
+          description: "",
+          section: "Books",handler: () => {
+              window.location.href = "/books/non_hermitian_qm/";
+            },},{id: "books-time-dependent-density-functional-theory-concepts-and-applications",
+          title: 'Time-Dependent Density-Functional Theory, Concepts and Applications',
+          description: "",
+          section: "Books",handler: () => {
+              window.location.href = "/books/time_dependent_dft/";
+            },},{id: "news-our-paper-on-generalized-perturbative-single-excitation-corrections-for-open-shell-noncovalent-interactions-was-accepted-in-j-chem-phys",
           title: 'Our paper on generalized perturbative single-excitation corrections for open-shell noncovalent interactions was accepted...',
           description: "",
           section: "News",},{id: "news-the-jpcl-paper-on-negative-ion-resonances-was-selected-for-the-journal-cover",
