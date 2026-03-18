@@ -37,21 +37,14 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/teaching/";
           },
-        },{id: "nav-people",
-          title: "people",
-          description: "profile page in the standard al-folio layout",
+        },{id: "nav-bookshelf",
+          title: "bookshelf",
+          description: "",
           section: "Navigation",
           handler: () => {
-            window.location.href = "/people/";
+            window.location.href = "/books/";
           },
-        },{id: "dropdown-bookshelf",
-              title: "bookshelf",
-              description: "",
-              section: "Dropdown",
-              handler: () => {
-                window.location.href = "/books/";
-              },
-            },{id: "post-a-comprehensive-overview-of-density-functional-theory",
+        },{id: "post-a-comprehensive-overview-of-density-functional-theory",
         
           title: "A comprehensive overview of density functional theory",
         
@@ -149,8 +142,8 @@ ninja.data = [{
           section: "News",},{id: "news-presented-project-updates-at-the-noa-meeting-spring-2025-in-dornburg-germany",
           title: 'Presented project updates at the NOA Meeting Spring 2025 in Dornburg, Germany.',
           description: "",
-          section: "News",},{id: "news-a-comprehensive-overview-of-density-functional-theory-is-now-available-in-the-notes-section",
-          title: 'A comprehensive overview of density functional theory is now available in the notes...',
+          section: "News",},{id: "news-a-comprehensive-overview-of-density-functional-theory-is-now-available-in-the-blog-section",
+          title: 'A comprehensive overview of density functional theory is now available in the blog...',
           description: "",
           section: "News",},{id: "projects-density-functional-embedding",
           title: 'density functional embedding',
