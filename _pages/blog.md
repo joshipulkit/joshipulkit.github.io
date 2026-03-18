@@ -124,7 +124,7 @@ pagination:
 
 {% if post.thumbnail %}
 
-<div class="row">
+<div class="row"
           <div class="col-sm-9">
 {% endif %}
         <h3>
