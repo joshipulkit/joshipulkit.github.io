@@ -28,8 +28,18 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-I am a theoretical and computational chemist working on electronic structure methods for realistic materials, open-shell interactions, and metastable anionic states. My research focuses on density functional embedding, beyond-RPA corrections, and negative ion resonances in molecular and condensed-phase systems.
+I am a **theoretical and computational chemist** working on **electronic structure methods for realistic materials and molecular systems**.
 
-I am currently a postdoctoral researcher in the Computational Materials Science group at Friedrich-Schiller-University Jena. I am particularly interested in methods that stay useful outside idealized benchmarks: periodic electrostatics, multiscale embedding, reproducible HPC workflows, and theory that maps cleanly onto spectroscopy and experiment-driven collaborations.
+My research focuses on **density functional embedding**, **post-DFT methods**, and **negative ion resonances**, with an emphasis on methods that remain reliable **outside idealized benchmarks**.
+
+I am particularly interested in:
+
+- open-shell interactions
+- periodic and long-range electrostatics
+- condensed-phase and heterogeneous environments
+
+I develop **physically grounded, computationally practical methods** bridging theory and experiment.
+
+If you are working on related problems or interested in collaboration, feel free to [get in touch](mailto:pulkit.joshi@uni-jena.de).
 
 This site collects selected publications, recent news, research directions, and a few working notes. A more structured summary of my background is available in the [CV](/assets/pdf/cv_pulkitjoshi.pdf).
