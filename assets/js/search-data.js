@@ -44,7 +44,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/books/";
           },
-        },{id: "post-a-comprehensive-overview-of-density-functional-theory",
+        },{id: "post-what-a-chemist-keeps-wanting-to-ask-about-climate-policy",
+        
+          title: "What a Chemist Keeps Wanting to Ask About Climate Policy",
+        
+        description: "A personal essay on science, policy, and the limits we keep ignoring",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/planetary-boundaries-essay/";
+          
+        },
+      },{id: "post-a-comprehensive-overview-of-density-functional-theory",
         
           title: "A comprehensive overview of density functional theory",
         
