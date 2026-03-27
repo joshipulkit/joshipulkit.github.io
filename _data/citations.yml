@@ -1,3 +1,15 @@
 metadata:
-  last_updated: '2026-03-17'
-papers: {}
+  last_updated: '2026-03-27'
+papers:
+  rqIYelAAAAAJ:2osOgNQ5qMEC:
+    citations: 9
+    title: "Necrosis-inducing high-valent oxo\u2013rhenium (V) complexes with potent antitumor activity: synthesis, aquation chemistry, cisplatin cross-resistance profile, and mechanism of action"
+    year: '2023'
+  rqIYelAAAAAJ:UeHWp8X0CEIC:
+    citations: 5
+    title: Taming negative ion resonances using nonlocal exchange-correlation functionals
+    year: '2024'
+  rqIYelAAAAAJ:qjMakFHDy7sC:
+    citations: 4
+    title: 'Generalized perturbative singles corrections to the random phase approximation method: Impact on noncovalent interaction energies of closed-and open-shell dimers'
+    year: '2024'
