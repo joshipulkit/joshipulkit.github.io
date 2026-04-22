@@ -44,7 +44,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/books/";
           },
-        },{id: "post-what-a-chemist-keeps-wanting-to-ask-about-climate-policy",
+        },{id: "post-the-hydroxyl-radical-and-the-atmosphere-s-self-cleaning-chemistry",
+        
+          title: "The Hydroxyl Radical and the Atmosphere’s Self-Cleaning Chemistry",
+        
+        description: "Why OH helps determine how long methane and many pollutants remain in the air",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/hydroxyl-radical-invisible-clean-up-system/";
+          
+        },
+      },{id: "post-what-a-chemist-keeps-wanting-to-ask-about-climate-policy",
         
           title: "What a Chemist Keeps Wanting to Ask About Climate Policy",
         
