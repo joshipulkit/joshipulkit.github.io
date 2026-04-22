@@ -5,6 +5,9 @@ date: 2026-03-25 00:00:00+0530
 description: A personal essay on science, policy, and the limits we keep ignoring
 tags: Opinion Science-Policy
 categories: posts
+toc:
+  beginning: true
+  sidebar: right
 ---
 
 I am a theoretical chemist by training. I spend most of my time running calculations on molecules, working out how electrons arrange themselves around nuclei, figuring out why one reaction happens and another does not. It is quiet, exacting work, and the thing that keeps me honest is that the numbers do not care what I want them to be. You cannot sweet-talk a bond length. You cannot lobby against an ionisation energy. If the maths says the molecule is unstable, the molecule is unstable. You learn, fairly early, that your job is not to negotiate with nature. It is to understand the constraints and work within them.

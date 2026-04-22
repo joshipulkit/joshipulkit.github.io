@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="505.44pt" height="369.216pt" viewBox="0 0 505.44 369.216" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-04-22T14:57:35.991026</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.9.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 369.216 
+L 505.44 369.216 
+L 505.44 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 45.50112 110.806272 
+L 126.03168 110.806272 
+Q 140.76288 110.806272 140.76288 100.161792 
+L 140.76288 77.453568 
+Q 140.76288 66.809088 126.03168 66.809088 
+L 45.50112 66.809088 
+Q 30.76992 66.809088 30.76992 77.453568 
+L 30.76992 100.161792 
+Q 30.76992 110.806272 45.50112 110.806272 
+z
+" clip-path="url(#p2d86f7dad1)" style="fill: #f6f1dd; stroke: #9aa4ae; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 45.50112 167.576832 
+L 126.03168 167.576832 
+Q 140.76288 167.576832 140.76288 156.932352 
+L 140.76288 134.224128 
+Q 140.76288 123.579648 126.03168 123.579648 
+L 45.50112 123.579648 
+Q 30.76992 123.579648 30.76992 134.224128 
+L 30.76992 156.932352 
+Q 30.76992 167.576832 45.50112 167.576832 
+z
+" clip-path="url(#p2d86f7dad1)" style="fill: #f6f1dd; stroke: #9aa4ae; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 45.50112 224.347392 
+L 126.03168 224.347392 
+Q 140.76288 224.347392 140.76288 213.702912 
+L 140.76288 190.994688 
+Q 140.76288 180.350208 126.03168 180.350208 
+L 45.50112 180.350208 
+Q 30.76992 180.350208 30.76992 190.994688 
+L 30.76992 213.702912 
+Q 30.76992 224.347392 45.50112 224.347392 
+z
+" clip-path="url(#p2d86f7dad1)" style="fill: #edf5f5; stroke: #9aa4ae; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 207.54432 188.865792 
+L 297.89568 188.865792 
+Q 317.53728 188.865792 317.53728 174.673152 
+L 317.53728 130.675968 
+Q 317.53728 116.483328 297.89568 116.483328 
+L 207.54432 116.483328 
+Q 187.90272 116.483328 187.90272 130.675968 
+L 187.90272 174.673152 
+Q 187.90272 188.865792 207.54432 188.865792 
+z
+" clip-path="url(#p2d86f7dad1)" style="fill: #e4f0ee; stroke: #1c6b63; stroke-width: 1.5; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 364.67712 110.806272 
+L 459.93888 110.806272 
+Q 474.67008 110.806272 474.67008 100.161792 
+L 474.67008 73.905408 
+Q 474.67008 63.260928 459.93888 63.260928 
+L 364.67712 63.260928 
+Q 349.94592 63.260928 349.94592 73.905408 
+L 349.94592 100.161792 
+Q 349.94592 110.806272 364.67712 110.806272 
+z
+" clip-path="url(#p2d86f7dad1)" style="fill: #f7f7f5; stroke: #9aa4ae; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 364.67712 171.124992 
+L 459.93888 171.124992 
+Q 474.67008 171.124992 474.67008 160.480512 
+L 474.67008 134.224128 
+Q 474.67008 123.579648 459.93888 123.579648 
+L 364.67712 123.579648 
+Q 349.94592 123.579648 349.94592 134.224128 
+L 349.94592 160.480512 
+Q 349.94592 171.124992 364.67712 171.124992 
+z
+" clip-path="url(#p2d86f7dad1)" style="fill: #f7f7f5; stroke: #9aa4ae; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 364.67712 231.443712 
+L 459.93888 231.443712 
+Q 474.67008 231.443712 474.67008 220.799232 
+L 474.67008 194.542848 
+Q 474.67008 183.898368 459.93888 183.898368 
+L 364.67712 183.898368 
+Q 349.94592 183.898368 349.94592 194.542848 
+L 349.94592 220.799232 
+Q 349.94592 231.443712 364.67712 231.443712 
+z
+" clip-path="url(#p2d86f7dad1)" style="fill: #f7f7f5; stroke: #9aa4ae; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 79.87392 323.695872 
+L 180.04608 323.695872 
+Q 194.77728 323.695872 194.77728 313.051392 
+L 194.77728 288.569088 
+Q 194.77728 277.924608 180.04608 277.924608 
+L 79.87392 277.924608 
+Q 65.14272 277.924608 65.14272 288.569088 
+L 65.14272 313.051392 
+Q 65.14272 323.695872 79.87392 323.695872 
+z
+" clip-path="url(#p2d86f7dad1)" style="fill: #f2ece3; stroke: #9aa4ae; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 207.54432 323.695872 
+L 307.71648 323.695872 
+Q 322.44768 323.695872 322.44768 313.051392 
+L 322.44768 288.569088 
+Q 322.44768 277.924608 307.71648 277.924608 
+L 207.54432 277.924608 
+Q 192.81312 277.924608 192.81312 288.569088 
+L 192.81312 313.051392 
+Q 192.81312 323.695872 207.54432 323.695872 
+z
+" clip-path="url(#p2d86f7dad1)" style="fill: #f2ece3; stroke: #9aa4ae; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 335.21472 323.695872 
+L 435.38688 323.695872 
+Q 450.11808 323.695872 450.11808 313.051392 
+L 450.11808 288.569088 
+Q 450.11808 277.924608 435.38688 277.924608 
+L 335.21472 277.924608 
+Q 320.48352 277.924608 320.48352 288.569088 
+L 320.48352 313.051392 
+Q 320.48352 323.695872 335.21472 323.695872 
+z
+" clip-path="url(#p2d86f7dad1)" style="fill: #f2ece3; stroke: #9aa4ae; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_12">
+    <path d="M 143.656162 93.389926 
+Q 166.787016 120.739957 189.051499 147.065586 
+" clip-path="url(#p2d86f7dad1)" style="fill: none; stroke: #6a7682; stroke-width: 1.2; stroke-linecap: round"/>
+    <path d="M 187.784379 141.85076 
+L 189.051499 147.065586 
+L 184.119366 144.950386 
+z
+" clip-path="url(#p2d86f7dad1)" style="fill: #6a7682; stroke: #6a7682; stroke-width: 1.2; stroke-linecap: round"/>
+   </g>
+   <g id="patch_13">
+    <path d="M 145.731483 146.360031 
+Q 166.790162 149.126684 186.51863 151.718577 
+" clip-path="url(#p2d86f7dad1)" style="fill: none; stroke: #6a7682; stroke-width: 1.2; stroke-linecap: round"/>
+    <path d="M 182.072148 148.713782 
+L 186.51863 151.718577 
+L 181.446905 153.472886 
+z
+" clip-path="url(#p2d86f7dad1)" style="fill: #6a7682; stroke: #6a7682; stroke-width: 1.2; stroke-linecap: round"/>
+   </g>
+   <g id="patch_14">
+    <path d="M 144.195185 198.289119 
+Q 166.786744 177.512835 188.390776 157.644728 
+" clip-path="url(#p2d86f7dad1)" style="fill: none; stroke: #6a7682; stroke-width: 1.2; stroke-linecap: round"/>
+    <path d="M 183.233089 159.127382 
+L 188.390776 157.644728 
+L 186.482287 162.66047 
+z
+" clip-path="url(#p2d86f7dad1)" style="fill: #6a7682; stroke: #6a7682; stroke-width: 1.2; stroke-linecap: round"/>
+   </g>
+   <g id="patch_15">
+    <path d="M 314.997623 147.694597 
+Q 333.741655 119.853998 351.736405 93.126313 
+" clip-path="url(#p2d86f7dad1)" style="fill: none; stroke: #6a7682; stroke-width: 1.2; stroke-linecap: round"/>
+    <path d="M 347.06485 95.767634 
+L 351.736405 93.126313 
+L 351.046529 98.448349 
+z
+" clip-path="url(#p2d86f7dad1)" style="fill: #6a7682; stroke: #6a7682; stroke-width: 1.2; stroke-linecap: round"/>
+   </g>
+   <g id="patch_16">
+    <path d="M 317.603275 151.95698 
+Q 333.74072 150.013546 348.546148 148.230527 
+" clip-path="url(#p2d86f7dad1)" style="fill: none; stroke: #6a7682; stroke-width: 1.2; stroke-linecap: round"/>
+    <path d="M 343.493623 146.421661 
+L 348.546148 148.230527 
+L 344.067541 151.187227 
+z
+" clip-path="url(#p2d86f7dad1)" style="fill: #6a7682; stroke: #6a7682; stroke-width: 1.2; stroke-linecap: round"/>
+   </g>
+   <g id="patch_17">
+    <path d="M 315.402227 157.350469 
+Q 333.74091 180.171941 351.239201 201.947593 
+" clip-path="url(#p2d86f7dad1)" style="fill: none; stroke: #6a7682; stroke-width: 1.2; stroke-linecap: round"/>
+    <path d="M 350.103345 196.702611 
+L 351.239201 201.947593 
+L 346.361703 199.709288 
+z
+" clip-path="url(#p2d86f7dad1)" style="fill: #6a7682; stroke: #6a7682; stroke-width: 1.2; stroke-linecap: round"/>
+   </g>
+   <g id="patch_18">
+    <path d="M 247.97339 188.277895 
+Q 191.338271 232.065976 135.76455 275.033426 
+" clip-path="url(#p2d86f7dad1)" style="fill: none; stroke: #6a7682; stroke-width: 1.2; stroke-linecap: round"/>
+    <path d="M 141.029911 273.996132 
+L 135.76455 275.033426 
+L 138.093931 270.198761 
+z
+" clip-path="url(#p2d86f7dad1)" style="fill: #6a7682; stroke: #6a7682; stroke-width: 1.2; stroke-linecap: round"/>
+   </g>
+   <g id="patch_19">
+    <path d="M 253.030047 190.600907 
+Q 255.175161 232.063884 257.250957 272.187013 
+" clip-path="url(#p2d86f7dad1)" style="fill: none; stroke: #6a7682; stroke-width: 1.2; stroke-linecap: round"/>
+    <path d="M 259.399752 267.269424 
+L 257.250957 272.187013 
+L 254.606163 267.517423 
+z
+" clip-path="url(#p2d86f7dad1)" style="fill: #6a7682; stroke: #6a7682; stroke-width: 1.2; stroke-linecap: round"/>
+   </g>
+   <g id="patch_20">
+    <path d="M 257.595484 188.098311 
+Q 319.010408 232.064646 379.334422 275.250009 
+" clip-path="url(#p2d86f7dad1)" style="fill: none; stroke: #6a7682; stroke-width: 1.2; stroke-linecap: round"/>
+    <path d="M 376.828509 270.504443 
+L 379.334422 275.250009 
+L 374.034421 274.407399 
+z
+" clip-path="url(#p2d86f7dad1)" style="fill: #6a7682; stroke: #6a7682; stroke-width: 1.2; stroke-linecap: round"/>
+   </g>
+   <g id="text_1">
+    <text style="fill: #22303c; font: 700 12px 'DejaVu Sans'; text-anchor: middle" x="85.7664" y="86.040183" transform="rotate(-0 85.7664 86.040183)">Sunlight</text>
+   </g>
+   <g id="text_2">
+    <text style="fill: #42505c; font: 10.5px 'DejaVu Sans'" transform="translate(50.027025 90.904851)">UV photolysis</text>
+    <text style="fill: #42505c; font: 10.5px 'DejaVu Sans'" transform="translate(44.635111 103.859308)">starts the chain</text>
+   </g>
+   <g id="text_3">
+    <!-- Ozone (O$_3$) -->
+    <g style="fill: #22303c" transform="translate(49.1064 142.857618)">
+     <text>
+      <tspan style="font: 700 12px 'DejaVu Sans'" x="0 10.201172 17.185547 25.429688 33.972656 42.111328 46.289062 51.773438 67.761914" y="-0.890625">Ozone (O)</tspan>
+      <tspan style="font: 8.4px 'DejaVu Sans'" x="62.089453" y="1.078125">3</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_4">
+    <text style="fill: #42505c; font: 10.5px 'DejaVu Sans'" transform="translate(44.799994 147.675411)">Creates excited</text>
+    <text style="fill: #42505c; font: 10.5px 'DejaVu Sans'" transform="translate(48.607884 160.629868)">oxygen atoms</text>
+   </g>
+   <g id="text_5">
+    <text style="fill: #22303c; font: 700 12px 'DejaVu Sans'; text-anchor: middle" x="85.7664" y="199.628178" transform="rotate(-0 85.7664 199.628178)">Water vapour</text>
+   </g>
+   <g id="text_6">
+    <!-- O($^1$D) + H$_2$O -->
+    <g style="fill: #42505c" transform="translate(52.5864 204.982456)">
+     <text>
+      <tspan style="font: 10.5px 'DejaVu Sans'" x="0 8.264648 17.425503 25.510708 29.607144 32.94479 41.742642 45.080288 58.040215" y="-0.6156250000000014">O(D) + HO</tspan>
+      <tspan style="font: 7.35px 'DejaVu Sans'" x="12.461709 53.076421" y="-4.640625000000001 1.1093749999999982">12</tspan>
+     </text>
+    </g>
+    <text style="fill: #42505c; font: 10.5px 'DejaVu Sans'" transform="translate(61.041361 217.936913)">forms OH</text>
+   </g>
+   <g id="text_7">
+    <text style="fill: #1c6b63; font: 700 24px 'DejaVu Sans'; text-anchor: middle" x="252.72" y="148.43969" transform="rotate(-0 252.72 148.43969)">OH</text>
+   </g>
+   <g id="text_8">
+    <text style="fill: #42505c; font: 11px 'DejaVu Sans'" transform="translate(208.145938 152.357237)">Hydroxyl radical</text>
+    <text style="fill: #42505c; font: 11px 'DejaVu Sans'" transform="translate(195.305156 165.928573)">Short-lived, reactive,</text>
+    <text style="fill: #42505c; font: 11px 'DejaVu Sans'" transform="translate(199.02625 179.499909)">chemically decisive</text>
+   </g>
+   <g id="text_9">
+    <!-- Methane (CH$_4$) -->
+    <g style="fill: #22303c" transform="translate(362.808 83.709791)">
+     <text>
+      <tspan style="font: 700 12px 'DejaVu Sans'" x="0 11.941406 20.080078 25.816406 34.359375 42.457031 51 59.138672 63.316406 68.800781 77.607422 93.437695" y="-0.875">Methane (CH)</tspan>
+      <tspan style="font: 8.4px 'DejaVu Sans'" x="87.765234" y="1.09375">4</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_10">
+    <text style="fill: #42505c; font: 10.5px 'DejaVu Sans'" transform="translate(330.494953 89.698477)">OH initiates methane oxidation</text>
+    <text style="fill: #42505c; font: 10.5px 'DejaVu Sans'" transform="translate(347.541047 102.652934)">and helps set its lifetime</text>
+   </g>
+   <g id="text_11">
+    <text style="fill: #22303c; font: 700 12px 'DejaVu Sans'; text-anchor: middle" x="412.308" y="144.028511" transform="rotate(-0 412.308 144.028511)">Carbon monoxide</text>
+   </g>
+   <g id="text_12">
+    <text style="fill: #42505c; font: 10.5px 'DejaVu Sans'" transform="translate(353.170852 150.017197)">A major OH sink in the</text>
+    <text style="fill: #42505c; font: 10.5px 'DejaVu Sans'" transform="translate(364.788937 162.971654)">lower atmosphere</text>
+   </g>
+   <g id="text_13">
+    <text style="fill: #22303c; font: 700 12px 'DejaVu Sans'; text-anchor: middle" x="412.308" y="204.347231" transform="rotate(-0 412.308 204.347231)">VOCs</text>
+   </g>
+   <g id="text_14">
+    <text style="fill: #42505c; font: 10.5px 'DejaVu Sans'" transform="translate(326.603391 210.335917)">Reactive organics feed oxidation</text>
+    <text style="fill: #42505c; font: 10.5px 'DejaVu Sans'" transform="translate(339.015539 223.290374)">chains and radical recycling</text>
+   </g>
+   <g id="text_15">
+    <text style="fill: #22303c; font: 700 12px 'DejaVu Sans'; text-anchor: middle" x="129.96" y="297.788024" transform="rotate(-0 129.96 297.788024)">Tropospheric ozone</text>
+   </g>
+   <g id="text_16">
+    <text style="fill: #42505c; font: 10.5px 'DejaVu Sans'" transform="translate(63.31125 303.191264)">Secondary chemistry can</text>
+    <text style="fill: #42505c; font: 10.5px 'DejaVu Sans'" transform="translate(54.686484 316.145721)">build ozone near the surface</text>
+   </g>
+   <g id="text_17">
+    <text style="fill: #22303c; font: 700 12px 'DejaVu Sans'; text-anchor: middle" x="257.6304" y="297.741149" transform="rotate(-0 257.6304 297.741149)">Secondary aerosols</text>
+   </g>
+   <g id="text_18">
+    <text style="fill: #42505c; font: 10.5px 'DejaVu Sans'" transform="translate(194.714072 303.191264)">Oxidation products help</text>
+    <text style="fill: #42505c; font: 10.5px 'DejaVu Sans'" transform="translate(209.652783 316.145721)">form fine particles</text>
+   </g>
+   <g id="text_19">
+    <text style="fill: #22303c; font: 700 12px 'DejaVu Sans'; text-anchor: middle" x="385.3008" y="297.788024" transform="rotate(-0 385.3008 297.788024)">More soluble products</text>
+   </g>
+   <g id="text_20">
+    <text style="fill: #42505c; font: 10.5px 'DejaVu Sans'" transform="translate(305.444198 303.191264)">Some products become easier</text>
+    <text style="fill: #42505c; font: 10.5px 'DejaVu Sans'" transform="translate(338.488847 316.145721)">to remove by rain</text>
+   </g>
+   <g id="text_21">
+    <text style="fill: #22303c; font: 700 13px 'DejaVu Sans'; text-anchor: middle" x="252.72" y="94.118166" transform="rotate(-0 252.72 94.118166)">How OH sits at the center of atmospheric self-cleaning</text>
+   </g>
+   <g id="text_22">
+    <text style="fill: #4a5966; font: 10.5px 'DejaVu Sans'; text-anchor: middle" x="252.72" y="104.123584" transform="rotate(-0 252.72 104.123584)">A simplified chemistry map for general readers</text>
+   </g>
+   <g id="text_23">
+    <text style="fill: #5d6773; font: 9px 'DejaVu Sans'; text-anchor: middle" x="252.72" y="353.854957" transform="rotate(-0 252.72 353.854957)">Conceptual figure based on IPCC AR6 Chapter 6, Lelieveld et al. (2004), and Price et al. (2025).</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p2d86f7dad1">
+   <rect x="7.2" y="7.2" width="491.04" height="354.816"/>
+  </clipPath>
+ </defs>
+</svg>
