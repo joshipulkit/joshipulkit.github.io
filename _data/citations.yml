@@ -1,5 +1,5 @@
 metadata:
-  last_updated: '2026-03-27'
+  last_updated: '2026-05-08'
 papers:
   rqIYelAAAAAJ:2osOgNQ5qMEC:
     citations: 9
@@ -9,6 +9,14 @@ papers:
     citations: 5
     title: Taming negative ion resonances using nonlocal exchange-correlation functionals
     year: '2024'
+  rqIYelAAAAAJ:W7OEmFMy1HYC:
+    citations: 0
+    title: Density Functional Theory
+    year: Unknown Year
+  rqIYelAAAAAJ:Y0pCki6q_DkC:
+    citations: 0
+    title: "The Hydroxyl Radical and the Atmosphere\u2019s Self-Cleaning Chemistry"
+    year: Unknown Year
   rqIYelAAAAAJ:qjMakFHDy7sC:
     citations: 4
     title: 'Generalized perturbative singles corrections to the random phase approximation method: Impact on noncovalent interaction energies of closed-and open-shell dimers'
