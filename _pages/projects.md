@@ -34,5 +34,7 @@ nav_order: 3
         {{ project.content | markdownify }}
       </div>
     </section>
-  {% endfor %}
+
+{% endfor %}
+
 </div>

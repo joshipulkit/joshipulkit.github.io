@@ -22,6 +22,7 @@ pagination:
 {% assign blog_description_size = site.blog_description | size %}
 
 {% if blog_name_size > 0 or blog_description_size > 0 %}
+
   <header class="post-header">
     <h1 class="post-title">{{ site.blog_name }}</h1>
     <p class="post-description">{{ site.blog_description }}</p>
