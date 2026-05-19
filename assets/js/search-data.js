@@ -4,41 +4,41 @@ const ninja = document.querySelector('ninja-keys');
 // add the home and posts menu items
 ninja.data = [{
     id: "nav-about",
-    title: "about",
+    title: "About",
     section: "Navigation",
     handler: () => {
       window.location.href = "/";
     },
   },{id: "nav-blog",
-          title: "blog",
+          title: "Blog",
           description: "",
           section: "Navigation",
           handler: () => {
             window.location.href = "/blog/";
           },
         },{id: "nav-publications",
-          title: "publications",
+          title: "Publications",
           description: "Selected publications in reversed chronological order.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/publications/";
           },
         },{id: "nav-research",
-          title: "research",
+          title: "Research",
           description: "Current research directions, methods, and software work.",
           section: "Navigation",
           handler: () => {
-            window.location.href = "/projects/";
+            window.location.href = "/research/";
           },
         },{id: "nav-teaching",
-          title: "teaching",
-          description: "Teaching materials and course information.",
+          title: "Teaching",
+          description: "Courses, tutorials, and supporting material — grouped by year.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/teaching/";
           },
         },{id: "nav-bookshelf",
-          title: "bookshelf",
+          title: "Bookshelf",
           description: "",
           section: "Navigation",
           handler: () => {
@@ -137,51 +137,81 @@ ninja.data = [{
             },},{id: "news-our-paper-on-generalized-perturbative-single-excitation-corrections-for-open-shell-noncovalent-interactions-was-accepted-in-j-chem-phys",
           title: 'Our paper on generalized perturbative single-excitation corrections for open-shell noncovalent interactions was accepted...',
           description: "",
-          section: "News",},{id: "news-the-jpcl-paper-on-negative-ion-resonances-was-selected-for-the-journal-cover",
-          title: 'The JPCL paper on negative ion resonances was selected for the journal cover....',
+          section: "News",},{id: "news-our-jpcl-paper-on-negative-ion-resonances-was-selected-as-the-journal-cover-for-the-may-9-2024-issue",
+          title: 'Our JPCL paper on negative ion resonances was selected as the journal cover...',
           description: "",
-          section: "News",},{id: "news-presented-my-phd-synopsis-seminar-at-tifr-mumbai",
-          title: 'Presented my PhD synopsis seminar at TIFR Mumbai.',
+          section: "News",},{id: "news-presented-my-phd-synopsis-seminar-at-tifr-mumbai-summarising-five-years-of-work-on-fifth-rung-functionals",
+          title: 'Presented my PhD synopsis seminar at TIFR Mumbai, summarising five years of work...',
           description: "",
-          section: "News",},{id: "news-received-international-travel-support-from-anrf-serb",
-          title: 'Received international travel support from ANRF/SERB.',
+          section: "News",},{id: "news-awarded-anrf-serb-international-travel-support-to-attend-the-molecular-electronic-structure-mes-conference",
+          title: 'Awarded ANRF/SERB international travel support to attend the Molecular Electronic Structure (MES) Conference....',
           description: "",
-          section: "News",},{id: "news-awarded-a-csir-travel-grant",
-          title: 'Awarded a CSIR travel grant.',
+          section: "News",},{id: "news-awarded-a-csir-international-travel-grant-to-attend-the-turbomole-today-and-tomorrow-meeting",
+          title: 'Awarded a CSIR international travel grant to attend the Turbomole: Today and Tomorrow...',
           description: "",
-          section: "News",},{id: "news-spoke-at-turbomole-today-and-tomorrow-on-beyond-rpa-corrections-for-open-shell-intermolecular-interactions",
-          title: 'Spoke at “Turbomole: Today and Tomorrow” on beyond-RPA corrections for open-shell intermolecular interactions....',
+          section: "News",},{id: "news-spoke-at-turbomole-today-and-tomorrow-on-beyond-rpa-corrections-for-open-shell-intermolecular-interactions-and-on-the-density-functional-and-post-density-functional-methods-i-m-now-implementing-inside-turbomole",
+          title: 'Spoke at Turbomole: Today and Tomorrow on beyond-RPA corrections for open-shell intermolecular interactions,...',
           description: "",
-          section: "News",},{id: "news-presented-work-on-exact-exchange-and-dynamical-long-range-polarization-at-the-international-conference-on-molecular-electronic-structure",
-          title: 'Presented work on exact exchange and dynamical long-range polarization at the International Conference...',
+          section: "News",},{id: "news-talk-at-the-molecular-electronic-structure-mes-conference-on-exact-exchange-and-dynamical-long-range-polarization-for-negative-ion-resonances",
+          title: 'Talk at the Molecular Electronic Structure (MES) Conference on exact exchange and dynamical...',
           description: "",
-          section: "News",},{id: "news-successfully-defended-my-phd-thesis-on-fifth-rung-density-functionals-for-open-shell-interactions-and-negative-ion-resonances",
-          title: 'Successfully defended my PhD thesis on fifth-rung density functionals for open-shell interactions and...',
+          section: "News",},{id: "news-defended-my-phd-thesis-at-tifr-mumbai-title-fifth-rung-density-functionals-for-open-shell-intermolecular-interactions-and-negative-ion-resonances",
+          title: 'Defended my PhD thesis at TIFR Mumbai. Title: Fifth-Rung Density Functionals for Open-Shell...',
           description: "",
-          section: "News",},{id: "news-joined-friedrich-schiller-university-jena-as-a-postdoctoral-researcher-in-computational-materials-science",
-          title: 'Joined Friedrich-Schiller-University Jena as a postdoctoral researcher in computational materials science.',
+          section: "News",},{id: "news-started-a-postdoc-with-prof-marek-sierka-s-computational-materials-science-group-at-friedrich-schiller-universität-jena-implementing-density-functional-and-post-density-functional-methods-in-turbomole",
+          title: 'Started a postdoc with Prof. Marek Sierka’s Computational Materials Science group at Friedrich-Schiller-Universität...',
           description: "",
-          section: "News",},{id: "news-presented-project-updates-at-the-noa-meeting-spring-2025-in-dornburg-germany",
-          title: 'Presented project updates at the NOA Meeting Spring 2025 in Dornburg, Germany.',
+          section: "News",},{id: "news-presented-work-on-density-functional-embedding-for-realistic-environments-at-the-noa-meeting-spring-2025-dornburg-germany",
+          title: 'Presented work on density-functional embedding for realistic environments at the NOA Meeting Spring...',
           description: "",
           section: "News",},{id: "news-a-comprehensive-overview-of-density-functional-theory-is-now-available-in-the-blog-section",
           title: 'A comprehensive overview of density functional theory is now available in the blog...',
           description: "",
           section: "News",},{id: "projects-density-functional-embedding",
-          title: 'density functional embedding',
+          title: 'Density Functional Embedding',
           description: "embedding theory for realistic materials and condensed-phase chemistry",
           section: "Projects",handler: () => {
               window.location.href = "/projects/1_density-functional-embedding/";
             },},{id: "projects-negative-ion-resonances",
-          title: 'negative ion resonances',
+          title: 'Negative Ion Resonances',
           description: "temporary anions, metastable states, and open-shell interactions",
           section: "Projects",handler: () => {
               window.location.href = "/projects/2_negative-ion-resonances/";
-            },},{id: "projects-methods-software-and-hpc",
-          title: 'methods, software, and HPC',
-          description: "reproducible computational workflows across electronic structure packages",
+            },},{id: "projects-intermolecular-interactions",
+          title: 'Intermolecular Interactions',
+          description: "beyond-RPA corrections for noncovalent interactions in open- and closed-shell dimers",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/3_methods-software-hpc/";
+              window.location.href = "/projects/3_intermolecular-interactions/";
+            },},{id: "teachings-quantum-chemistry",
+          title: 'Quantum Chemistry',
+          description: "",
+          section: "Teachings",handler: () => {
+              window.location.href = "/teachings/2019-qm-tifr/";
+            },},{id: "teachings-symmetry-in-chemistry",
+          title: 'Symmetry in Chemistry',
+          description: "",
+          section: "Teachings",handler: () => {
+              window.location.href = "/teachings/2021-symmetry-tifr/";
+            },},{id: "teachings-algorithmen-des-wissenschaftlichen-rechnens-algorithms-of-scientific-computing",
+          title: 'Algorithmen des Wissenschaftlichen Rechnens (Algorithms of Scientific Computing)',
+          description: "",
+          section: "Teachings",handler: () => {
+              window.location.href = "/teachings/2025-algorithms-scietific-computing-fsu/";
+            },},{id: "teachings-datenverarbeitung-und-maschinelles-lernen-data-processing-and-machine-learning",
+          title: 'Datenverarbeitung und Maschinelles Lernen (Data Processing and Machine Learning)',
+          description: "",
+          section: "Teachings",handler: () => {
+              window.location.href = "/teachings/2025-data-processing-ml/";
+            },},{id: "teachings-theoretisch-chemische-grundlagen-der-materialwissenschaft-theoretical-chemical-foundations-of-materials-science",
+          title: 'Theoretisch-chemische Grundlagen der Materialwissenschaft (Theoretical Chemical Foundations of Materials Science)',
+          description: "",
+          section: "Teachings",handler: () => {
+              window.location.href = "/teachings/2025-theoretical-qm-materials/";
+            },},{id: "teachings-wissenschaftliche-recherche-amp-präsentation-scientific-research-amp-presentation",
+          title: 'Wissenschaftliche Recherche &amp;amp; Präsentation (Scientific Research &amp;amp; Presentation)',
+          description: "",
+          section: "Teachings",handler: () => {
+              window.location.href = "/teachings/2026-scientific-communication-presentation/";
             },},{
         id: 'social-cv',
         title: 'CV',
@@ -223,13 +253,6 @@ ninja.data = [{
         section: 'Socials',
         handler: () => {
           window.open("https://www.researchgate.net/profile/Pulkit-Joshi/", "_blank");
-        },
-      },{
-        id: 'social-rss',
-        title: 'RSS Feed',
-        section: 'Socials',
-        handler: () => {
-          window.open("/feed.xml", "_blank");
         },
       },{
         id: 'social-scholar',
