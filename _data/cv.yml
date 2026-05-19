@@ -22,7 +22,7 @@ cv:
 
   sections:
     summary:
-      - Theoretical and computational chemist working on electronic structure theory, density functional embedding, beyond-RPA corrections, and negative ion resonances.
+      - Theoretical and computational chemist. I work on density functional theory and many-body electronic-structure methods, with a focus on open-shell interactions, negative ion resonances, and density-functional embedding. Developer in TURBOMOLE.
 
     education:
       - institution: Tata Institute of Fundamental Research
@@ -31,6 +31,7 @@ cv:
         degree: PhD
         start_date: 2019
         end_date: 2024
+        advisor: Prof. Vamsee K. Voora
         highlights:
           - Thesis on fifth-rung density functionals for open-shell intermolecular interactions and negative ion resonances.
 
@@ -53,9 +54,9 @@ cv:
         position: Postdoctoral Researcher
         location: Jena, Germany
         start_date: 2025
-        summary: Research in computational materials science with a focus on electronic structure methods for realistic materials, embedding, and metastable states.
+        summary: In Prof. Marek Sierka's Computational Materials Science group, implementing density-functional and post-density-functional methods in TURBOMOLE.
         highlights:
-          - Density functional embedding for realistic environments and periodic electrostatics.
+          - Density-functional embedding for realistic environments and periodic electrostatics.
           - Method development for negative ion resonances and open-shell interactions.
 
       - company: Tata Institute of Fundamental Research
@@ -67,6 +68,7 @@ cv:
           - Continued work on beyond-RPA corrections and resonance theory after the PhD.
 
     selected_honors:
+      - bullet: JPCL Cover Article, Journal of Physical Chemistry Letters (May 2024)
       - bullet: CSIR Travel Grant, Council of Scientific and Industrial Research (2024)
       - bullet: International Travel Support, ANRF / SERB (2024)
 
@@ -103,5 +105,7 @@ cv:
     skills:
       - label: Research Areas
         details: Density Functional Theory, Density Functional Embedding, RPA, Open-Shell Systems, Negative Ion Resonances
-      - label: Software and HPC
-        details: ORCA, CP2K, TURBOMOLE, Psi4, CFOUR, Python, FORTRAN, Linux
+      - label: Software (Developer)
+        details: "TURBOMOLE: implementing density-functional and post-density-functional methods"
+      - label: Software (User)
+        details: ORCA, CP2K, Psi4, CFOUR; Python, FORTRAN, Linux, SLURM

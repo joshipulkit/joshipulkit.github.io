@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Joined Friedrich-Schiller-University Jena as a postdoctoral researcher in computational materials science.
+Started a postdoc with **Prof. Marek Sierka**'s Computational Materials Science group at Friedrich-Schiller-Universität Jena, implementing density-functional and post-density-functional methods in TURBOMOLE.

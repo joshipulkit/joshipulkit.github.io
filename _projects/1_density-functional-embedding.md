@@ -6,9 +6,11 @@ img: assets/img/density_functional_embedding.png
 importance: 1
 ---
 
-This line of work focuses on embedding strategies for realistic environments, with particular attention to periodic electrostatics and multiscale couplings that remain practical on HPC systems.
+A familiar tension in electronic-structure theory is that the methods which capture the right physics often cannot be applied to realistically sized systems. Embedding approaches deal with this by splitting a system into an "active" region treated at a high level and an "environment" treated at a lower level. The hard part is doing this *self-consistently*, especially for periodic systems with long-range electrostatics and polarization response, which is still an open methodological problem.
 
-The broader goal is to make high-level electronic structure theory useful beyond idealized benchmarks and toward settings where materials, interfaces, and complex chemical environments matter.
+With [Prof. Sierka](https://www.cmsg.uni-jena.de/)'s group I work on density-functional and post-density-functional embedding methods inside [TURBOMOLE](https://www.turbomole.org/). The broader aim is to make embedding dependable for realistic chemistry and materials problems, including heterogeneous environments, interfaces, and condensed-phase systems.
+
+I'm equally interested in **excited-state and time-dependent properties**, for instance the response of materials under laser fields, where the embedding picture has to handle non-equilibrium electronic dynamics on top of ground-state energetics. This sits naturally close to the [CRC/SFB 1375 "Nonlinear Optics down to Atomic Scales" (NOA)](https://www.noa.uni-jena.de/) at Jena.
 
 <div class="row justify-content-sm-center">
   <div class="col-sm-10 mt-3 mt-md-0">

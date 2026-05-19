@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Spoke at "Turbomole: Today and Tomorrow" on beyond-RPA corrections for open-shell intermolecular interactions.
+Spoke at **Turbomole: Today and Tomorrow** on beyond-RPA corrections for open-shell intermolecular interactions, and on the density-functional and post-density-functional methods I'm now implementing inside TURBOMOLE.

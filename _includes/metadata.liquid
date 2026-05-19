@@ -226,21 +226,24 @@
     {% endcase %}
   {% endfor %}
 
+  {%- capture ld_description -%}{% if page.description %}{{ page.description }}{% elsif site.description %}{{ site.description }}{% endif %}{%- endcapture -%}
+  {%- capture ld_headline -%}{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}{%- endcapture -%}
+  {%- capture ld_url -%}{{ page.url | prepend: site.baseurl | prepend: site.url }}{%- endcapture -%}
   <script type="application/ld+json">
     {
         "author":
         {
             "@type": "Person",
-            "name": "{{ author_name }}"
+            "name": {{ author_name | jsonify }}
         },
-        "url": "{{ page.url | prepend: site.baseurl | prepend: site.url }}",
+        "url": {{ ld_url | jsonify }},
         "@type": "{% if is_blog_post %}BlogPosting{% else %}WebSite{% endif %}",
-        "description": "{% if page.description %}{{ page.description }}{% else if site.description %}{{ site.description }}{% endif %}",
-        "headline": "{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}",
+        "description": {{ ld_description | jsonify }},
+        "headline": {{ ld_headline | jsonify }},
         {% if sameaslinks != blank %}
         "sameAs": {{ sameaslinks | jsonify }},
         {% endif %}
-        "name": "{{ author_name }}",
+        "name": {{ author_name | jsonify }},
         "@context": "https://schema.org"
     }
   </script>

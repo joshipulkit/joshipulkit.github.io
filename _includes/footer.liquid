@@ -1,30 +1,48 @@
-{% capture footer_contents %}
-  &copy; Copyright {{ site.time | date: '%Y' }}
-  {{ site.first_name }}
-  {{ site.middle_name }}
-  {{ site.last_name }}. {{ site.footer_text }}
+{% capture footer_left %}
+  <span class="footer__copy">&copy; {{ site.time | date: '%Y' }} {{ site.first_name }}{% if site.middle_name %} {{ site.middle_name }}{% endif %} {{ site.last_name }}</span>
+  <span class="footer__sep">·</span>
+  <span class="footer__build">jekyll · github pages</span>
   {% if site.impressum_path %}
-    <a href="{{ site.url }}{{ site.baseurl }}{{ site.impressum_path }}">Impressum</a>.
+    <span class="footer__sep">·</span>
+    <a href="{{ site.url }}{{ site.baseurl }}{{ site.impressum_path }}">impressum</a>
   {% endif %}
   {% if site.last_updated %}
-    Last updated: {{ 'now' | date: '%B %d, %Y' }}.
+    <span class="footer__sep">·</span>
+    <span class="footer__updated">updated {{ 'now' | date: '%Y-%m-%d' }}</span>
   {% endif %}
 {% endcapture %}
 
+{% capture footer_right %}
+  {% for social in site.data.socials %}
+    {% case social[0] %}
+      {% when 'github_username' %}
+        <a href="https://github.com/{{ social[1] }}" rel="me noopener" target="_blank" aria-label="GitHub">github</a>
+      {% when 'scholar_userid' %}
+        <a href="https://scholar.google.com/citations?user={{ social[1] }}" rel="me noopener" target="_blank" aria-label="Google Scholar">scholar</a>
+      {% when 'orcid_id' %}
+        <a href="https://orcid.org/{{ social[1] }}" rel="me noopener" target="_blank" aria-label="ORCID">orcid</a>
+      {% when 'email' %}
+        <a href="mailto:{{ social[1] }}" aria-label="Email">email</a>
+    {% endcase %}
+  {% endfor %}
+{% endcapture %}
+
 {% if site.footer_fixed %}
-  <footer class="fixed-bottom" role="contentinfo">
-    <div class="container mt-0">
-      {{ footer_contents }}
+  <footer class="fixed-bottom footer--mono" role="contentinfo">
+    <div class="container footer__row">
+      <div class="footer__left">{{ footer_left }}</div>
+      <div class="footer__right">{{ footer_right }}</div>
     </div>
   </footer>
 {% else %}
-  <footer class="sticky-bottom mt-5" role="contentinfo">
+  <footer class="sticky-bottom footer--mono mt-5" role="contentinfo">
     {% if site.newsletter.enabled %}
       {% include newsletter.liquid %}
     {% endif %}
 
-    <div class="container">
-      {{ footer_contents }}
+    <div class="container footer__row">
+      <div class="footer__left">{{ footer_left }}</div>
+      <div class="footer__right">{{ footer_right }}</div>
     </div>
   </footer>
 {% endif %}

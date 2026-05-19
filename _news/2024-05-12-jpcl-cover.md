@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-The JPCL paper on negative ion resonances was selected for the journal cover.
+Our JPCL paper on negative ion resonances was selected as the **journal cover** for the May 9, 2024 issue.

@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Awarded a CSIR travel grant.
+Awarded a **CSIR international travel grant** to attend the **Turbomole: Today and Tomorrow** meeting.

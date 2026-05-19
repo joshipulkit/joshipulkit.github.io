@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Received international travel support from ANRF/SERB.
+Awarded **ANRF/SERB international travel support** to attend the **Molecular Electronic Structure (MES) Conference**.

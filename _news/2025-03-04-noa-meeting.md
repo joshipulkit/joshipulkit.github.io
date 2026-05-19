@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Presented project updates at the NOA Meeting Spring 2025 in Dornburg, Germany.
+Presented work on density-functional embedding for realistic environments at the **NOA Meeting Spring 2025** (Dornburg, Germany).

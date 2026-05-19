@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Presented my PhD synopsis seminar at TIFR Mumbai.
+Presented my PhD synopsis seminar at TIFR Mumbai, summarising five years of work on fifth-rung functionals.

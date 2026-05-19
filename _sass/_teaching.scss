@@ -1,0 +1,96 @@
+/*******************************************************************************
+ * Teaching listing styles (year chips, repo button, empty state).
+ ******************************************************************************/
+
+@use "variables" as v;
+
+/* Year-chip filter row at the top of /teaching/ */
+.teaching-years {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1.5rem 0 0.5rem;
+}
+
+.teaching-year-chip {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  padding: 0.3rem 0.7rem;
+  border: 1px solid var(--global-divider-color);
+  border-radius: 999px;
+  color: var(--global-text-color);
+  text-decoration: none;
+  transition: border-color 0.15s ease, color 0.15s ease, background-color 0.15s ease;
+
+  &:hover,
+  &:focus-visible {
+    color: var(--global-theme-color);
+    border-color: var(--global-theme-color);
+    text-decoration: none;
+  }
+
+  &:target {
+    color: var(--global-theme-color);
+    border-color: var(--global-theme-color);
+  }
+}
+
+/* Secondary metadata line under the course title */
+.teaching-meta {
+  margin-top: 0.25rem;
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+
+/* Right-aligned repo CTA */
+.news .teaching-actions {
+  text-align: right;
+  white-space: nowrap;
+  width: 1%;
+}
+
+.teaching-repo {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  padding: 0.35rem 0.75rem;
+  border: 1px solid var(--global-divider-color);
+  border-radius: 6px;
+  color: var(--global-text-color) !important;
+  text-decoration: none !important;
+  transition: border-color 0.15s ease, color 0.15s ease, background-color 0.15s ease;
+
+  &:hover,
+  &:focus-visible {
+    color: var(--global-theme-color) !important;
+    border-color: var(--global-theme-color);
+    text-decoration: none !important;
+  }
+}
+
+/* When the active year section is anchored, accent its heading */
+.section-heading:target .section-heading__text {
+  color: var(--global-theme-color);
+}
+
+/* Empty-state block shown when site.teachings is empty */
+.teaching-empty {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  border: 1px dashed var(--global-divider-color);
+  border-radius: 10px;
+  background: var(--global-surface-color);
+}
+
+.teaching-empty__lead {
+  font-size: 1.05rem;
+  color: var(--global-text-color);
+  margin: 0 0 1rem;
+}
+
+.teaching-empty pre {
+  margin: 0.5rem 0 0;
+  font-size: 0.78rem;
+}

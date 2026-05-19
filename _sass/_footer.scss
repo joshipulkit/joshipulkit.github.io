@@ -2,7 +2,75 @@
  * Footer styles
  ******************************************************************************/
 
-footer.fixed-bottom {
+.footer--mono {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.03em;
+  background-color: var(--global-footer-bg-color);
+  border-top: 1px solid var(--global-divider-color);
+}
+
+.footer--mono .footer__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
+  color: var(--global-footer-text-color);
+}
+
+/* Defeat the global `span { color: var(--global-text-color) }` rule
+   from _typography.scss so footer spans inherit the row color. */
+.footer--mono span {
+  color: inherit;
+}
+
+.footer--mono .footer__left,
+.footer--mono .footer__right {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  color: var(--global-footer-text-color);
+}
+
+.footer--mono .footer__sep {
+  opacity: 0.5;
+}
+
+.footer--mono .footer__updated {
+  color: var(--global-footer-text-color);
+}
+
+.footer--mono a {
+  color: var(--global-footer-link-color);
+  text-decoration: none;
+  text-transform: lowercase;
+  position: relative;
+  transition: color 0.15s ease;
+
+  &:hover {
+    color: var(--global-theme-color);
+    text-decoration: none;
+  }
+}
+
+.footer--mono .footer__right a + a {
+  margin-left: 0.85rem;
+}
+
+@media (max-width: 575.98px) {
+  .footer--mono .footer__row {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+}
+
+/* Keep legacy classes for any other layouts still using them */
+footer.fixed-bottom:not(.footer--mono) {
   background-color: var(--global-footer-bg-color);
   font-size: 0.75rem;
 
@@ -23,7 +91,7 @@ footer.fixed-bottom {
   }
 }
 
-footer.sticky-bottom {
+footer.sticky-bottom:not(.footer--mono) {
   border-top: 1px solid var(--global-divider-color);
   padding-top: 40px;
   padding-bottom: 40px;

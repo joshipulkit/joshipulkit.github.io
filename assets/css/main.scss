@@ -20,12 +20,16 @@
 
 // Core styles organized by usage
 @use "typography";
+@use "hero";
+@use "section-heading";
+@use "page-header";
 @use "navbar";
 @use "footer";
 @use "blog";
 @use "publications";
 @use "components";
 @use "utilities";
+@use "teaching";
 
 // Other specialized styles
 @use "distill";

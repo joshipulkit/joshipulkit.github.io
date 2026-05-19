@@ -1,0 +1,44 @@
+/*******************************************************************************
+ * Unified page header used by every layout: page page.
+ * Renders the existing `<header class="post-header"><h1 class="post-title">…</h1>
+ * <p class="post-description">…</p></header>` markup in the //-mono aesthetic.
+ ******************************************************************************/
+
+@use "variables" as v;
+
+.post > .post-header {
+  margin: 2.5rem 0 1.25rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--global-divider-color);
+}
+
+.post > .post-header .post-title {
+  font-family: var(--font-mono);
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
+  font-weight: 600;
+  text-transform: lowercase;
+  letter-spacing: 0.01em;
+  line-height: 1.15;
+  margin: 0 0 0.4rem;
+  color: var(--global-text-color);
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+
+  &::before {
+    content: "//";
+    color: var(--global-theme-color);
+    font-weight: 500;
+    flex: 0 0 auto;
+  }
+}
+
+.post > .post-header .post-description {
+  font-family: var(--font-sans);
+  font-size: 1.02rem;
+  line-height: 1.55;
+  color: var(--global-text-color-light);
+  margin: 0;
+  max-width: 44rem;
+}

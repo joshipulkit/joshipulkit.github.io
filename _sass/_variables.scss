@@ -32,10 +32,25 @@ $grey-900: #212529;
 $white-color: #ffffff !default;
 $black-color: #000000 !default;
 
+// Accent (tech-flavored deep teal)
+$accent-color-light: #0e7c66 !default;
+$accent-color-dark: #34d399 !default;
+
+// Dark-mode rebalance (GitHub-dark inspired)
+$dark-bg-color: #0d1117 !default;
+$dark-surface-color: #161b22 !default;
+$dark-text-color: #e6edf3 !default;
+$dark-text-muted-color: #7d8590 !default;
+$dark-divider-color: #30363d !default;
+
+// Typography
+$font-family-sans-serif: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
+$font-family-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace !default;
+
 // Theme colors
 
-$code-bg-color-light: rgba($purple-color, 0.05);
-$code-bg-color-dark: #2c3237 !default;
+$code-bg-color-light: rgba($accent-color-light, 0.06);
+$code-bg-color-dark: #1c2128 !default;
 
 // Font awesome location
 $fa-font-path: "../webfonts";

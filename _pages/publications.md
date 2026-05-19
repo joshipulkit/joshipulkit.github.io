@@ -11,6 +11,8 @@ nav_order: 2
 
 <!-- Bibsearch Feature -->
 
+Three peer-reviewed articles to date, one selected as a journal cover. Authorship is listed in the order given by each journal.
+
 {% include bib_search.liquid %}
 
 <div class="publications">

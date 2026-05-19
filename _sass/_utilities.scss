@@ -4,31 +4,95 @@
 
 @use "variables" as v;
 
+// Motion: subtle reveal on scroll (gated by JS adding `.is-visible`)
+.reveal {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.55s cubic-bezier(0.2, 0.7, 0.2, 1),
+    transform 0.55s cubic-bezier(0.2, 0.7, 0.2, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+// Accessibility: keyboard focus ring (does not affect mouse users)
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--global-theme-color);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+// Skip-to-content link: hidden until focused via keyboard
+.skip-to-content {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--global-theme-color);
+  color: var(--global-bg-color);
+  padding: 8px 16px;
+  z-index: 10000;
+  text-decoration: none;
+  border-radius: 0 0 4px 0;
+
+  &:focus {
+    top: 0;
+  }
+}
+
 // Code and syntax highlighting
 
 figure.highlight {
-  margin: 0 0 1rem;
-
-  // Responsive code block container
+  margin: 0 0 1.25rem;
+  position: relative;
+  border-radius: 8px;
+  background-color: var(--global-code-bg-color);
+  border: 1px solid var(--global-divider-color);
+  border-left: 3px solid var(--global-theme-color);
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
 
   pre {
-    // Ensure code blocks can scroll horizontally
     white-space: pre;
     word-wrap: normal;
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
+    background-color: transparent !important;
+    border: 0 !important;
+    margin: 0;
+    padding: 1rem 1.1rem;
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    line-height: 1.55;
   }
 }
 
 pre {
-  color: var(--global-theme-color);
+  color: var(--global-text-color);
   background-color: var(--global-code-bg-color);
-  border-radius: 6px;
-  padding: 6px 12px;
+  border-radius: 8px;
+  padding: 1rem 1.1rem;
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  line-height: 1.55;
+  border-left: 3px solid var(--global-theme-color);
 
-  // Responsive behavior for code blocks
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   white-space: pre;
@@ -47,8 +111,10 @@ pre {
 code {
   color: var(--global-theme-color);
   background-color: var(--global-code-bg-color);
-  border-radius: 3px;
-  padding: 3px 3px;
+  border-radius: 4px;
+  padding: 0.1em 0.35em;
+  font-family: var(--font-mono);
+  font-size: 0.9em;
 
   // Inline code should wrap
   white-space: normal;
