@@ -21,7 +21,10 @@
   border-radius: 999px;
   color: var(--global-text-color);
   text-decoration: none;
-  transition: border-color 0.15s ease, color 0.15s ease, background-color 0.15s ease;
+  transition:
+    border-color 0.15s ease,
+    color 0.15s ease,
+    background-color 0.15s ease;
 
   &:hover,
   &:focus-visible {
@@ -60,7 +63,10 @@
   border-radius: 6px;
   color: var(--global-text-color) !important;
   text-decoration: none !important;
-  transition: border-color 0.15s ease, color 0.15s ease, background-color 0.15s ease;
+  transition:
+    border-color 0.15s ease,
+    color 0.15s ease,
+    background-color 0.15s ease;
 
   &:hover,
   &:focus-visible {

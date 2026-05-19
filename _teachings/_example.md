@@ -5,13 +5,13 @@
 
 published: false
 layout: page
-title: Example Course Title              # required
-year: 2024                               # required — used to group + sort
-year_label: Winter 2024–25               # optional pretty label (otherwise just the year is shown)
-role: Teaching Assistant                 # optional
-professor: Prof. Last Name               # optional
-institution: University of Somewhere     # optional
-repo: https://github.com/user/repo       # optional — renders a `repo →` button
+title: Example Course Title # required
+year: 2024 # required — used to group + sort
+year_label: Winter 2024–25 # optional pretty label (otherwise just the year is shown)
+role: Teaching Assistant # optional
+professor: Prof. Last Name # optional
+institution: University of Somewhere # optional
+repo: https://github.com/user/repo # optional — renders a `repo →` button
 ---
 
 Optional markdown body shown only on the entry's detail page (linked from the listing).

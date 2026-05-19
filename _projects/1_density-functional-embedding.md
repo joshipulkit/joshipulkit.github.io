@@ -6,7 +6,7 @@ img: assets/img/density_functional_embedding.png
 importance: 1
 ---
 
-A familiar tension in electronic-structure theory is that the methods which capture the right physics often cannot be applied to realistically sized systems. Embedding approaches deal with this by splitting a system into an "active" region treated at a high level and an "environment" treated at a lower level. The hard part is doing this *self-consistently*, especially for periodic systems with long-range electrostatics and polarization response, which is still an open methodological problem.
+A familiar tension in electronic-structure theory is that the methods which capture the right physics often cannot be applied to realistically sized systems. Embedding approaches deal with this by splitting a system into an "active" region treated at a high level and an "environment" treated at a lower level. The hard part is doing this _self-consistently_, especially for periodic systems with long-range electrostatics and polarization response, which is still an open methodological problem.
 
 With [Prof. Sierka](https://www.cmsg.uni-jena.de/)'s group I work on density-functional and post-density-functional embedding methods inside [TURBOMOLE](https://www.turbomole.org/). The broader aim is to make embedding dependable for realistic chemistry and materials problems, including heterogeneous environments, interfaces, and condensed-phase systems.
 

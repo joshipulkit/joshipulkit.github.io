@@ -38,7 +38,7 @@ Optional short body for the detail page.
 </nav>
 
 {% for y in years %}
-  {% assign year_items = published_teachings | where: "year", y | sort: "year_label" | reverse %}
+{% assign year_items = published_teachings | where: "year", y | sort: "year_label" | reverse %}
 
   <h2 class="section-heading" id="y{{ y }}">
     <span class="section-heading__text">{{ y }}</span>

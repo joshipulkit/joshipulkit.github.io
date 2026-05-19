@@ -79,7 +79,9 @@
 
   a {
     color: var(--global-text-color);
-    transition: color 0.15s ease, transform 0.15s ease;
+    transition:
+      color 0.15s ease,
+      transform 0.15s ease;
 
     &:hover {
       color: var(--global-theme-color);

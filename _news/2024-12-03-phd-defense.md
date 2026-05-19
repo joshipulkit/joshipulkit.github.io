@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Defended my PhD thesis at TIFR Mumbai. Title: *Fifth-Rung Density Functionals for Open-Shell Intermolecular Interactions and Negative Ion Resonances*.
+Defended my PhD thesis at TIFR Mumbai. Title: _Fifth-Rung Density Functionals for Open-Shell Intermolecular Interactions and Negative Ion Resonances_.

@@ -36,9 +36,7 @@ layout: default
         <div class="hero__media-frame">
           {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
           {% capture profile_alt %}{% if page.profile.image_alt %}{{ page.profile.image_alt }}{% else %}{{ site.first_name }}{% if site.middle_name %} {{ site.middle_name }}{% endif %} {{ site.last_name }}{% endif %}{% endcapture %}
-          {%
-            include figure.liquid loading="eager" path=profile_image_path class="hero__image" sizes="(min-width: 576px) 180px, 50vw" alt=profile_alt cache_bust=true
-          %}
+          {% include figure.liquid loading="eager" path=profile_image_path class="hero__image" sizes="(min-width: 576px) 180px, 50vw" alt=profile_alt cache_bust=true %}
         </div>
       </div>
     {% endif %}
