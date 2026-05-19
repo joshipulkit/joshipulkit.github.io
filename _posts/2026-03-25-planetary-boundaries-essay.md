@@ -5,6 +5,7 @@ date: 2026-03-25 00:00:00+0530
 description: A personal essay on science, policy, and the limits we keep ignoring
 tags: Opinion Science-Policy
 categories: posts
+featured: true
 toc:
   beginning: true
   sidebar: right

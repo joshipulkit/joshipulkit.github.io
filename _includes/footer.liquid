@@ -25,6 +25,7 @@
         <a href="mailto:{{ social[1] }}" aria-label="Email">email</a>
     {% endcase %}
   {% endfor %}
+  <a href="{{ '/feed.xml' | relative_url }}" aria-label="RSS feed">rss</a>
 {% endcapture %}
 
 {% if site.footer_fixed %}

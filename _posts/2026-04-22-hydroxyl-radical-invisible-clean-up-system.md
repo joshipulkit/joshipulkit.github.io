@@ -5,6 +5,7 @@ date: 2026-04-22 00:00:00+0200
 description: Why OH helps determine how long methane and many pollutants remain in the air
 tags: Climate Atmospheric-Chemistry Science
 categories: posts
+featured: true
 toc:
   beginning: true
   sidebar: right
