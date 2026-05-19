@@ -31,12 +31,8 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-My research is in density functional theory and many-body electronic-structure methods. I work mostly on the cases where the usual approximations get stretched thin: open-shell interactions, long-range and periodic electrostatics, and metastable states like temporary anions.
+My research is in density functional theory and many-body electronic-structure methods, particularly the regimes where standard approximations are stretched thin: open-shell interactions, long-range and periodic electrostatics, and metastable states such as temporary anions.
 
-In a recent [JPCL cover article](https://doi.org/10.1021/acs.jpclett.4c00717) (Ghosal, Joshi, Voora), we showed that nonlocal exchange-correlation potentials can describe negative ion resonances reliably even where conventional DFT struggles. A companion [JCP paper](https://doi.org/10.1063/5.0180526) (Joshi, Voora) introduced perturbative singles corrections (RPAS) to the random-phase approximation. These corrections improve interaction energies for both closed- and open-shell dimers, with the biggest gains in the open-shell regime, which has historically been the hardest for post-Kohn-Sham methods.
+Recent work: a [JPCL cover article](https://doi.org/10.1021/acs.jpclett.4c00717) (Ghosal, Joshi, Voora) on nonlocal exchange-correlation potentials for negative ion resonances, and a [JCP paper](https://doi.org/10.1063/5.0180526) (Joshi, Voora) introducing perturbative singles corrections (RPAS) that improve noncovalent interaction energies of open- and closed-shell dimers.
 
-I did my PhD with [Prof. Vamsee K. Voora](https://vkvoora.github.io/) at TIFR Mumbai, working on fifth-rung density functionals for open-shell intermolecular interactions and negative ion resonances. I now work with [Prof. Marek Sierka](https://www.cmsg.uni-jena.de/) in the Computational Materials Science group at FSU Jena, on density-functional embedding for realistic environments.
-
-I'm a developer in [TURBOMOLE](https://www.turbomole.org/), contributing density-functional and post-density-functional methods (embedding, beyond-RPA corrections, nonlocal exchange-correlation potentials). For benchmarking and cross-validation I also use ORCA, CP2K, Psi4, and CFOUR.
-
-At the postgraduate level I teach across quantum mechanics, symmetry, scientific computing, machine learning, and materials theory. The current list is at [/teaching/](/teaching/).
+I trained with [Prof. Vamsee K. Voora](https://vkvoora.github.io/) at TIFR Mumbai and now work with [Prof. Marek Sierka](https://www.cmsg.uni-jena.de/) at FSU Jena, where I develop density-functional and post-density-functional methods inside [TURBOMOLE](https://www.turbomole.org/).
