@@ -31,8 +31,8 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-My research is in density functional theory and many-body electronic-structure methods, particularly the regimes where standard approximations are stretched thin: open-shell interactions, long-range and periodic electrostatics, and metastable states such as temporary anions.
+My research is in density functional theory and many-body electronic-structure methods, particularly the regimes where standard approximations are stretched thin: open-shell interactions, long-range and periodic electrostatics in nanomaterials, and metastable states such as temporary anions.
 
 Recent work: a [JPCL cover article](https://doi.org/10.1021/acs.jpclett.4c00717) (Ghosal, Joshi, Voora) on nonlocal exchange-correlation potentials for negative ion resonances, and a [JCP paper](https://doi.org/10.1063/5.0180526) (Joshi, Voora) introducing perturbative singles corrections (RPAS) that improve noncovalent interaction energies of open- and closed-shell dimers.
 
-I trained with [Prof. Vamsee K. Voora](https://vkvoora.github.io/) at TIFR Mumbai and now work with [Prof. Marek Sierka](https://www.cmsg.uni-jena.de/) at FSU Jena, where I develop density-functional and post-density-functional methods inside [TURBOMOLE](https://www.turbomole.org/).
+I trained with [Prof. Vamsee K. Voora](https://vkvoora.github.io/) at TIFR Mumbai developing density-functional and many body electronic structure methods. Currently, I am working  with [Prof. Marek Sierka](https://www.cmsg.uni-jena.de/) at FSU Jena, where I develop similar methods for interesting nanomaterial applications inside [TURBOMOLE](https://www.turbomole.org/).
