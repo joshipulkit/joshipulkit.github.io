@@ -1,6 +1,6 @@
 ---
 layout: page
-title: density functional embedding
+title: Density Functional Embedding
 description: embedding theory for realistic materials and condensed-phase chemistry
 img: assets/img/density_functional_embedding.png
 importance: 1

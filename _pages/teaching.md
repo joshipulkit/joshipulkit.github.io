@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /teaching/
-title: teaching
+title: Teaching
 description: Courses, tutorials, and supporting material — grouped by year.
 nav: true
 nav_order: 6

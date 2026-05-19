@@ -50,8 +50,8 @@ layout: default
     <!-- News -->
     {% if page.announcements and page.announcements.enabled %}
       <h2 class="section-heading reveal">
-        <a href="{{ '/news/' | relative_url }}">news</a>
-        <a class="section-heading__more" href="{{ '/news/' | relative_url }}">see all →</a>
+        <a href="{{ '/news/' | relative_url }}">News</a>
+        <a class="section-heading__more" href="{{ '/news/' | relative_url }}">See all →</a>
       </h2>
       <div class="reveal">{% include news.liquid limit=true %}</div>
     {% endif %}
@@ -59,8 +59,8 @@ layout: default
     <!-- Latest posts -->
     {% if page.latest_posts and page.latest_posts.enabled %}
       <h2 class="section-heading reveal">
-        <a href="{{ '/blog/' | relative_url }}">latest posts</a>
-        <a class="section-heading__more" href="{{ '/blog/' | relative_url }}">see all →</a>
+        <a href="{{ '/blog/' | relative_url }}">Latest Posts</a>
+        <a class="section-heading__more" href="{{ '/blog/' | relative_url }}">See all →</a>
       </h2>
       <div class="reveal">{% include latest_posts.liquid %}</div>
     {% endif %}
@@ -68,8 +68,8 @@ layout: default
     <!-- Selected papers -->
     {% if page.selected_papers %}
       <h2 class="section-heading reveal">
-        <a href="{{ '/publications/' | relative_url }}">selected publications</a>
-        <a class="section-heading__more" href="{{ '/publications/' | relative_url }}">see all →</a>
+        <a href="{{ '/publications/' | relative_url }}">Selected Publications</a>
+        <a class="section-heading__more" href="{{ '/publications/' | relative_url }}">See all →</a>
       </h2>
       <div class="reveal">{% include selected_papers.liquid %}</div>
     {% endif %}

@@ -1,14 +1,14 @@
 {% capture footer_left %}
   <span class="footer__copy">&copy; {{ site.time | date: '%Y' }} {{ site.first_name }}{% if site.middle_name %} {{ site.middle_name }}{% endif %} {{ site.last_name }}</span>
   <span class="footer__sep">·</span>
-  <span class="footer__build">jekyll · github pages</span>
+  <span class="footer__build">Jekyll · GitHub Pages</span>
   {% if site.impressum_path %}
     <span class="footer__sep">·</span>
-    <a href="{{ site.url }}{{ site.baseurl }}{{ site.impressum_path }}">impressum</a>
+    <a href="{{ site.url }}{{ site.baseurl }}{{ site.impressum_path }}">Impressum</a>
   {% endif %}
   {% if site.last_updated %}
     <span class="footer__sep">·</span>
-    <span class="footer__updated">updated {{ 'now' | date: '%Y-%m-%d' }}</span>
+    <span class="footer__updated">Updated {{ 'now' | date: '%Y-%m-%d' }}</span>
   {% endif %}
 {% endcapture %}
 
@@ -16,16 +16,17 @@
   {% for social in site.data.socials %}
     {% case social[0] %}
       {% when 'github_username' %}
-        <a href="https://github.com/{{ social[1] }}" rel="me noopener" target="_blank" aria-label="GitHub">github</a>
+        <a href="https://github.com/{{ social[1] }}" rel="me noopener" target="_blank" aria-label="GitHub">GitHub</a>
+      {% when 'linkedin_username' %}
+        <a href="https://www.linkedin.com/in/{{ social[1] }}" rel="me noopener" target="_blank" aria-label="LinkedIn">LinkedIn</a>
       {% when 'scholar_userid' %}
-        <a href="https://scholar.google.com/citations?user={{ social[1] }}" rel="me noopener" target="_blank" aria-label="Google Scholar">scholar</a>
+        <a href="https://scholar.google.com/citations?user={{ social[1] }}" rel="me noopener" target="_blank" aria-label="Google Scholar">Scholar</a>
       {% when 'orcid_id' %}
-        <a href="https://orcid.org/{{ social[1] }}" rel="me noopener" target="_blank" aria-label="ORCID">orcid</a>
+        <a href="https://orcid.org/{{ social[1] }}" rel="me noopener" target="_blank" aria-label="ORCID">ORCID</a>
       {% when 'email' %}
-        <a href="mailto:{{ social[1] }}" aria-label="Email">email</a>
+        <a href="mailto:{{ social[1] }}" aria-label="Email">Email</a>
     {% endcase %}
   {% endfor %}
-  <a href="{{ '/feed.xml' | relative_url }}" aria-label="RSS feed">rss</a>
 {% endcapture %}
 
 {% if site.footer_fixed %}

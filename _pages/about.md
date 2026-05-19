@@ -1,6 +1,6 @@
 ---
 layout: about
-title: about
+title: About
 permalink: /
 subtitle: Developing scalable electronic structure methods for realistic materials and spectroscopy-driven applications.
 
@@ -9,7 +9,7 @@ profile:
   image: avatar_pulkit.png
   image_circular: false # crops the image to make it circular
   image_alt: Pulkit Joshi
-  kicker: postdoctoral researcher · jena, de
+  kicker: Postdoctoral Researcher · Jena, DE
   more_info: >
     <p>Computational Materials Science Group</p>
     <p>Otto Schott Institute for Materials Research</p>

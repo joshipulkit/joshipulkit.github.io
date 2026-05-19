@@ -1,6 +1,6 @@
 ---
 layout: page
-title: negative ion resonances
+title: Negative Ion Resonances
 description: temporary anions, metastable states, and open-shell interactions
 img: assets/img/open_shell_anionic_states.png
 importance: 2

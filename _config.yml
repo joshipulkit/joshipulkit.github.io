@@ -90,8 +90,8 @@ bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 # Blog
 # -----------------------------------------------------------------------------
 
-blog_name: blog # blog_name will be displayed in your blog page
-blog_description: posts, notes, and short technical writeups
+blog_name: Blog # blog_name will be displayed in your blog page
+blog_description: Posts, notes, and short technical writeups.
 permalink: /blog/:year/:title/
 lsi: false # produce an index for related posts
 

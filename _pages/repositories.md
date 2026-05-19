@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /repositories/
-title: repositories
+title: Repositories
 description: GitHub profile cards and selected repositories.
 nav: false
 nav_order: 4

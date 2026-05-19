@@ -1,6 +1,6 @@
 ---
 layout: page
-title: news
+title: News
 permalink: /news/
 description: Talks, appointments, publications, and milestones.
 ---

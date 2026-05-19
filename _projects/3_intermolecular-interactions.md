@@ -1,6 +1,6 @@
 ---
 layout: page
-title: intermolecular interactions
+title: Intermolecular Interactions
 description: beyond-RPA corrections for noncovalent interactions in open- and closed-shell dimers
 img: assets/img/publication_preview/rpas_jcp.png
 importance: 3
