@@ -14,6 +14,8 @@ profile:
     <p>Computational Materials Science Group</p>
     <p>Otto Schott Institute for Materials Research</p>
     <p>Löbdergraben 32, 07743 Jena, Germany</p>
+    <p><a href="mailto:pulkit.joshi@uni-jena.de">pulkit.joshi@uni-jena.de</a></p>
+    <p><a href="mailto:pulkitjoshi896@gmail.com">pulkitjoshi896@gmail.com</a></p>
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
