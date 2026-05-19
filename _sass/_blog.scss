@@ -2,42 +2,9 @@
  * Blog post and listing styles
  ******************************************************************************/
 
-.header-bar {
-  border-bottom: 1px solid var(--global-divider-color);
-  text-align: left;
-  padding: 2.5rem 0 1.25rem;
-  margin-bottom: 1.5rem;
-
-  h1 {
-    font-family: var(--font-mono);
-    font-size: clamp(1.5rem, 3vw, 2.1rem);
-    font-weight: 600;
-    text-transform: lowercase;
-    letter-spacing: 0.01em;
-    line-height: 1.15;
-    margin: 0 0 0.4rem;
-    color: var(--global-text-color);
-    display: flex;
-    align-items: baseline;
-    gap: 0.6rem;
-    flex-wrap: wrap;
-
-    &::before {
-      content: "//";
-      color: var(--global-theme-color);
-      font-weight: 500;
-      flex: 0 0 auto;
-    }
-  }
-
-  h2 {
-    font-family: var(--font-sans);
-    font-size: 1rem;
-    font-weight: 400;
-    color: var(--global-text-color-light);
-    margin: 0;
-  }
-}
+// .header-bar removed in Part 5: blog page now uses the unified
+// `<header class="post-header">` markup so the layout matches all
+// other listing pages (styles in _sass/_page-header.scss).
 
 /* Blog post-list: clean mono metadata, no icons */
 .post-list li {

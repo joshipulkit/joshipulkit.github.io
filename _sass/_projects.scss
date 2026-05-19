@@ -1,0 +1,117 @@
+/*******************************************************************************
+ * Research index: profile-style alternating rows.
+ * Image floats left or right at ~32% width with copy flowing beside and
+ * wrapping under, matching `_layouts/profiles.liquid` behaviour.
+ ******************************************************************************/
+
+@use "variables" as v;
+
+.research-list {
+  margin-top: 1rem;
+}
+
+.research-row__sep {
+  border: 0;
+  border-top: 1px solid var(--global-divider-color);
+  margin: 2rem 0 1.5rem;
+}
+
+.research-row {
+  margin-bottom: 1rem;
+}
+
+// Media wrapper: floats on desktop, full-width on mobile.
+.research-row__media {
+  width: 100%;
+  margin: 0 auto 1.25rem;
+  display: block;
+
+  .project-svg {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    color: var(--global-text-color);
+    display: block;
+    margin: 0 auto;
+    transition: transform 0.35s ease;
+  }
+
+  &:hover .project-svg {
+    transform: translateY(-2px);
+  }
+}
+
+@media (min-width: 576px) {
+  .research-row__media {
+    width: 34%;
+    margin-bottom: 0.5rem;
+
+    .project-svg {
+      max-width: 100%;
+    }
+  }
+
+  .research-row__media--right {
+    float: right;
+    margin: 0 0 1rem 1.5rem;
+  }
+
+  .research-row__media--left {
+    float: left;
+    margin: 0 1.5rem 1rem 0;
+  }
+}
+
+.research-row__title {
+  font-family: var(--font-mono);
+  font-size: clamp(1.2rem, 2.2vw, 1.55rem);
+  font-weight: 600;
+  text-transform: lowercase;
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+  color: var(--global-text-color);
+  margin: 0 0 0.55rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.55rem;
+  flex-wrap: wrap;
+
+  &::before {
+    content: "//";
+    color: var(--global-theme-color);
+    font-weight: 500;
+    flex: 0 0 auto;
+  }
+}
+
+.research-row__desc {
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  color: var(--global-text-color-light);
+  margin: 0 0 0.85rem;
+  font-style: italic;
+}
+
+.research-row__body {
+  font-size: 0.98rem;
+  line-height: 1.6;
+
+  p {
+    margin: 0 0 0.85rem;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  a {
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.15s ease;
+
+    &:hover {
+      border-bottom-color: var(--global-theme-color);
+      text-decoration: none;
+    }
+  }
+}

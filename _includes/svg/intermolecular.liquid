@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 320" class="project-svg" role="img" aria-label="Intermolecular interaction: two molecular fragments with an open-shell partner and an interaction region between them.">
+  <defs>
+    <radialGradient id="int-cloud" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#0e7c66" stop-opacity="0.32" />
+      <stop offset="100%" stop-color="#0e7c66" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <!-- Interaction region: faint teal cloud + dotted boundary -->
+  <ellipse cx="240" cy="160" rx="100" ry="36" fill="url(#int-cloud)" />
+  <ellipse cx="240" cy="160" rx="100" ry="36" fill="none" stroke="#0e7c66" stroke-width="1" stroke-dasharray="2 4" opacity="0.55" />
+
+  <!-- Bracket showing inter-fragment distance R -->
+  <g stroke="currentColor" stroke-width="1" fill="none" opacity="0.5">
+    <line x1="160" y1="232" x2="160" y2="244" />
+    <line x1="320" y1="232" x2="320" y2="244" />
+    <line x1="160" y1="240" x2="320" y2="240" />
+  </g>
+
+  <!-- Left fragment: closed-shell 3-atom cluster -->
+  <g>
+    <line x1="124" y1="135" x2="100" y2="182" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.85" />
+    <line x1="124" y1="135" x2="152" y2="182" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.85" />
+    <line x1="100" y1="182" x2="152" y2="182" stroke="currentColor" stroke-width="2" stroke-linecap="round" opacity="0.85" />
+    <circle cx="124" cy="135" r="6" fill="currentColor" opacity="0.85" />
+    <circle cx="100" cy="182" r="6" fill="currentColor" opacity="0.85" />
+    <circle cx="152" cy="182" r="6" fill="currentColor" opacity="0.85" />
+    <!-- density halo -->
+    <ellipse cx="124" cy="162" rx="44" ry="36" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="3 3" opacity="0.3" />
+  </g>
+
+  <!-- Right fragment: open-shell partner with spin arrow -->
+  <g>
+    <circle cx="360" cy="160" r="9" fill="#0e7c66" />
+    <ellipse cx="360" cy="160" rx="36" ry="36" fill="none" stroke="#0e7c66" stroke-width="1" stroke-dasharray="3 3" opacity="0.45" />
+    <!-- spin-up arrow -->
+    <line x1="360" y1="120" x2="360" y2="148" stroke="#0e7c66" stroke-width="1.8" stroke-linecap="round" />
+    <polyline points="354,128 360,120 366,128" fill="none" stroke="#0e7c66" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+
+  <!-- Mono labels -->
+  <g font-family="JetBrains Mono, ui-monospace, monospace" font-size="11" letter-spacing="0.04em" fill="currentColor">
+    <text x="240" y="120" text-anchor="middle" fill="#0e7c66">ΔE_int</text>
+    <text x="124" y="216" text-anchor="middle" opacity="0.7">closed shell</text>
+    <text x="360" y="216" text-anchor="middle" fill="#0e7c66">open shell</text>
+    <text x="240" y="262" text-anchor="middle" opacity="0.55">R</text>
+  </g>
+</svg>
