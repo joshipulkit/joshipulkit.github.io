@@ -40,6 +40,34 @@ select:focus-visible {
   border-radius: 2px;
 }
 
+// Chip: the one pill primitive shared by blog tags, teaching year chips,
+// repo buttons, and publication link buttons.
+.chip {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  letter-spacing: 0.04em;
+  padding: 0.3rem 0.75rem;
+  border: 1px solid var(--global-divider-color);
+  border-radius: 999px;
+  color: var(--global-text-color);
+  text-decoration: none;
+  transition: var(--transition-fast);
+
+  &:hover,
+  &:focus-visible {
+    color: var(--global-theme-color);
+    border-color: var(--global-theme-color);
+    background-color: var(--global-surface-color);
+    text-decoration: none;
+  }
+}
+
+.chip--category {
+  color: var(--global-text-color-light);
+  border-style: dashed;
+}
+
 // Skip-to-content link: hidden until focused via keyboard
 .skip-to-content {
   position: absolute;
@@ -248,12 +276,15 @@ nav[data-toggle="toc"] {
   top: 5rem;
 
   .nav .nav > li > a {
-    font-size: 0.75rem;
+    font-size: 0.72rem;
   }
 
   .nav > li > a {
-    color: var(--global-text-color);
-    font-size: 0.75rem;
+    font-family: var(--font-mono);
+    letter-spacing: 0.02em;
+    color: var(--global-text-color-light);
+    font-size: 0.72rem;
+    transition: var(--transition-fast);
 
     &:hover {
       color: var(--global-hover-color);
@@ -262,9 +293,10 @@ nav[data-toggle="toc"] {
   }
 
   .nav-link.active {
+    font-family: var(--font-mono);
     color: var(--global-theme-color);
     border-left-color: var(--global-theme-color);
-    font-size: 0.75rem;
+    font-size: 0.72rem;
 
     &:hover {
       color: var(--global-hover-color);
@@ -274,7 +306,7 @@ nav[data-toggle="toc"] {
 }
 
 /* small screens */
-@media (max-width: 576px) {
+@media (max-width: 575.98px) {
   /* override stickyness so that the navigation does not follow scrolling */
   nav[data-toggle="toc"] {
     visibility: hidden;
@@ -439,7 +471,7 @@ nav[data-toggle="toc"] {
   cursor: pointer;
 }
 
-@media (max-width: 575px) {
+@media (max-width: 575.98px) {
   .newsletter-form-input,
   .newsletter-form-button,
   .newsletter-loading-button,
@@ -550,89 +582,80 @@ ninja-keys {
   --ninja-icon-size: 0px;
   --ninja-modal-background: var(--global-bg-color);
   --ninja-z-index: 1031;
+  --ninja-font-family: var(--font-sans);
+  --ninja-text-color: var(--global-text-color);
+  --ninja-secondary-text-color: var(--global-text-color-light);
+  --ninja-selected-background: var(--global-accent-wash);
+  --ninja-footer-background: var(--global-surface-color);
+  --ninja-key-border-radius: 5px;
+  --ninja-modal-shadow: 0 24px 60px -24px rgba(10, 14, 30, 0.45);
 }
 
 ninja-keys::part(ninja-input) {
-  color: var(--ninja-selected-text-color);
+  color: var(--global-text-color);
+  font-family: var(--font-mono);
 }
 
 ninja-keys::part(ninja-input-wrapper) {
   background: var(--global-bg-color);
+  border-bottom: 1px solid var(--global-divider-color);
 }
 
 // Books shelf
 
+ul.book-shelf-row {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding: 0;
+  margin: 0 0 1.5rem;
+}
+
 figure.cover {
   display: inline-block;
   text-align: center;
-  margin: 0.5rem; /* adjust as needed */
+  margin: 0.5rem;
 
   img {
     vertical-align: bottom;
+    border-radius: 4px;
+    box-shadow: 0 0 0 1px var(--global-divider-color);
+    transition: var(--transition-fast);
+  }
+
+  &:hover img {
+    transform: translateY(-3px);
+    box-shadow:
+      0 0 0 1px var(--global-divider-color),
+      0 14px 28px -16px rgba(10, 14, 30, 0.35);
+  }
+
+  figcaption {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--global-text-color-light);
+    background-color: transparent;
+    margin-top: 0.45rem;
+  }
+
+  /* Reading-status accents: text color only, no painted bars */
+  figcaption.reading,
+  figcaption.watching,
+  figcaption.reread,
+  figcaption.rewatch {
+    color: var(--global-theme-color);
   }
 
   figcaption.abandoned {
-    font-family: monospace;
-    color: #23212d;
-    text-transform: uppercase;
-    background-color: #ee5f5b;
-  }
-
-  figcaption.finished,
-  figcaption.watched {
-    font-family: monospace;
-    color: #23212d;
-    text-transform: uppercase;
-    background-color: #62c462;
-  }
-
-  figcaption.interested {
-    font-family: monospace;
-    color: #23212d;
-    text-transform: uppercase;
-    background-color: #7691db;
-  }
-
-  figcaption.paused {
-    font-family: monospace;
-    color: #23212d;
-    text-transform: uppercase;
-    background-color: #bdac7e;
-  }
-
-  figcaption.queued {
-    font-family: monospace;
-    color: #23212d;
-    text-transform: uppercase;
-    background-color: #9e76b5;
-  }
-
-  figcaption.reading,
-  figcaption.watching {
-    font-family: monospace;
-    color: #23212d;
-    text-transform: uppercase;
-    background-color: #f89406;
-  }
-
-  figcaption.reread,
-  figcaption.rewatch {
-    font-family: monospace;
-    color: #23212d;
-    text-transform: uppercase;
-    background-color: #a6517d;
-  }
-
-  figcaption.uncategorized {
-    font-family: monospace;
-    color: #23212d;
-    text-transform: uppercase;
-    background-color: #b0abb3;
+    color: var(--global-oxide-color);
   }
 
   /* mouse over link */
   a.cover-link:hover {
-    color: #23212d !important;
+    text-decoration: none;
   }
 }
 

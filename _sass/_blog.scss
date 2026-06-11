@@ -35,22 +35,10 @@
 }
 
 .tag-category-list {
-  border-bottom: 1px solid var(--global-divider-color);
-  text-align: center;
-  padding-top: 1rem;
-
-  ul {
-    justify-content: center;
-    display: flow-root;
-
-    p,
-    li {
-      list-style: none;
-      display: inline-block;
-      padding: 1rem 0.5rem;
-      color: var(--global-text-color-light);
-    }
-  }
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0 0 1.75rem;
 }
 
 .post-title {
@@ -101,35 +89,54 @@
 .pagination {
   .page-item {
     .page-link {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
       color: var(--global-text-color);
-      padding: 0.75rem 1.15rem;
+      background-color: transparent;
+      border: 1px solid var(--global-divider-color);
+      padding: 0.6rem 1rem;
+      transition: var(--transition-fast);
 
       &:hover {
-        color: #000;
+        color: var(--global-theme-color);
+        border-color: var(--global-theme-color);
+        background-color: var(--global-surface-color);
       }
     }
 
     &.active .page-link {
-      color: #fff;
+      color: var(--global-bg-color);
       background-color: var(--global-theme-color);
+      border-color: var(--global-theme-color);
 
       &:hover {
+        color: var(--global-bg-color);
         background-color: var(--global-theme-color);
       }
+    }
+
+    &.disabled .page-link {
+      color: var(--global-text-color-light);
+      background-color: transparent;
+      opacity: 0.5;
     }
   }
 }
 
 .post {
   .post-meta {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.03em;
     color: var(--global-text-color-light);
-    font-size: 0.875rem;
     margin-bottom: 0;
   }
 
   .post-tags {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.03em;
     color: var(--global-text-color-light);
-    font-size: 0.875rem;
     padding-top: 0.25rem;
     padding-bottom: 1rem;
 
@@ -144,32 +151,87 @@
   }
 }
 
-.featured-posts {
-  a {
-    color: var(--global-text-color-light);
-    text-decoration: none;
+/* Featured posts: editorial lead rows, not a card grid */
+.featured-leads {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  margin: 0 0 2.5rem;
 
-    .card-text {
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
+  @media (max-width: 767.98px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.featured-lead {
+  display: block;
+  position: relative;
+  padding: 1.4rem 1.5rem 1.25rem;
+  border: 1px solid var(--global-divider-color);
+  border-radius: 8px;
+  text-decoration: none !important;
+  transition: var(--transition-fast);
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: -1px;
+    top: -1px;
+    bottom: -1px;
+    width: 3px;
+    border-radius: 8px 0 0 8px;
+    background: var(--global-theme-color);
+    transform: scaleY(0);
+    transform-origin: top center;
+    transition: var(--transition-fast);
+  }
+
+  &:hover {
+    border-color: var(--global-theme-color);
+    background-color: var(--global-surface-color);
+
+    &::before {
+      transform: scaleY(1);
     }
 
-    &:hover {
+    .featured-lead__title {
       color: var(--global-theme-color);
-
-      .card-title {
-        color: var(--global-theme-color);
-      }
     }
   }
+}
 
-  .post-meta {
-    color: var(--global-text-color-light);
-    font-size: 0.875rem;
-    margin-bottom: 0;
-    padding-top: 0.5rem;
-  }
+.featured-lead__eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--global-oxide-color);
+  margin: 0 0 0.5rem;
+}
+
+.featured-lead__title {
+  font-family: var(--font-display);
+  font-size: 1.18rem;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--global-text-color);
+  margin: 0 0 0.45rem;
+  transition: var(--transition-fast);
+}
+
+.featured-lead__desc {
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--global-text-color-light);
+  margin: 0 0 0.7rem;
+}
+
+.featured-lead__meta {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  color: var(--global-text-color-light);
+  margin: 0;
 }
 
 .post-description {
@@ -186,6 +248,36 @@
   }
 }
 
+/* Markdown tables inside article content (classless tables only, so the
+   .table card rows and CV tables keep their own treatments) */
+.post article table:not([class]) {
+  width: 100%;
+  margin: 1.5rem 0;
+  border-collapse: collapse;
+
+  th {
+    font-family: var(--font-mono);
+    font-size: 0.74rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--global-text-color-light);
+    text-align: left;
+    padding: 0.55rem 0.9rem;
+    border-bottom: 2px solid var(--global-divider-color);
+  }
+
+  td {
+    font-size: 0.94rem;
+    padding: 0.55rem 0.9rem;
+    border-bottom: 1px solid var(--global-divider-color);
+  }
+
+  tr:hover td {
+    background-color: var(--global-surface-color);
+  }
+}
+
 /* News & latest-posts card-row treatment (used on about page) */
 .news {
   margin: 1rem 0 2rem;
@@ -199,7 +291,7 @@
 
   tr {
     position: relative;
-    transition: background-color 0.18s ease;
+    transition: var(--transition-fast);
 
     th,
     td {
@@ -219,7 +311,7 @@
       font-weight: 500;
       white-space: nowrap;
       width: 22%;
-      transition: color 0.18s ease;
+      transition: var(--transition-fast);
     }
 
     td {
@@ -238,7 +330,7 @@
       background: var(--global-theme-color);
       transform: scaleY(0);
       transform-origin: top center;
-      transition: transform 0.22s ease;
+      transition: var(--transition-fast);
     }
 
     &:hover {
@@ -261,10 +353,38 @@
   .news-title {
     color: var(--global-text-color);
     font-weight: 500;
-    transition: color 0.15s ease;
+    transition: var(--transition-fast);
 
     &:hover {
       text-decoration: none;
+    }
+  }
+
+  /* Phones: stack the date label above the entry text so the fixed-width
+     date column can never force horizontal scroll. */
+  @media (max-width: 575.98px) {
+    .table,
+    tbody {
+      display: block;
+    }
+
+    tr {
+      display: block;
+      padding: 0.85rem 0.9rem;
+      border-bottom: 1px solid var(--global-divider-color);
+
+      th,
+      td {
+        display: block;
+        width: auto;
+        white-space: normal;
+        border-bottom: none;
+        padding: 0 !important;
+      }
+
+      th {
+        margin-bottom: 0.25rem;
+      }
     }
   }
 }

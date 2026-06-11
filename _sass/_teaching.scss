@@ -53,6 +53,22 @@
   width: 1%;
 }
 
+/* Phones: the row stacking from _blog.scss applies; the actions cell
+   becomes a left-aligned block below the meta line. */
+@media (max-width: 575.98px) {
+  .news .teaching-actions {
+    text-align: left;
+    width: auto;
+    white-space: normal;
+    margin-top: 0.5rem;
+
+    &:empty {
+      display: none;
+      margin: 0;
+    }
+  }
+}
+
 .teaching-repo {
   display: inline-block;
   font-family: var(--font-mono);

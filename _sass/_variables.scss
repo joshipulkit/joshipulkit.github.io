@@ -32,33 +32,44 @@ $grey-900: #212529;
 $white-color: #ffffff !default;
 $black-color: #000000 !default;
 
-// Accent (tech-flavored deep teal)
-$accent-color-light: #0e7c66 !default;
-$accent-color-dark: #34d399 !default;
+// "Scholarly editorial" identity
+// Accent: deep cobalt (UI, links, focus). Counterpoint: warm oxide,
+// reserved exclusively for the resonance-peak signature marks.
+$accent-color-light: #2244cc !default;
+$accent-color-dark: #8fa4ff !default;
+$oxide-color-light: #bf4d2e !default;
+$oxide-color-dark: #e2826b !default;
 
-// Dark-mode rebalance (GitHub-dark inspired)
-$dark-bg-color: #0d1117 !default;
-$dark-surface-color: #161b22 !default;
-$dark-text-color: #e6edf3 !default;
-$dark-text-muted-color: #7d8590 !default;
-$dark-divider-color: #30363d !default;
+// Light mode: cool gallery white with deep blue-black ink (no pure black)
+$light-bg-color: #fcfcfd !default;
+$light-surface-color: #f4f5f7 !default;
+$light-text-color: #181c23 !default;
+$light-text-muted-color: #5c6470 !default;
 
-// Typography
+// Dark mode: deep indigo-charcoal (warmer than GitHub-dark, no pure black)
+$dark-bg-color: #0f1216 !default;
+$dark-surface-color: #161a20 !default;
+$dark-text-color: #e6e8ec !default;
+$dark-text-muted-color: #99a1ad !default;
+$dark-divider-color: #2a2f38 !default;
+
+// Typography: one superfamily, three voices.
+// Display (headlines), text (body), data (labels, dates, code).
+$font-family-display: "IBM Plex Serif", Georgia, "Times New Roman", serif !default;
 $font-family-sans-serif:
-  "Inter",
+  "IBM Plex Sans",
   -apple-system,
   BlinkMacSystemFont,
   "Segoe UI",
-  Roboto,
   "Helvetica Neue",
   Arial,
   sans-serif !default;
-$font-family-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace !default;
+$font-family-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace !default;
 
 // Theme colors
 
-$code-bg-color-light: rgba($accent-color-light, 0.06);
-$code-bg-color-dark: #1c2128 !default;
+$code-bg-color-light: rgba($accent-color-light, 0.05);
+$code-bg-color-dark: #181d26 !default;
 
 // Font awesome location
 $fa-font-path: "../webfonts";

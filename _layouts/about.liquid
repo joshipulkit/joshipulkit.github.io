@@ -49,7 +49,7 @@ layout: default
 
     <!-- News -->
     {% if page.announcements and page.announcements.enabled %}
-      <h2 class="section-heading reveal">
+      <h2 class="section-heading reveal" style="--peak-pos: 22%">
         <a href="{{ '/news/' | relative_url }}">News</a>
         <a class="section-heading__more" href="{{ '/news/' | relative_url }}">See all →</a>
       </h2>
@@ -58,7 +58,7 @@ layout: default
 
     <!-- Latest posts -->
     {% if page.latest_posts and page.latest_posts.enabled %}
-      <h2 class="section-heading reveal">
+      <h2 class="section-heading reveal" style="--peak-pos: 52%">
         <a href="{{ '/blog/' | relative_url }}">Latest Posts</a>
         <a class="section-heading__more" href="{{ '/blog/' | relative_url }}">See all →</a>
       </h2>
@@ -67,7 +67,7 @@ layout: default
 
     <!-- Selected papers -->
     {% if page.selected_papers %}
-      <h2 class="section-heading reveal">
+      <h2 class="section-heading reveal" style="--peak-pos: 82%">
         <a href="{{ '/publications/' | relative_url }}">Selected Publications</a>
         <a class="section-heading__more" href="{{ '/publications/' | relative_url }}">See all →</a>
       </h2>

@@ -91,12 +91,15 @@ let applyTheme = () => {
 };
 
 let setHighlight = (theme) => {
+  const lightHighlight = document.getElementById("highlight_theme_light");
+  const darkHighlight = document.getElementById("highlight_theme_dark");
+  if (!lightHighlight || !darkHighlight) return;
   if (theme == "dark") {
-    document.getElementById("highlight_theme_light").media = "none";
-    document.getElementById("highlight_theme_dark").media = "";
+    lightHighlight.media = "none";
+    darkHighlight.media = "";
   } else {
-    document.getElementById("highlight_theme_dark").media = "none";
-    document.getElementById("highlight_theme_light").media = "";
+    darkHighlight.media = "none";
+    lightHighlight.media = "";
   }
 };
 

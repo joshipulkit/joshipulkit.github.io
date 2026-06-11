@@ -5,11 +5,22 @@
 @use "variables" as v;
 
 .hero {
+  position: relative;
   display: grid;
   grid-template-columns: 1fr auto;
-  column-gap: 2.5rem;
+  column-gap: 3rem;
   align-items: center;
-  padding: 3rem 0 2rem;
+  padding: 3.5rem 0 2.25rem;
+
+  /* "Active region": a faint accent field behind the hero, the embedding
+     idea rendered as design. Pointer-transparent, invisible to layout. */
+  &::before {
+    content: "";
+    position: absolute;
+    inset: -2rem -3rem 0;
+    background: radial-gradient(ellipse 70% 80% at 18% 30%, var(--global-accent-wash), transparent 65%);
+    pointer-events: none;
+  }
 
   @media (max-width: 575.98px) {
     grid-template-columns: 1fr;
@@ -20,41 +31,37 @@
 
 .hero__copy {
   min-width: 0;
+  position: relative;
 }
 
 .hero__kicker {
   font-family: var(--font-mono);
   font-size: 0.78rem;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.09em;
   text-transform: uppercase;
-  color: var(--global-theme-color);
-  margin: 0 0 0.75rem;
-
-  &::before {
-    content: "// ";
-    color: var(--global-text-color-light);
-  }
+  color: var(--global-text-color-light);
+  margin: 0 0 1rem;
 }
 
 .hero__name {
-  font-family: var(--font-sans);
-  font-size: clamp(2.25rem, 4.5vw, 3.25rem);
-  font-weight: 700;
-  letter-spacing: -0.025em;
-  line-height: 1.05;
-  margin: 0 0 1rem;
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5.5vw, 3.9rem);
+  font-weight: 600;
+  letter-spacing: -0.018em;
+  line-height: 1.04;
+  margin: 0 0 1.1rem;
 
   .hero__name-emphasis {
-    font-weight: 800;
+    font-weight: 700;
   }
 }
 
 .hero__lead {
-  font-size: 1.125rem;
-  line-height: 1.55;
+  font-size: 1.14rem;
+  line-height: 1.6;
   color: var(--global-text-color-light);
   margin: 0 0 1.25rem;
-  max-width: 38rem;
+  max-width: 36rem;
 }
 
 .hero__more-info {
@@ -63,6 +70,8 @@
   letter-spacing: 0.03em;
   color: var(--global-text-color-light);
   margin: 1rem 0 1.25rem;
+  overflow-wrap: anywhere;
+  min-width: 0;
 
   p {
     margin: 0;
@@ -79,9 +88,7 @@
 
   a {
     color: var(--global-text-color);
-    transition:
-      color 0.15s ease,
-      transform 0.15s ease;
+    transition: var(--transition-fast);
 
     &:hover {
       color: var(--global-theme-color);
@@ -94,26 +101,27 @@
 .hero__media {
   display: flex;
   justify-content: center;
+  position: relative;
 }
 
 .hero__media-frame {
   position: relative;
-  width: clamp(140px, 18vw, 180px);
+  width: clamp(150px, 19vw, 195px);
   aspect-ratio: 1 / 1;
-  border-radius: 14px;
+  border-radius: 12px;
   overflow: hidden;
   box-shadow:
     0 0 0 1px var(--global-divider-color),
-    0 12px 32px -16px rgba(0, 0, 0, 0.25);
+    0 16px 40px -20px rgba(10, 14, 30, 0.3);
 
   &::after {
     content: "";
     position: absolute;
     inset: 0;
-    border-radius: 14px;
+    border-radius: 12px;
     border: 2px solid transparent;
     pointer-events: none;
-    transition: border-color 0.2s ease;
+    transition: var(--transition-fast);
   }
 
   &:hover::after {
@@ -130,11 +138,30 @@
   }
 }
 
+/* The signature rule: hairline baseline carrying the resonance peak.
+   On the hero it sits early in the spectrum; section rules downstream
+   carry the peak further along the baseline. */
 .hero__rule {
   border: 0;
-  height: 1px;
-  background: var(--global-divider-color);
-  margin: 0.5rem 0 2.5rem;
+  height: 11px;
+  margin: 0.75rem 0 2.25rem;
+  background-image:
+    var(--resonance-peak),
+    linear-gradient(
+      to bottom,
+      transparent calc(50% + 3.5px),
+      var(--global-divider-color) calc(50% + 3.5px),
+      var(--global-divider-color) calc(50% + 4.5px),
+      transparent calc(50% + 4.5px)
+    );
+  background-repeat: no-repeat, no-repeat;
+  background-position:
+    var(--peak-pos, 8%) center,
+    center;
+  background-size:
+    42px 11px,
+    100% 100%;
+  opacity: 1;
 }
 
 // Reset float behaviour from the legacy .profile selector when used inside the hero.

@@ -2,6 +2,7 @@
 **/*.min.css
 **/*.min.js
 .bundle/**
+.claude/**
 .jekyll-cache/**
 .venv-rendercv/**
 _site/**

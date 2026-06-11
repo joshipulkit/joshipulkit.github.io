@@ -12,10 +12,10 @@ layout: page
         {% unless forloop.first %}
           </ul>
         {% endunless %}
-        <h1 id="c{{current_category | slugify }}">
-          <a href="{{ current_category | slugify | prepend: '/books/category/' | relative_url }}">{{ current_category }}</a>
-        </h1>
-        <ul>
+        <h2 class="section-heading" id="c{{ current_category | slugify }}" style="--peak-pos: 30%">
+          <a href="{{ current_category | slugify | prepend: '/books/category/' | relative_url }}">{{ current_category | capitalize }}</a>
+        </h2>
+        <ul class="book-shelf-row">
           {% assign category = current_category %}
       {% endif %}
 

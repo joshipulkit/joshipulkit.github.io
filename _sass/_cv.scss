@@ -2,6 +2,42 @@
  * CV shared styles
  *****************************/
 
+/* CV section cards: flat editorial panels with serif headings */
+.cv .card {
+  background-color: var(--global-card-bg-color);
+  border: 1px solid var(--global-divider-color);
+  border-radius: 8px;
+  box-shadow: none;
+
+  .card-title {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--global-text-color);
+    margin-bottom: 0.9rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid var(--global-divider-color);
+  }
+
+  .list-group-item {
+    background-color: transparent;
+    border-color: var(--global-divider-color);
+  }
+}
+
+/* Date pills: mono outline chips instead of MDB's red badges */
+.cv .badge {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--global-theme-color) !important;
+  background-color: transparent !important;
+  border: 1px solid var(--global-theme-color);
+  border-radius: 999px;
+  padding: 0.32em 0.7em;
+}
+
 div.container-link-button {
   margin-right: 0.5rem;
 }
@@ -16,13 +52,11 @@ table.table-cv {
 }
 
 a.btncv {
+  font-family: var(--font-mono);
   color: var(--global-text-color) !important;
-  border: 1px solid var(--global-text-color) !important;
-  border-radius: 0.125rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
+  border: 1px solid var(--global-divider-color) !important;
+  border-radius: 999px;
+  padding: 0.3rem 0.8rem;
   text-decoration: none;
   font-weight: 400;
   font-size: 0.7rem;
@@ -30,6 +64,7 @@ a.btncv {
   vertical-align: middle;
   text-transform: uppercase;
   white-space: nowrap;
+  transition: var(--transition-fast);
 }
 
 a.btncv:hover {
@@ -43,8 +78,9 @@ a.btncv:hover {
  *****************************/
 
 p.location {
+  font-family: var(--font-mono);
   font-size: 0.7rem;
-  white-space: nowrap;
+  white-space: normal;
 }
 
 i.iconlocation {
