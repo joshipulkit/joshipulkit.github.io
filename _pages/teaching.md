@@ -59,10 +59,14 @@ Optional short body for the detail page.
               <div class="teaching-meta mono-label">{{ meta_parts | join: " · " }}</div>
             {% endif %}
           </td>
+          {%- comment -%}
+            Whitespace-controlled so a repo-less cell is truly empty and the
+            mobile `:empty { display: none }` rule can match it.
+          {%- endcomment -%}
           <td class="teaching-actions">
-            {% if item.repo %}
+            {%- if item.repo -%}
               <a class="teaching-repo" href="{{ item.repo }}" target="_blank" rel="noopener">repo →</a>
-            {% endif %}
+            {%- endif -%}
           </td>
         </tr>
       {% endfor %}

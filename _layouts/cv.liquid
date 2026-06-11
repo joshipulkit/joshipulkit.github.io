@@ -164,16 +164,22 @@ layout: default
           <div class="card mt-3 p-3">
             <h3 class="card-title font-weight-medium">{{ section_label }}</h3>
             <div>
+              {% comment %}
+                Schema guard: the unified includes expect specific fields
+                (awards: title/awarder, skills: name/level). Sections whose
+                entries use the simpler bullet/label shape fall through to
+                the generic branch instead of rendering empty.
+              {% endcomment %}
               {% if section_key == 'education' %}
                 {% assign entries = section_entries %}
                 {% include cv/education.liquid %}
-              {% elsif section_key == 'awards' or section_key == 'honors and awards' or section_key == 'selected honors' %}
+              {% elsif section_key == 'awards' or section_key == 'honors and awards' %}
                 {% assign entries = section_entries %}
                 {% include cv/awards.liquid %}
               {% elsif section_key == 'publications' %}
                 {% assign entries = section_entries %}
                 {% include cv/publications.liquid %}
-              {% elsif section_key == 'skills' %}
+              {% elsif section_key == 'skills' and section_entries.first.name %}
                 {% assign entries = section_entries %}
                 {% include cv/skills.liquid %}
               {% elsif section_key == 'languages' %}

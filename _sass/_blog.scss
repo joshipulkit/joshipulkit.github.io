@@ -376,7 +376,8 @@
       th,
       td {
         display: block;
-        width: auto;
+        /* !important: the date th carries an inline style="width: 20%" */
+        width: auto !important;
         white-space: normal;
         border-bottom: none;
         padding: 0 !important;

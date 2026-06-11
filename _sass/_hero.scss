@@ -13,11 +13,13 @@
   padding: 3.5rem 0 2.25rem;
 
   /* "Active region": a faint accent field behind the hero, the embedding
-     idea rendered as design. Pointer-transparent, invisible to layout. */
+     idea rendered as design. Pointer-transparent, invisible to layout.
+     Horizontal insets stay at 0 so the box never widens the page on
+     narrow viewports (negative insets created scrollable overflow). */
   &::before {
     content: "";
     position: absolute;
-    inset: -2rem -3rem 0;
+    inset: -2rem 0 0;
     background: radial-gradient(ellipse 70% 80% at 18% 30%, var(--global-accent-wash), transparent 65%);
     pointer-events: none;
   }
