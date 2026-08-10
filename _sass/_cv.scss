@@ -27,7 +27,7 @@
 
 /* Date pills: mono outline chips instead of MDB's red badges */
 .cv .badge {
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: 0.66rem;
   font-weight: 500;
   letter-spacing: 0.04em;
@@ -52,7 +52,7 @@ table.table-cv {
 }
 
 a.btncv {
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   color: var(--global-text-color) !important;
   border: 1px solid var(--global-divider-color) !important;
   border-radius: 999px;
@@ -78,7 +78,7 @@ a.btncv:hover {
  *****************************/
 
 p.location {
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: 0.7rem;
   white-space: normal;
 }

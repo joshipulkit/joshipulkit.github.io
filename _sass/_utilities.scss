@@ -41,15 +41,18 @@ select:focus-visible {
 }
 
 // Chip: the one pill primitive shared by blog tags, teaching year chips,
-// repo buttons, and publication link buttons.
+// repo buttons, and publication link buttons. Filled pill, no border;
+// feedback lives on the press and it's instant.
 .chip {
   display: inline-block;
-  font-family: var(--font-mono);
-  font-size: 0.76rem;
-  letter-spacing: 0.04em;
-  padding: 0.3rem 0.75rem;
-  border: 1px solid var(--global-divider-color);
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  padding: 0.3rem 0.8rem;
+  border: 0;
   border-radius: 999px;
+  background-color: var(--global-surface-color);
   color: var(--global-text-color);
   text-decoration: none;
   transition: var(--transition-fast);
@@ -57,15 +60,22 @@ select:focus-visible {
   &:hover,
   &:focus-visible {
     color: var(--global-theme-color);
-    border-color: var(--global-theme-color);
-    background-color: var(--global-surface-color);
     text-decoration: none;
+  }
+
+  &:active {
+    transform: scale(0.96);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chip:active {
+    transform: none;
   }
 }
 
 .chip--category {
   color: var(--global-text-color-light);
-  border-style: dashed;
 }
 
 // Skip-to-content link: hidden until focused via keyboard
@@ -280,7 +290,7 @@ nav[data-toggle="toc"] {
   }
 
   .nav > li > a {
-    font-family: var(--font-mono);
+    font-family: var(--font-sans);
     letter-spacing: 0.02em;
     color: var(--global-text-color-light);
     font-size: 0.72rem;
@@ -293,7 +303,7 @@ nav[data-toggle="toc"] {
   }
 
   .nav-link.active {
-    font-family: var(--font-mono);
+    font-family: var(--font-sans);
     color: var(--global-theme-color);
     border-left-color: var(--global-theme-color);
     font-size: 0.72rem;
@@ -593,7 +603,7 @@ ninja-keys {
 
 ninja-keys::part(ninja-input) {
   color: var(--global-text-color);
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
 }
 
 ninja-keys::part(ninja-input-wrapper) {
@@ -632,7 +642,7 @@ figure.cover {
   }
 
   figcaption {
-    font-family: var(--font-mono);
+    font-family: var(--font-sans);
     font-size: 0.68rem;
     letter-spacing: 0.06em;
     text-transform: uppercase;

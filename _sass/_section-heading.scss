@@ -1,8 +1,6 @@
 /*******************************************************************************
- * Section heading: serif heading, resonance-rule baseline, mono "see all".
- * The hairline after the heading carries the oxide resonance peak; its
- * position walks along the baseline from section to section (set per
- * heading with `--peak-pos`), so the page reads as one spectrum.
+ * Section heading: bold system-type heading with a quiet "see all" link.
+ * Sections separate by whitespace, not rules.
  ******************************************************************************/
 
 @use "variables" as v;
@@ -11,35 +9,12 @@
   display: flex;
   align-items: baseline;
   gap: 1rem;
-  margin: 3rem 0 0.75rem;
+  margin: 4rem 0 1.25rem;
   font-family: var(--font-display);
-  font-size: 1.35rem;
-  font-weight: 600;
-  letter-spacing: -0.005em;
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: -0.018em;
   color: var(--global-text-color);
-
-  &::after {
-    content: "";
-    flex: 1 1 auto;
-    height: 11px;
-    align-self: center;
-    background-image:
-      var(--resonance-peak),
-      linear-gradient(
-        to bottom,
-        transparent calc(50% + 3.5px),
-        var(--global-divider-color) calc(50% + 3.5px),
-        var(--global-divider-color) calc(50% + 4.5px),
-        transparent calc(50% + 4.5px)
-      );
-    background-repeat: no-repeat, no-repeat;
-    background-position:
-      var(--peak-pos, 20%) center,
-      center;
-    background-size:
-      42px 11px,
-      100% 100%;
-  }
 
   a {
     color: inherit;
@@ -53,15 +28,16 @@
 
 .section-heading__more {
   flex: 0 0 auto;
+  margin-left: auto;
   order: 3;
-  font-family: var(--font-mono);
-  font-size: 0.74rem;
-  letter-spacing: 0.05em;
-  color: var(--global-text-color-light) !important;
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  color: var(--global-theme-color) !important;
   transition: var(--transition-fast);
 
   &:hover {
-    color: var(--global-theme-color) !important;
-    text-decoration: none !important;
+    text-decoration: underline !important;
   }
 }

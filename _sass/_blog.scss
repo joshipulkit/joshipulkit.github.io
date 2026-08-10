@@ -10,7 +10,7 @@
 .post-list li {
   .post-meta,
   .post-tags {
-    font-family: var(--font-mono);
+    font-family: var(--font-sans);
     font-size: 0.78rem;
     letter-spacing: 0.03em;
     color: var(--global-text-color-light);
@@ -89,7 +89,7 @@
 .pagination {
   .page-item {
     .page-link {
-      font-family: var(--font-mono);
+      font-family: var(--font-sans);
       font-size: 0.85rem;
       color: var(--global-text-color);
       background-color: transparent;
@@ -125,7 +125,7 @@
 
 .post {
   .post-meta {
-    font-family: var(--font-mono);
+    font-family: var(--font-sans);
     font-size: 0.78rem;
     letter-spacing: 0.03em;
     color: var(--global-text-color-light);
@@ -133,7 +133,7 @@
   }
 
   .post-tags {
-    font-family: var(--font-mono);
+    font-family: var(--font-sans);
     font-size: 0.78rem;
     letter-spacing: 0.03em;
     color: var(--global-text-color-light);
@@ -201,7 +201,7 @@
 }
 
 .featured-lead__eyebrow {
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: 0.66rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -227,7 +227,7 @@
 }
 
 .featured-lead__meta {
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: 0.72rem;
   letter-spacing: 0.04em;
   color: var(--global-text-color-light);
@@ -256,7 +256,7 @@
   border-collapse: collapse;
 
   th {
-    font-family: var(--font-mono);
+    font-family: var(--font-sans);
     font-size: 0.74rem;
     font-weight: 500;
     letter-spacing: 0.05em;
@@ -303,7 +303,7 @@
     }
 
     th {
-      font-family: var(--font-mono);
+      font-family: var(--font-sans);
       font-size: 0.74rem;
       letter-spacing: 0.05em;
       text-transform: uppercase;

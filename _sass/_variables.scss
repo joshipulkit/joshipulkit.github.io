@@ -32,44 +32,36 @@ $grey-900: #212529;
 $white-color: #ffffff !default;
 $black-color: #000000 !default;
 
-// "Scholarly editorial" identity
-// Accent: deep cobalt (UI, links, focus). Counterpoint: warm oxide,
-// reserved exclusively for the resonance-peak signature marks.
-$accent-color-light: #2244cc !default;
-$accent-color-dark: #8fa4ff !default;
-$oxide-color-light: #b34527 !default;
-$oxide-color-dark: #e2826b !default;
+// Apple-style identity: restrained near-monochrome palette, one blue accent,
+// orange reserved as a secondary highlight (awards, "featured" marks).
+$accent-color-light: #0066cc !default;
+$accent-color-dark: #2997ff !default;
+$oxide-color-light: #b64400 !default;
+$oxide-color-dark: #f56300 !default;
 
-// Light mode: cool gallery white with deep blue-black ink (no pure black)
-$light-bg-color: #fcfcfd !default;
-$light-surface-color: #f4f5f7 !default;
-$light-text-color: #181c23 !default;
-$light-text-muted-color: #5c6470 !default;
+// Light mode: warm gallery white, near-black ink
+$light-bg-color: #fbfbfd !default;
+$light-surface-color: #f5f5f7 !default;
+$light-text-color: #1d1d1f !default;
+$light-text-muted-color: #6e6e73 !default;
 
-// Dark mode: deep indigo-charcoal (warmer than GitHub-dark, no pure black)
-$dark-bg-color: #0f1216 !default;
-$dark-surface-color: #161a20 !default;
-$dark-text-color: #e6e8ec !default;
-$dark-text-muted-color: #99a1ad !default;
-$dark-divider-color: #2a2f38 !default;
+// Dark mode: true black canvas, elevated graphite surfaces
+$dark-bg-color: #000000 !default;
+$dark-surface-color: #1d1d1f !default;
+$dark-text-color: #f5f5f7 !default;
+$dark-text-muted-color: #86868b !default;
+$dark-divider-color: #2d2d2f !default;
 
-// Typography: one superfamily, three voices.
-// Display (headlines), text (body), data (labels, dates, code).
-$font-family-display: "IBM Plex Serif", Georgia, "Times New Roman", serif !default;
-$font-family-sans-serif:
-  "IBM Plex Sans",
-  -apple-system,
-  BlinkMacSystemFont,
-  "Segoe UI",
-  "Helvetica Neue",
-  Arial,
-  sans-serif !default;
-$font-family-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace !default;
+// Typography: the platform's system family everywhere; it ships optical
+// sizing and tracking tables no webfont matches. Mono only for code/data.
+$font-family-display: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
+$font-family-sans-serif: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
+$font-family-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace !default;
 
 // Theme colors
 
 $code-bg-color-light: rgba($accent-color-light, 0.05);
-$code-bg-color-dark: #181d26 !default;
+$code-bg-color-dark: #161617 !default;
 
 // Font awesome location
 $fa-font-path: "../webfonts";

@@ -8,26 +8,14 @@
   position: relative;
   display: grid;
   grid-template-columns: 1fr auto;
-  column-gap: 3rem;
+  column-gap: 3.5rem;
   align-items: center;
-  padding: 3.5rem 0 2.25rem;
-
-  /* "Active region": a faint accent field behind the hero, the embedding
-     idea rendered as design. Pointer-transparent, invisible to layout.
-     Horizontal insets stay at 0 so the box never widens the page on
-     narrow viewports (negative insets created scrollable overflow). */
-  &::before {
-    content: "";
-    position: absolute;
-    inset: -2rem 0 0;
-    background: radial-gradient(ellipse 70% 80% at 18% 30%, var(--global-accent-wash), transparent 65%);
-    pointer-events: none;
-  }
+  padding: 4.5rem 0 3rem;
 
   @media (max-width: 575.98px) {
     grid-template-columns: 1fr;
     row-gap: 1.5rem;
-    padding: 2rem 0 1rem;
+    padding: 2.5rem 0 1.5rem;
   }
 }
 
@@ -37,20 +25,20 @@
 }
 
 .hero__kicker {
-  font-family: var(--font-mono);
-  font-size: 0.78rem;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  font-weight: 500;
+  letter-spacing: 0;
   color: var(--global-text-color-light);
-  margin: 0 0 1rem;
+  margin: 0 0 0.75rem;
 }
 
 .hero__name {
   font-family: var(--font-display);
   font-size: clamp(2.5rem, 5.5vw, 3.9rem);
-  font-weight: 600;
-  letter-spacing: -0.018em;
-  line-height: 1.04;
+  font-weight: 700;
+  letter-spacing: -0.022em;
+  line-height: 1.05;
   margin: 0 0 1.1rem;
 
   .hero__name-emphasis {
@@ -59,17 +47,17 @@
 }
 
 .hero__lead {
-  font-size: 1.14rem;
-  line-height: 1.6;
+  font-size: 1.18rem;
+  line-height: 1.55;
+  letter-spacing: 0.002em;
   color: var(--global-text-color-light);
   margin: 0 0 1.25rem;
   max-width: 36rem;
 }
 
 .hero__more-info {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  letter-spacing: 0.03em;
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
   color: var(--global-text-color-light);
   margin: 1rem 0 1.25rem;
   overflow-wrap: anywhere;
@@ -108,27 +96,11 @@
 
 .hero__media-frame {
   position: relative;
-  width: clamp(150px, 19vw, 195px);
+  width: clamp(150px, 19vw, 200px);
   aspect-ratio: 1 / 1;
-  border-radius: 12px;
+  border-radius: 22px;
   overflow: hidden;
-  box-shadow:
-    0 0 0 1px var(--global-divider-color),
-    0 16px 40px -20px rgba(10, 14, 30, 0.3);
-
-  &::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: 12px;
-    border: 2px solid transparent;
-    pointer-events: none;
-    transition: var(--transition-fast);
-  }
-
-  &:hover::after {
-    border-color: var(--global-theme-color);
-  }
+  box-shadow: 0 24px 48px -24px rgba(0, 0, 0, 0.35);
 
   img,
   picture,
@@ -140,30 +112,12 @@
   }
 }
 
-/* The signature rule: hairline baseline carrying the resonance peak.
-   On the hero it sits early in the spectrum; section rules downstream
-   carry the peak further along the baseline. */
+/* Hairline separator below the hero */
 .hero__rule {
   border: 0;
-  height: 11px;
-  margin: 0.75rem 0 2.25rem;
-  background-image:
-    var(--resonance-peak),
-    linear-gradient(
-      to bottom,
-      transparent calc(50% + 3.5px),
-      var(--global-divider-color) calc(50% + 3.5px),
-      var(--global-divider-color) calc(50% + 4.5px),
-      transparent calc(50% + 4.5px)
-    );
-  background-repeat: no-repeat, no-repeat;
-  background-position:
-    var(--peak-pos, 8%) center,
-    center;
-  background-size:
-    42px 11px,
-    100% 100%;
-  opacity: 1;
+  height: 1px;
+  margin: 1rem 0 2.5rem;
+  background: var(--global-divider-color);
 }
 
 // Reset float behaviour from the legacy .profile selector when used inside the hero.

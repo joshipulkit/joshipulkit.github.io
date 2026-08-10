@@ -45,15 +45,17 @@ samp,
   font-family: var(--font-mono);
 }
 
-// Mono label utility used by section headings, dates, footer metadata, nav.
+// Small label utility used by section headings, dates, footer metadata, nav.
 .mono-label {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: none;
   color: var(--global-text-color-light);
 }
 
+// Tracking is size-specific: tighten as headings grow, body stays at 0.
 h1,
 h2,
 h3,
@@ -62,11 +64,16 @@ h5,
 h6 {
   font-family: var(--font-display);
   font-weight: 600;
-  letter-spacing: -0.005em;
-  line-height: 1.25;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
 }
 
 h1 {
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+h2 {
   letter-spacing: -0.015em;
 }
 
@@ -128,12 +135,10 @@ table.table a {
 blockquote {
   background: var(--global-surface-color);
   border-left: 3px solid var(--global-theme-color);
-  border-radius: 0 6px 6px 0;
+  border-radius: 0 12px 12px 0;
   margin: 1.5em 0;
   padding: 1em 1.25em;
-  font-family: var(--font-display);
-  font-style: italic;
-  font-size: 1.12rem;
+  font-size: 1.06rem;
   line-height: 1.6;
 
   p {

@@ -60,7 +60,7 @@ posts_in_search: true
 bib_search: true
 
 # Dimensions
-max_width: 930px
+max_width: 980px
 
 # -----------------------------------------------------------------------------
 # Open Graph & Schema.org
@@ -454,7 +454,7 @@ third_party_libraries:
     version: "5.5.0"
   google_fonts:
     url:
-      fonts: "https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&family=Material+Icons&display=swap"
+      fonts: "https://fonts.googleapis.com/css2?family=Material+Icons&display=swap"
   highlightjs:
     integrity:
       css:
@@ -512,9 +512,9 @@ third_party_libraries:
     integrity:
       js: "sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="
     local:
-      fonts: "output/chtml/fonts/woff-v2/"
+      fonts: "https://fonts.googleapis.com/css2?family=Material+Icons&display=swap"
     url:
-      fonts: "https://cdn.jsdelivr.net/npm/mathjax@{{version}}/es5/output/chtml/fonts/woff-v2/"
+      fonts: "https://fonts.googleapis.com/css2?family=Material+Icons&display=swap"
       js: "https://cdn.jsdelivr.net/npm/mathjax@{{version}}/es5/tex-mml-chtml.js"
     version: "3.2.2"
   masonry:
