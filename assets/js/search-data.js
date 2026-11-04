@@ -44,7 +44,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/books/";
           },
-        },{id: "post-the-hydroxyl-radical-and-the-atmosphere-s-self-cleaning-chemistry",
+        },{id: "post-how-gases-add-to-delhi-39-s-winter-particle-pollution",
+        
+          title: "How Gases Add to Delhi&#39;s Winter Particle Pollution",
+        
+        description: "How a lid of warm air, ammonia and two acid gases make about a third of the mass of Delhi&#39;s fine winter particles, and what that means for cleaner air",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/delhi-winter-smog/";
+          
+        },
+      },{id: "post-the-hydroxyl-radical-and-the-atmosphere-s-self-cleaning-chemistry",
         
           title: "The Hydroxyl Radical and the Atmosphere’s Self-Cleaning Chemistry",
         
