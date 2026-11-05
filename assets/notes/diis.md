@@ -120,8 +120,8 @@ $$\mathbf{e}_i = \mathbf{F}_i \mathbf{D}_i \mathbf{S} - \mathbf{S} \mathbf{D}_i 
 - Compute the new extrapolated Fock matrix as the following and repeat the SCF procedure.
   $$\mathbf{F} = \sum_{i=1}^{m} c_i \mathbf{F}_i$$
 
-_You can find a python code for DIIS method [here](../../codes/diis-python-code).\
-If you have have any queries regarding the article, feel free to [write to me](../../connect.html)._
+_You can find a python code for DIIS method [here](https://github.com/joshipulkit/codes/tree/main/python3/diis).\
+If you have any queries regarding the article, feel free to [write to me](/)._
 
 <!-- references begin -->
 
